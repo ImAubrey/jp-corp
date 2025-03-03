@@ -1,0 +1,69 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "High-Speed Connectivity",
+    description:
+      "Offering premium bandwidth with multiple carrier options and reliable network infrastructure for seamless connectivity.",
+    icon: "bx:bxs-network-chart",
+  },
+  {
+    title: "24/7 Technical Support",
+    description:
+      "Round-the-clock professional support team ensuring your services run smoothly with minimal downtime.",
+    icon: "bx:bxs-help-circle",
+  },
+  {
+    title: "Data Center Security",
+    description:
+      "State-of-the-art physical and cyber security measures protecting your valuable data and hardware investments.",
+    icon: "bx:bxs-shield",
+  },
+  {
+    title: "Cloud Solutions",
+    description:
+      "Flexible cloud hosting options with scalable resources to meet your growing business needs.",
+    icon: "bx:bxs-cloud",
+  },
+  {
+    title: "Infrastructure Management",
+    description:
+      "Professional management of your hardware, network, and system resources with regular maintenance and updates.",
+    icon: "bx:bxs-server",
+  },
+  {
+    title: "Disaster Recovery",
+    description:
+      "Comprehensive backup and recovery solutions ensuring business continuity in any unexpected situations.",
+    icon: "bx:bxs-server",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Business Internet & Data Center Solutions
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    We provide comprehensive Internet Service Provider and Internet Data Center solutions, 
+    offering enterprise-grade connectivity, secure hosting, and reliable infrastructure services.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
