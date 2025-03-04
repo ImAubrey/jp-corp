@@ -1,0 +1,106 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+
+// Timeline events
+const timelineEvents = [
+  {
+    date: "January 2023",
+    title: "Company Founded",
+    description: "Astrix was established with a vision to provide honest, straightforward network services to clients worldwide."
+  },
+  {
+    date: "March 2023",
+    title: "First Data Center Partnership",
+    description: "Secured our first data center partnership in Tokyo, establishing a foundation for our hosting services."
+  },
+  {
+    date: "June 2023",
+    title: "Network Infrastructure Launch",
+    description: "Deployed our core network infrastructure with direct connections to major internet exchanges in Asia."
+  },
+  {
+    date: "September 2023",
+    title: "Dedicated Server Offerings",
+    description: "Launched our first range of dedicated server options, focusing on high-performance, reliable hardware."
+  },
+  {
+    date: "December 2023",
+    title: "IP Transit Services Introduced",
+    description: "Expanded our service portfolio with IP transit and BGP announcement capabilities for clients with their own IP addresses."
+  },
+  {
+    date: "February 2024",
+    title: "24/7 Support Team Established",
+    description: "Formed our round-the-clock technical support team to ensure clients receive assistance whenever needed."
+  },
+  {
+    date: "April 2024",
+    title: "Network Expansion",
+    description: "Added new points of presence in North America to improve network reach and reduce latency for international clients."
+  },
+  {
+    date: "Present",
+    title: "Continuing Growth",
+    description: "Focusing on building relationships with clients and expanding our service offerings to meet evolving needs."
+  }
+];
+---
+
+<Layout title="Timeline">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Company Timeline</Fragment>
+      <Fragment slot="desc">Our journey from inception to present</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Milestones & Progress
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Astrix has grown steadily since its founding, continuously improving our network infrastructure 
+        and expanding our service offerings to better serve our clients.
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-4xl mt-12 mb-16">
+      <div class="relative">
+        {/* Vertical line */}
+        <div class="absolute left-5 md:left-1/2 transform md:-translate-x-[0.5px] h-full border-l-2 border-gray-200"></div>
+        
+        <div class="space-y-12">
+          {timelineEvents.map((event, index) => (
+            <div class="relative">
+              {/* Timeline dot */}
+              <div class="absolute left-5 md:left-1/2 transform -translate-x-[7px] md:-translate-x-[9px] mt-1.5">
+                <div class="w-4 h-4 rounded-full border-2 border-gray-600 bg-white"></div>
+              </div>
+              
+              {/* Content */}
+              <div class={`md:grid md:grid-cols-2 md:gap-8 ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+                {/* Date */}
+                <div class={`pl-14 md:pl-0 md:text-right ${index % 2 === 0 ? 'md:pr-8' : 'md:order-last md:pl-8'}`}>
+                  <div class="mb-2 md:mb-0 text-gray-500 font-medium">{event.date}</div>
+                </div>
+                
+                {/* Event description */}
+                <div class={`pl-14 md:pl-0 ${index % 2 === 0 ? 'md:order-last md:pl-8' : 'md:pr-8'}`}>
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">{event.title}</h3>
+                  <p class="text-gray-600">{event.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-gray-600 text-base font-medium rounded-md text-gray-600 hover:bg-gray-100">
+          Join Us on Our Journey
+        </a>
+      </div>
+    </div>
+  </Container>
+</Layout>
