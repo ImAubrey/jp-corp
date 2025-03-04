@@ -1,0 +1,235 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+
+// Service pricing data
+const announcementServices = [
+  {
+    service: "Initial Announcement Setup",
+    details: "Prefix whitelist, IRR check, announcement setup, delivery to customer",
+    price: "$68 USD / batch of prefixes",
+    notes: "A batch of prefixes is defined by a single LoA"
+  },
+  {
+    service: "Announcement Maintenance",
+    details: "Maintain IP prefix announcements: IPv4 /24 or IPv6 /32",
+    price: "$18 USD / prefix / month",
+    notes: ""
+  },
+  {
+    service: "Prefix Geolocation",
+    details: "Contact major geolocation databases to set correct location",
+    price: "Free",
+    notes: ""
+  }
+];
+
+const abuseCategories = [
+  {
+    category: "Copyright Infringement",
+    description: "Reported for downloading pirated content via BitTorrent, etc.",
+    fee: "$2 USD / IP"
+  },
+  {
+    category: "Vulnerability Alert",
+    description: "Customer systems have exploitable CVE vulnerabilities.",
+    fee: "$8 USD / IP"
+  },
+  {
+    category: "Service Compromised",
+    description: "Compromise, scanning/brute-forcing, outbound attacks, resource-consuming crypto mining.",
+    fee: "$12 USD / IP"
+  },
+  {
+    category: "Spam",
+    description: "Sending unsolicited emails.",
+    fee: "$16 USD / IP"
+  },
+  {
+    category: "Malicious Services",
+    description: "Phishing sites, malware distribution, command and control servers.",
+    fee: "$20 USD / IP"
+  },
+  {
+    category: "Report to IP Owner",
+    description: "Any abuse report copied to the IP address owner.",
+    fee: "$24 USD / IP"
+  }
+];
+---
+
+<Layout title="IP Transit Services">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">IP Transit Services</Fragment>
+      <Fragment slot="desc">Bring Your Own IP (BYOIP) Announcement Services</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Benefits of BYOIP
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Using your own IP addresses with our announcement services offers several advantages 
+        for businesses that need flexible network resources.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-10">
+      <div class="bg-white p-6 rounded-lg border border-gray-100">
+        <div class="text-gray-700 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cost Effective</h3>
+        <p class="text-gray-600">Lower cost compared to leasing IP addresses from our service.</p>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg border border-gray-100">
+        <div class="text-gray-700 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Professional Management</h3>
+        <p class="text-gray-600">We help manage and position your announced IP prefixes for optimal performance.</p>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg border border-gray-100">
+        <div class="text-gray-700 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Resource Control</h3>
+        <p class="text-gray-600">Maintain full control over your own IP resources.</p>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800 mb-6">
+        IP Announcement Services & Pricing
+      </h2>
+      <div class="bg-white rounded-lg border border-gray-100 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="min-w-full">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Service</th>
+                <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Details</th>
+                <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Price</th>
+                <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Notes</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {announcementServices.map((service) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="py-4 px-4 text-sm font-medium text-gray-900">{service.service}</td>
+                  <td class="py-4 px-4 text-sm text-gray-700">{service.details}</td>
+                  <td class="py-4 px-4 text-sm text-gray-700">{service.price}</td>
+                  <td class="py-4 px-4 text-sm text-gray-500">{service.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+      
+    <div class="mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800 mb-6">
+        Abuse Handling Policy
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500 mb-6">
+        If an IP address announced through our network is reported for abuse, there will be an abuse report handling fee.
+        For each calendar month, each IP address can incur a maximum of one fee per abuse category.
+      </p>
+        
+      <div class="overflow-x-auto bg-white rounded-lg border border-gray-100">
+        <table class="min-w-full">
+          <thead class="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Abuse Category</th>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Description</th>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Handling Fee (per month)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            {abuseCategories.map((category) => (
+              <tr class="hover:bg-gray-50">
+                <td class="py-4 px-4 text-sm font-medium text-gray-900">{category.category}</td>
+                <td class="py-4 px-4 text-sm text-gray-700">{category.description}</td>
+                <td class="py-4 px-4 text-sm text-gray-700">{category.fee}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+        
+      <p class="text-gray-600 mt-6">
+        <strong class="font-semibold">Note:</strong> If an abuse report is copied to the IP address owner, the "Report to IP Owner" fee 
+        automatically applies, superseding fees from other categories.
+      </p>
+    </div>
+      
+    <div class="mx-auto max-w-4xl mt-16 mb-16">
+      <h2 class="font-bold text-3xl text-gray-800 mb-6">
+        Abuse Fee Examples
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500 mb-6">
+        Here are some examples to clarify our abuse fee policy:
+      </p>
+        
+      <div class="space-y-6">
+        <div class="p-5 border border-gray-200 rounded-lg">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Example 1</h3>
+          <p class="text-gray-600">
+            An IP address receives 20 "Copyright Infringement" reports in one month. 
+            The handling fee is $2 USD for that month.
+          </p>
+        </div>
+        
+        <div class="p-5 border border-gray-200 rounded-lg">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Example 2</h3>
+          <p class="text-gray-600">
+            An IP address receives 20 "Copyright Infringement" reports and 4 "Spam" reports in one month. 
+            The handling fees are $2 USD for Copyright and $16 USD for Spam, totaling $18 USD.
+          </p>
+        </div>
+        
+        <div class="p-5 border border-gray-200 rounded-lg">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Example 3</h3>
+          <p class="text-gray-600">
+            An IP address receives 20 "Copyright Infringement" reports and 4 "Spam" reports in one month. 
+            Of the Spam reports, 2 were copied to the IP owner, incurring a $24 USD fee. The remaining 2 Spam reports 
+            incur a $16 USD fee, and the Copyright reports incur a $2 USD fee, totaling $42 USD.
+          </p>
+        </div>
+        
+        <div class="p-5 border border-gray-200 rounded-lg">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Example 4</h3>
+          <p class="text-gray-600">
+            An IP address receives 20 "Copyright Infringement" reports and 4 "Spam" reports in one month. 
+            All 4 Spam reports were copied to the IP owner, incurring a $24 USD fee. The Copyright reports incur a $2 USD fee, 
+            totaling $26 USD.
+          </p>
+        </div>
+      </div>
+        
+      <div class="mt-8 p-5 bg-gray-50 border border-gray-200 rounded-lg">
+        <p class="text-gray-700">
+          We encourage customers to resolve abuse issues promptly. If the same IP receives abuse reports in the following 
+          calendar month, the handling fees will be calculated again.
+        </p>
+      </div>
+      
+      <div class="mt-8 text-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-gray-600 text-base font-medium rounded-md text-gray-600 hover:bg-gray-100">
+          Contact Us for IP Transit Services
+        </a>
+      </div>
+    </div>
+  </Container>
+</Layout>

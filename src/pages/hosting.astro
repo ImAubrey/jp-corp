@@ -1,0 +1,135 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+
+// Server data
+const servers = [
+  {
+    id: "EONS-NRT2-1718-U31",
+    status: "In Use",
+    rentalFee: "$198",
+    powerConsumption: "240W",
+    setupFee: "$68.00",
+    specs: "1x Intel Xeon Gold 6126 (12 cores, 24 threads) / 64GB RAM / 2x 240GB SATA SSD / dual port 40G NIC"
+  },
+  {
+    id: "EONS-NRT2-1718-U25-26",
+    status: "In Use",
+    rentalFee: "$329",
+    powerConsumption: "850W",
+    setupFee: "$68.00",
+    specs: "H3C R4950G5 / 2x AMD EPYC 7R12 (48 cores, 96 threads) / 8x 64GB DDR4 2933MHz RECC RAM (512GB total) / 2x Kioxia CD6 7.68TB U.2 NVME / Mellanox CX3 dual 40G port NIC"
+  }
+];
+---
+
+<Layout title="Dedicated Hosting">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Dedicated Hosting</Fragment>
+      <Fragment slot="desc">High-performance dedicated servers in Tokyo (TYO)</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Available Servers
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Our premium dedicated servers are housed in state-of-the-art data centers in Tokyo, 
+        providing exceptional performance and reliability for your mission-critical applications.
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-4xl mt-10">
+      <div class="overflow-x-auto bg-white rounded-lg">
+        <table class="min-w-full">
+          <thead class="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Server ID</th>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Status</th>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Rental Fee (USD)</th>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Power (TDP)</th>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">Setup Fee (USD)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            {servers.map((server) => (
+              <tr class="hover:bg-gray-50">
+                <td class="py-4 px-4 text-sm font-medium text-gray-900">{server.id}</td>
+                <td class="py-4 px-4 text-sm text-gray-700 text-center">
+                  <span class={`inline-flex items-center justify-center px-2 py-1 rounded-full text-xs min-w-16 ${server.status === 'In Use' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`}>
+                    {server.status}
+                  </span>
+                </td>
+                <td class="py-4 px-4 text-sm text-gray-700">{server.rentalFee}</td>
+                <td class="py-4 px-4 text-sm text-gray-700">{server.powerConsumption}</td>
+                <td class="py-4 px-4 text-sm text-gray-700">{server.setupFee}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="mt-12">
+        <h3 class="font-medium text-2xl text-gray-800 mb-3">Server Specifications</h3>
+        <div class="space-y-4">
+          {servers.map((server) => (
+            <div class="border border-gray-200 rounded-lg p-4">
+              <p class="font-medium text-gray-800 mb-2">{server.id}</p>
+              <p class="text-gray-600">{server.specs}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div class="mx-auto max-w-4xl mt-16">
+        <h2 class="font-bold text-3xl text-gray-800 mb-6">
+          Hosting Services
+        </h2>
+        <p class="text-lg leading-relaxed text-slate-500 mb-6">
+          All our dedicated servers include these premium features:
+        </p>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700">Unmetered bandwidth on a high-capacity network</span>
+              </li>
+              <li class="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700">24/7 technical support</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700">Basic DDoS protection</span>
+              </li>
+              <li class="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700">Remote reboot capability</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-gray-600 text-base font-medium rounded-md text-gray-600 hover:bg-gray-100">
+            Contact Us for Availability
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>
