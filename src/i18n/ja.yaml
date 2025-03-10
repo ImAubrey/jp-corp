@@ -1,0 +1,224 @@
+# Navigation
+nav:
+  home: ホーム
+  hosting: ホスティング
+  ipTransit: IP通信
+  timeline: タイムライン
+  about: 会社概要
+  contact: お問い合わせ
+  logoFirstLetter: A
+  logoRest: strix
+
+# Home page
+home:
+  title: ウェブサイトへようこそ
+  subtitle: 現代的なソリューションでビジネスの成長をサポートします
+  cta: 始めましょう
+  partners: 私たちのパートナー
+  solutions:
+    title: T1パワードインターネット＆データセンターソリューション
+    description: 成長中のビジネスのために設計された直接T1接続を備えた企業グレードのISPおよびIDCサービスを提供し、高速相互接続と新しい専任チームだけが提供できる個人的な注意と柔軟性を組み合わせています。
+    features:
+      cloudComputing:
+        title: クラウドコンピューティング
+        description: 直接T1接続を備えた高性能クラウドコンピューティングプラットフォームで、企業グレードのアプリケーション向けに安定した高速コンピューティングリソースを提供します。
+      serverHosting:
+        title: サーバーホスティング
+        description: 高速T1接続を備えたプロフェッショナルなデータセンターサーバーホスティングソリューションで、サーバーが最適な条件で動作することを保証します。
+      edgeComputing:
+        title: エッジコンピューティング
+        description: T1回線で相互接続された分散型エッジコンピューティングネットワークで、エンドユーザーに近い場所で低遅延処理機能を提供します。
+      transit:
+        title: トランジット
+        description: 複数の主要なネットワーク交換ポイントを接続するグローバルグレードのT1トランジットサービスで、高速で信頼性の高いデータ転送機能を提供します。
+      hardwareLeasing:
+        title: ハードウェアリースと販売
+        description: あらゆる規模のビジネスのITインフラ要件を満たす柔軟なネットワークおよびサーバーハードウェアのリースと販売ソリューション。
+      lirServices:
+        title: LIRサービス
+        description: IPリソースの取得と管理、ネットワーク構成の最適化、接続効率の向上を支援するプロフェッショナルなローカルインターネットレジストリサービス。
+  hero:
+    title: Astrix
+    description: ISPソリューションとIDCホスティングサービスに新しい視点をもたらします。信頼性の高い接続性、安全なインフラストラクチャ、パーソナライズされたサポートに焦点を当て、デジタル環境でビジネスが繁栄するのを支援します。
+
+# About page
+about:
+  title: 会社概要
+  subtitle: 小さいながらも献身的なチーム
+  heading: ともにネットワークソリューションを構築する
+  description: 誠実でわかりやすいネットワークサービスを提供するというビジョンで設立された当社は、接続ソリューションに新鮮なアプローチを持つ熱心な専門家を集めています。私たちはお客様との長期的な関係を構築し、ともに成長・向上していくことを信念としています。
+
+# Timeline page
+timeline:
+  pageTitle: タイムライン
+  sectionTitle: 会社の歴史
+  sectionSubtitle: 設立から現在までの私たちの歩み
+  milestonesTitle: マイルストーンと進歩
+  milestonesDescription: Astrixは設立以来、着実に成長を続け、ネットワークインフラを継続的に改善し、サービス提供を拡大してお客様により良いサービスを提供しています。
+  ctaButton: 私たちの旅に参加しましょう
+  events:
+    event1:
+      date: 2025年1月1日
+      title: 新年のお祝い
+      description: コミュニティと共に祝うため、シンガポールサーバーを無料提供する特別なプロモーションで新年を迎えました。
+    event2:
+      date: 2024年12月20日
+      title: グローバル展開
+      description: 国際的な顧客層により良いサービスを提供するため、多言語対応のウェブサイトを立ち上げました。
+    event3:
+      date: 2024年12月1日
+      title: シンガポールBGPの開始
+      description: プレミアム接続性と強化されたDNSロック解除機能を備えた、新しいシンガポールBGPノードでネットワークを拡張しました。
+    event4:
+      date: 2024年10月13日
+      title: ドイツの高性能ノード
+      description: AMD 9950Xプロセッサを搭載した高性能ドイツノードを導入し、卓越した計算能力を提供しています。
+    event5:
+      date: 2024年9月30日
+      title: 超高速日本
+      description: 日本でSONY Nuro 10G住宅向け帯域幅を立ち上げ、超高速接続を提供しています。
+    event6:
+      date: 2024年7月1日
+      title: LIRサービス
+      description: RIPE NCC ASNとIPv6プレフィックス割り当てを提供する包括的なLIRサービスを導入し、ネットワークの自律性を高めました。
+    event7:
+      date: 2024年6月5日
+      title: 香港への展開
+      description: 香港Liteプロダクトラインを立ち上げ、アジア市場にコスト効率の高いソリューションを提供しています。
+    event8:
+      date: 2024年5月1日
+      title: グランドオープン
+      description: 旗艦の日本サーバーインフラを備えたLain.shを正式に立ち上げ、あらゆるニーズに対応した多様なホスティングソリューションを提供しています。
+
+# Contact page
+contact:
+  title: お問い合わせ
+  subtitle: ご連絡ください
+  heading: Astrixへのお問い合わせ
+  description: お客様のご質問にお答えし、当社のサービスがビジネスの成長にどのように役立つかについてご説明します。新しい会社として、すべての対話を大切にしています。
+  address: 〒130-0011 東京都墨田区石原2-13-1
+  phone: +1 (562) 2139 670
+
+# Hosting page
+hosting:
+  title: 専用ホスティング
+  subtitle: 東京（TYO）の高性能専用サーバー
+  availableServersTitle: 利用可能なサーバー
+  availableServersDescription: 当社の高品質な専用サーバーは、東京の最先端データセンターに設置され、ミッションクリティカルなアプリケーションに優れたパフォーマンスと信頼性を提供します。
+  specificationsTitle: サーバー仕様
+  servicesTitle: ホスティングサービス
+  servicesDescription: すべての専用サーバーには以下のプレミアム機能が含まれています：
+  contactCta: 在庫状況についてお問い合わせ
+  table:
+    serverId: サーバーID
+    status: 状態
+    rentalFee: レンタル料金（USD）
+    power: 消費電力（TDP）
+    setupFee: セットアップ料金（USD）
+  serverStatus:
+    inUse: 使用中
+    available: 利用可能
+  serverSpecs:
+    server1: 1x Intel Xeon Gold 6126（12コア、24スレッド）/ 64GB RAM / 2x 240GB SATA SSD / デュアルポート40G NIC
+    server2: H3C R4950G5 / 2x AMD EPYC 7R12（48コア、96スレッド）/ 8x 64GB DDR4 2933MHz RECC RAM（合計512GB）/ 2x Kioxia CD6 7.68TB U.2 NVME / Mellanox CX3 デュアル40Gポート NIC
+  features:
+    bandwidth: 大容量ネットワークでの無制限帯域幅
+    support: 24時間365日のテクニカルサポート
+    ddos: 基本的なDDoS保護
+    reboot: リモートリブート機能
+
+# IP Transit page
+ipTransit:
+  title: IP通信サービス
+  subtitle: 自己所有IP（BYOIP）アナウンスサービス
+  benefitsTitle: BYOIPの利点
+  benefitsDescription: 当社のアナウンスサービスで自己所有IPアドレスを使用することで、柔軟なネットワークリソースを必要とする企業に様々な利点を提供します。
+  benefits:
+    cost:
+      title: コスト効率
+      description: 当社サービスからIPアドレスをリースする場合と比較して低コスト。
+    management:
+      title: プロフェッショナルな管理
+      description: 最適なパフォーマンスを得るため、アナウンスされたIPプレフィックスの管理と配置をサポートします。
+    control:
+      title: リソース制御
+      description: 自社のIPリソースを完全に管理できます。
+  servicesTitle: IPアナウンスサービスと料金
+  table:
+    service: サービス
+    details: 詳細
+    price: 価格
+    notes: 備考
+  services:
+    initialSetup:
+      name: 初期アナウンス設定
+      details: プレフィックスホワイトリスト、IRRチェック、アナウンス設定、顧客への配信
+      price: $68 USD / プレフィックスバッチ
+      notes: プレフィックスバッチは1つのLoAで定義されます
+    maintenance:
+      name: アナウンスメンテナンス
+      details: "IPプレフィックスアナウンスの維持：IPv4 /24またはIPv6 /32"
+      price: $18 USD / プレフィックス / 月
+      notes: " "
+    geolocation:
+      name: プレフィックス地理位置情報
+      details: 主要な地理位置情報データベースに連絡して正確な位置を設定
+      price: 無料
+      notes: " "
+  abuseTitle: 不正利用対応ポリシー
+  abuseDescription: 当社のネットワークを通じてアナウンスされたIPアドレスが不正利用として報告された場合、不正利用レポート処理料金が発生します。各暦月において、各IPアドレスは不正利用カテゴリごとに最大1回の料金が発生します。
+  abuseTable:
+    category: 不正利用カテゴリ
+    description: 説明
+    fee: 処理料金（月あたり）
+  abuse:
+    copyright:
+      name: 著作権侵害
+      description: BitTorrentなどを通じた海賊版コンテンツのダウンロードとして報告された場合。
+      fee: $2 USD / IP
+    vulnerability:
+      name: 脆弱性警告
+      description: お客様のシステムに悪用可能なCVE脆弱性がある場合。
+      fee: $8 USD / IP
+    compromise:
+      name: サービス侵害
+      description: 侵害、スキャン/ブルートフォース攻撃、外部への攻撃、リソースを消費する暗号通貨マイニングなど。
+      fee: $12 USD / IP
+    spam:
+      name: スパム
+      description: 迷惑メールの送信。
+      fee: $16 USD / IP
+    malicious:
+      name: 悪意のあるサービス
+      description: フィッシングサイト、マルウェア配布、コマンド＆コントロールサーバーなど。
+      fee: $20 USD / IP
+    reportOwner:
+      name: IP所有者への報告
+      description: IPアドレス所有者に転送された不正利用レポート。
+      fee: $24 USD / IP
+  abuseNote:
+    label: 注意：
+    text: 不正利用レポートがIPアドレス所有者に転送された場合、「IP所有者への報告」料金が自動的に適用され、他のカテゴリの料金よりも優先されます。
+  examplesTitle: 不正利用料金の例
+  examplesDescription: 不正利用料金ポリシーを明確にするための例をいくつか紹介します：
+  examples:
+    example1:
+      title: 例1
+      description: 1ヶ月間に1つのIPアドレスが20件の「著作権侵害」レポートを受けた場合。その月の処理料金は2米ドルです。
+    example2:
+      title: 例2
+      description: 1ヶ月間に1つのIPアドレスが20件の「著作権侵害」レポートと4件の「スパム」レポートを受けた場合。処理料金は著作権について2米ドル、スパムについて16米ドルで、合計18米ドルです。
+    example3:
+      title: 例3
+      description: 1ヶ月間に1つのIPアドレスが20件の「著作権侵害」レポートと4件の「スパム」レポートを受けた場合。そのスパムレポートのうち2件がIP所有者に転送され、24米ドルの料金が発生します。残りの2件のスパムレポートには16米ドルの料金が発生し、著作権レポートには2米ドルの料金が発生し、合計42米ドルとなります。
+    example4:
+      title: 例4
+      description: 1ヶ月間に1つのIPアドレスが20件の「著作権侵害」レポートと4件の「スパム」レポートを受けた場合。4件全てのスパムレポートがIP所有者に転送され、24米ドルの料金が発生します。著作権レポートには2米ドルの料金が発生し、合計26米ドルとなります。
+  encouragement: お客様には不正利用の問題を迅速に解決することをお勧めします。同じIPが翌暦月に不正利用レポートを受けた場合、処理料金は再度計算されます。
+  contactCta: IP通信サービスについてお問い合わせ
+
+# Error page
+error:
+  title: ページが見つかりません
+  message: お探しのページは存在しないか、移動されました。
+  back: ホームに戻る

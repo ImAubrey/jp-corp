@@ -1,11 +1,10 @@
 ---
 import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
+import Footer from "../components/footer.astro";
+import Navbar from "../components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
-
-
+import { getLocale } from "astro-i18n-aut";
 
 export interface Props {
   title: string;
@@ -19,6 +18,7 @@ const resolvedImageWithDomain = new URL(
 ).toString();
 
 const { title } = Astro.props;
+const locale = getLocale(Astro.url);
 
 const makeTitle = title
   ? title + " | " + "Astrix"
@@ -26,7 +26,7 @@ const makeTitle = title
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -58,7 +58,9 @@ const makeTitle = title
   </head>
   <body>
     <Navbar />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
     <style is:global>
       /* Improve Page speed */

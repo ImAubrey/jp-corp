@@ -1,67 +1,80 @@
 ---
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-import Layout from "@layouts/Layout.astro";
+import Container from "../components/container.astro";
+import Sectionhead from "../components/sectionhead.astro";
+import Layout from "../layouts/Layout.astro";
+import { getLocale } from "astro-i18n-aut";
+import { useTranslations } from "../utils/i18n";
 
-// Timeline events
+// Get locale and translations function
+const locale = getLocale(Astro.url);
+const t = useTranslations(Astro.url);
+
+// Timeline events with translation keys
 const timelineEvents = [
   {
-    date: "January 2023",
-    title: "Company Founded",
-    description: "Astrix was established with a vision to provide honest, straightforward network services to clients worldwide."
+    dateKey: "timeline.events.event1.date",
+    titleKey: "timeline.events.event1.title",
+    descriptionKey: "timeline.events.event1.description"
   },
   {
-    date: "March 2023",
-    title: "First Data Center Partnership",
-    description: "Secured our first data center partnership in Tokyo, establishing a foundation for our hosting services."
+    dateKey: "timeline.events.event2.date",
+    titleKey: "timeline.events.event2.title",
+    descriptionKey: "timeline.events.event2.description"
   },
   {
-    date: "June 2023",
-    title: "Network Infrastructure Launch",
-    description: "Deployed our core network infrastructure with direct connections to major internet exchanges in Asia."
+    dateKey: "timeline.events.event3.date",
+    titleKey: "timeline.events.event3.title",
+    descriptionKey: "timeline.events.event3.description"
   },
   {
-    date: "September 2023",
-    title: "Dedicated Server Offerings",
-    description: "Launched our first range of dedicated server options, focusing on high-performance, reliable hardware."
+    dateKey: "timeline.events.event4.date",
+    titleKey: "timeline.events.event4.title",
+    descriptionKey: "timeline.events.event4.description"
   },
   {
-    date: "December 2023",
-    title: "IP Transit Services Introduced",
-    description: "Expanded our service portfolio with IP transit and BGP announcement capabilities for clients with their own IP addresses."
+    dateKey: "timeline.events.event5.date",
+    titleKey: "timeline.events.event5.title",
+    descriptionKey: "timeline.events.event5.description"
   },
   {
-    date: "February 2024",
-    title: "24/7 Support Team Established",
-    description: "Formed our round-the-clock technical support team to ensure clients receive assistance whenever needed."
+    dateKey: "timeline.events.event6.date",
+    titleKey: "timeline.events.event6.title",
+    descriptionKey: "timeline.events.event6.description"
   },
   {
-    date: "April 2024",
-    title: "Network Expansion",
-    description: "Added new points of presence in North America to improve network reach and reduce latency for international clients."
+    dateKey: "timeline.events.event7.date",
+    titleKey: "timeline.events.event7.title",
+    descriptionKey: "timeline.events.event7.description"
   },
   {
-    date: "Present",
-    title: "Continuing Growth",
-    description: "Focusing on building relationships with clients and expanding our service offerings to meet evolving needs."
+    dateKey: "timeline.events.event8.date",
+    titleKey: "timeline.events.event8.title",
+    descriptionKey: "timeline.events.event8.description"
   }
 ];
+
+// Helper function to create locale-aware paths
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
 ---
 
-<Layout title="Timeline">
+<Layout title={t('timeline.pageTitle')}>
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Company Timeline</Fragment>
-      <Fragment slot="desc">Our journey from inception to present</Fragment>
+      <Fragment slot="title">{t('timeline.sectionTitle')}</Fragment>
+      <Fragment slot="desc">{t('timeline.sectionSubtitle')}</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Milestones & Progress
+        {t('timeline.milestonesTitle')}
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        Astrix has grown steadily since its founding, continuously improving our network infrastructure 
-        and expanding our service offerings to better serve our clients.
+        {t('timeline.milestonesDescription')}
       </p>
     </div>
 
@@ -79,16 +92,16 @@ const timelineEvents = [
               </div>
               
               {/* Content */}
-              <div class={`md:grid md:grid-cols-2 md:gap-8 ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+              <div class={`md:grid md:grid-cols-2 items-start ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                 {/* Date */}
-                <div class={`pl-14 md:pl-0 md:text-right ${index % 2 === 0 ? 'md:pr-8' : 'md:order-last md:pl-8'}`}>
-                  <div class="mb-2 md:mb-0 text-gray-500 font-medium">{event.date}</div>
+                <div class={`pl-14 md:pl-0 ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:col-start-2 md:pl-8'}`}>
+                  <div class="mb-2 md:mb-0 text-gray-500 font-medium">{t(event.dateKey)}</div>
                 </div>
                 
                 {/* Event description */}
-                <div class={`pl-14 md:pl-0 ${index % 2 === 0 ? 'md:order-last md:pl-8' : 'md:pr-8'}`}>
-                  <h3 class="text-xl font-semibold text-gray-800 mb-2">{event.title}</h3>
-                  <p class="text-gray-600">{event.description}</p>
+                <div class={`pl-14 md:pl-0 ${index % 2 === 0 ? 'md:col-start-2 md:pl-8' : 'md:col-start-1 md:pr-8 md:row-start-1'}`}>
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2">{t(event.titleKey)}</h3>
+                  <p class="text-gray-600">{t(event.descriptionKey)}</p>
                 </div>
               </div>
             </div>
@@ -97,8 +110,8 @@ const timelineEvents = [
       </div>
       
       <div class="mt-16 text-center">
-        <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-gray-600 text-base font-medium rounded-md text-gray-600 hover:bg-gray-100">
-          Join Us on Our Journey
+        <a href={createLocalePath("/contact")} class="inline-flex items-center justify-center px-6 py-3 border border-gray-600 text-base font-medium rounded-md text-gray-600 hover:bg-gray-100">
+          {t('timeline.ctaButton')}
         </a>
       </div>
     </div>

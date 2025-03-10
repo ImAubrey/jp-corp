@@ -1,37 +1,41 @@
 ---
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-import Layout from "@layouts/Layout.astro";
+import Container from "../components/container.astro";
+import Sectionhead from "../components/sectionhead.astro";
+import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import { getLocale } from "astro-i18n-aut";
+import { useTranslations } from "../utils/i18n";
+
+// Get locale and translations function
+const locale = getLocale(Astro.url);
+const t = useTranslations(Astro.url);
 ---
 
-<Layout title="Contact">
+<Layout title={t('contact.title')}>
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">Let's Connect</Fragment>
+      <Fragment slot="title">{t('contact.title')}</Fragment>
+      <Fragment slot="desc">{t('contact.subtitle')}</Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Reach Out to Astrix</h2>
+        <h2 class="font-medium text-2xl text-gray-800">{t('contact.heading')}</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          We're here to answer your questions and discuss how our services can help your business grow. As a new company, we value every conversation.
+          {t('contact.description')}
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>2-13-1 Ishiwara, Sumida-ku, Tokyo, Japan</span>
+            <span>{t('contact.address')}</span>
           </div>
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:i@4eva.org"
-              >i@4eva.org</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+81-3-6748-2111">+1 (562) 2139 670</a
-            >
+            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
+            <a href="mailto:i@4eva.org">i@4eva.org</a>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" />
+            <a href="tel:+15622139670">{t('contact.phone')}</a>
           </div>
         </div>
       </div>

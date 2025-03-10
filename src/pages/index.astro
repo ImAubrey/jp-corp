@@ -1,16 +1,21 @@
 ---
-import Container from "@components/container.astro";
-import Cta from "@components/cta.astro";
-import Features from "@components/features.astro";
-import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
-import Layout from "@layouts/Layout.astro";
+import Container from "../components/container.astro";
+import Features from "../components/features.astro";
+import Hero from "../components/hero.astro";
+import Logos from "../components/logos.astro";
+import Layout from "../layouts/Layout.astro";
+import { getLocale } from "astro-i18n-aut";
+import { useTranslations } from "../utils/i18n";
+
+// Get locale and translations function
+const locale = getLocale(Astro.url);
+const t = useTranslations(Astro.url);
 ---
 
-<Layout title="">
+<Layout title={t('home.title')}>
   <Container>
-    <Hero />
-    <Features />
-    <Logos />
+    <Hero locale={locale} t={t} />
+    <Features locale={locale} t={t} />
+    <Logos locale={locale} t={t} />
   </Container>
 </Layout>

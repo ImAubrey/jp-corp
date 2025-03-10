@@ -1,0 +1,225 @@
+# Navigation
+nav:
+  home: 首页
+  hosting: 主机托管
+  ipTransit: IP传输
+  timeline: 时间线
+  about: 关于我们
+  blog: 博客
+  contact: 联系我们
+  logoFirstLetter: A
+  logoRest: strix
+
+# Home page
+home:
+  title: 欢迎访问我们的网站
+  subtitle: 以现代解决方案支持企业成长
+  cta: 开始使用
+  partners: 我们的合作伙伴
+  solutions:
+    title: T1级互联网和数据中心解决方案
+    description: 提供企业级ISP和IDC服务，配备直接T1连接，专为成长中的企业设计，将高速互连与只有新成立的专业团队才能提供的个性化关注和灵活性相结合。
+    features:
+      cloudComputing:
+        title: 云计算
+        description: 高性能云计算平台，通过直接T1连接提供稳定、高速的计算资源，适用于企业级应用。
+      serverHosting:
+        title: 服务器托管
+        description: 专业数据中心服务器托管解决方案，配备高速T1连接，确保您的服务器在最佳条件下运行。
+      edgeComputing:
+        title: 边缘计算
+        description: 通过T1线路互连的分布式边缘计算网络，在更靠近终端用户的位置提供低延迟处理能力。
+      transit:
+        title: 网络传输
+        description: 连接多个主要网络交换点的全球级T1传输服务，提供高速、可靠的数据传输能力。
+      hardwareLeasing:
+        title: 硬件租赁和销售
+        description: 灵活的网络和服务器硬件租赁与销售解决方案，满足各种规模企业的IT基础设施需求。
+      lirServices:
+        title: LIR服务
+        description: 专业的本地互联网注册服务，帮助您获取和管理IP资源，优化网络配置，提高连接效率。
+  hero:
+    title: Astrix
+    description: 为ISP解决方案和IDC托管服务带来全新视角。我们专注于可靠的连接、安全的基础设施和个性化支持，帮助您的企业在数字领域蓬勃发展。
+
+# About page
+about:
+  title: 关于我们
+  subtitle: 认识我们小而专注的团队
+  heading: 共同构建网络解决方案
+  description: 我们的团队以提供诚实、直接的网络服务为愿景而成立，汇集了对连接解决方案采取全新方法的热情专业人士。我们相信与客户建立持久的关系，共同成长和改进。
+  
+# Timeline page
+timeline:
+  pageTitle: 时间线
+  sectionTitle: 公司发展历程
+  sectionSubtitle: 从创立至今的旅程
+  milestonesTitle: 里程碑与进展
+  milestonesDescription: Astrix自成立以来稳步发展，不断改进我们的网络基础设施并扩展服务范围，以更好地服务客户。
+  ctaButton: 加入我们的旅程
+  events:
+    event1:
+      date: 2025年1月1日
+      title: 新年庆典
+      description: 通过特别促销活动迎接新年，向我们的社区提供免费的新加坡服务器。
+    event2:
+      date: 2024年12月20日
+      title: 全球扩张
+      description: 推出多语言网站，更好地服务于我们的国际客户群。
+    event3:
+      date: 2024年12月1日
+      title: 新加坡BGP启动
+      description: 通过新的新加坡BGP节点扩展我们的网络，提供优质连接和增强的DNS解锁功能。
+    event4:
+      date: 2024年10月13日
+      title: 德国高性能服务器
+      description: 引入由AMD 9950X处理器驱动的高性能德国节点，提供卓越的计算能力。
+    event5:
+      date: 2024年9月30日
+      title: 日本超高速网络
+      description: 在日本推出SONY Nuro 10G住宅带宽，提供闪电般的连接速度。
+    event6:
+      date: 2024年7月1日
+      title: LIR服务
+      description: 推出全面的LIR服务，提供RIPE NCC ASN和IPv6前缀分配，增强网络自主性。
+    event7:
+      date: 2024年6月5日
+      title: 香港扩展
+      description: 推出香港Lite产品线，为亚洲市场带来经济高效的解决方案。
+    event8:
+      date: 2024年5月1日
+      title: 盛大开业
+      description: 正式启动Lain.sh，配备我们旗舰的日本服务器基础设施，提供多样化的托管解决方案，满足所有需求。
+  
+# Contact page
+contact:
+  title: 联系我们
+  subtitle: 让我们建立联系
+  heading: 联系Astrix
+  description: 我们随时准备回答您的问题，讨论我们的服务如何帮助您的业务成长。作为一家新公司，我们重视每一次对话。
+  address: 日本东京都墨田区石原2-13-1
+  phone: +1 (562) 2139 670
+  
+# Hosting page
+hosting:
+  title: 专用托管
+  subtitle: 东京（TYO）高性能专用服务器
+  availableServersTitle: 可用服务器
+  availableServersDescription: 我们的高级专用服务器托管在东京最先进的数据中心，为您的关键任务应用程序提供卓越的性能和可靠性。
+  specificationsTitle: 服务器规格
+  servicesTitle: 托管服务
+  servicesDescription: 所有专用服务器都包括以下高级功能：
+  contactCta: 联系我们了解可用性
+  table:
+    serverId: 服务器ID
+    status: 状态
+    rentalFee: 租金（美元）
+    power: 功率（TDP）
+    setupFee: 设置费用（美元）
+  serverStatus:
+    inUse: 使用中
+    available: 可用
+  serverSpecs:
+    server1: 1x英特尔Xeon Gold 6126（12核心，24线程）/ 64GB内存 / 2x 240GB SATA固态硬盘 / 双端口40G网卡0G网卡
+    server2: H3C R4950G5 / 2x AMD EPYC 7R12（48核心，96线程）/ 8x 64GB DDR4 2933MHz RECC内存（共512GB）/ 2x Kioxia CD6 7.68TB U.2 NVME / Mellanox CX3双40G端口网卡
+  features:
+    bandwidth: 高容量网络上的无限流量
+    support: 24/7技术支持
+    ddos: 基本DDoS保护
+    reboot: 远程重启功能
+
+# IP Transit page
+ipTransit:
+  title: IP传输服务
+  subtitle: 自带IP（BYOIP）宣告服务
+  benefitsTitle: BYOIP的好处
+  benefitsDescription: 使用您自己的IP地址配合我们的宣告服务，为需要灵活网络资源的企业提供多种优势。
+  benefits:
+    cost:
+      title: 成本效益
+      description: 与从我们的服务租赁IP地址相比，成本更低。
+    management:
+      title: 专业管理
+      description: 我们帮助管理并优化您的IP前缀宣告，以获得最佳性能。
+    control:
+      title: 资源控制
+      description: 保持对自有IP资源的完全控制。
+  servicesTitle: IP宣告服务和定价
+  table:
+    service: 服务
+    details: 详情
+    price: 价格
+    notes: 备注
+  services:
+    initialSetup:
+      name: 初始宣告设置
+      details: 前缀白名单、IRR检查、宣告设置、交付给客户
+      price: $68 美元/批次前缀
+      notes: 前缀批次由单个授权书(LoA)定义
+    maintenance:
+      name: 宣告维护
+      details: "维护IP前缀宣告：IPv4 /24或IPv6 /32"
+      price: $18 美元/前缀/月
+      notes: " "
+    geolocation:
+      name: 前缀地理位置
+      details: 联系主要地理位置数据库设置正确位置
+      price: 免费
+      notes: " "
+  abuseTitle: 滥用处理政策
+  abuseDescription: 如果通过我们的网络宣告的IP地址被报告滥用，将产生滥用报告处理费。对于每个日历月，每个IP地址在每个滥用类别中最多收取一次费用。
+  abuseTable:
+    category: 滥用类别
+    description: 说明
+    fee: 处理费（每月）
+  abuse:
+    copyright:
+      name: 版权侵犯
+      description: 因通过BitTorrent等下载盗版内容而被举报。
+      fee: $2 美元/IP
+    vulnerability:
+      name: 漏洞警告
+      description: 客户系统存在可利用的CVE漏洞。
+      fee: $8 美元/IP
+    compromise:
+      name: 服务被入侵
+      description: 遭到入侵、扫描/暴力破解、外部攻击、资源消耗型加密货币挖矿。
+      fee: $12 美元/IP
+    spam:
+      name: 垃圾邮件
+      description: 发送未经请求的电子邮件。
+      fee: $16 美元/IP
+    malicious:
+      name: 恶意服务
+      description: 钓鱼网站、恶意软件分发、命令和控制服务器。
+      fee: $20 美元/IP
+    reportOwner:
+      name: 向IP所有者报告
+      description: 任何转发给IP地址所有者的滥用报告。
+      fee: $24 美元/IP
+  abuseNote:
+    label: 注意：
+    text: 如果滥用报告被转发给IP地址所有者，将自动适用"向IP所有者报告"费用，取代其他类别的费用。
+  examplesTitle: 滥用费用示例
+  examplesDescription: 以下是一些示例，用于说明我们的滥用费用政策：
+  examples:
+    example1:
+      title: 示例1
+      description: 一个IP地址在一个月内收到20份"版权侵犯"报告。该月的处理费用为2美元。
+    example2:
+      title: 示例2
+      description: 一个IP地址在一个月内收到20份"版权侵犯"报告和4份"垃圾邮件"报告。处理费用为版权侵犯2美元和垃圾邮件16美元，总计18美元。
+    example3:
+      title: 示例3
+      description: 一个IP地址在一个月内收到20份"版权侵犯"报告和4份"垃圾邮件"报告。其中2份垃圾邮件报告被转发给了IP所有者，产生24美元费用。剩余2份垃圾邮件报告产生16美元费用，版权报告产生2美元费用，总计42美元。
+    example4:
+      title: 示例4
+      description: 一个IP地址在一个月内收到20份"版权侵犯"报告和4份"垃圾邮件"报告。所有4份垃圾邮件报告都被转发给了IP所有者，产生24美元费用。版权报告产生2美元费用，总计26美元。
+  encouragement: 我们鼓励客户及时解决滥用问题。如果同一IP在下一个日历月再次收到滥用报告，将再次计算处理费用。
+  contactCta: 联系我们获取IP传输服务
+
+# Error page
+error:
+  title: 页面未找到
+  message: 您正在寻找的页面不存在或已被移动。
+  back: 返回首页

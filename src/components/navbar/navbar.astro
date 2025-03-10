@@ -1,67 +1,85 @@
 ---
-import Container from "@components/container.astro";
+import Container from "../container.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { getLocale } from "astro-i18n-aut";
+import { useTranslations } from "../../utils/i18n";
+import LanguageSwitcher from "../LanguageSwitcher.astro";
 
+// Get current locale
+const locale = getLocale(Astro.url);
+const t = useTranslations(Astro.url);
+
+// Define menu items with translation keys
 const menuitems = [
   {
-    title: "Home",
+    titleKey: "nav.home",
     path: "/",
   },
   {
-    title: "Hosting",
-    path: "/hosting",
+    titleKey: "nav.hosting",
+    path: "/hosting/",
   },
   {
-    title: "IP Transit",
-    path: "/ip-transit",
+    titleKey: "nav.ipTransit",
+    path: "/ip-transit/",
   },
   {
-    title: "Timeline",
-    path: "/timeline",
+    titleKey: "nav.timeline",
+    path: "/timeline/",
   },
   {
-    title: "About",
-    path: "/about",
+    titleKey: "nav.about",
+    path: "/about/",
   },
   {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
+    titleKey: "nav.contact",
+    path: "/contact/",
   },
 ];
+
+// Function to create locale-aware paths
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
 ---
 
 <Container>
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">A</span><span
-            class="text-slate-500">strix</span
+        <a href={createLocalePath("/")} class="text-lg"
+          ><span class="font-bold text-slate-800">{t("nav.logoFirstLetter")}</span><span
+            class="text-slate-500">{t("nav.logoRest")}</span
           >
         </a>
-        <div class="block lg:hidden">
+        <div class="flex items-center lg:hidden">
+          <div class="mr-4">
+            <LanguageSwitcher />
+          </div>
           <MenuIcon class="w-4 h-4 text-gray-800" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
+        <ul class="flex flex-col lg:flex-row lg:gap-3 lg:items-center">
           {
             menuitems.map((item) => (
               <>
                 <li>
                   <a
-                    href={item.path}
+                    href={createLocalePath(item.path)}
                     class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
-                    <span> {item.title}</span>
+                    <span>{t(item.titleKey)}</span>
                   </a>
                 </li>
               </>
             ))
           }
+          <li class="lg:ml-1">
+            <LanguageSwitcher />
+          </li>
         </ul>
       </MenuItems>
     </Astronav>

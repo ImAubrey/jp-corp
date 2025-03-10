@@ -2,41 +2,42 @@
 // @ts-ignore
 import { Icon } from "astro-icon/components";
 
+export interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+
+const { locale, t } = Astro.props;
+
 const features = [
   {
-    title: "Cloud Computing",
-    description:
-      "High-performance cloud computing platform with direct T1 connections providing stable, high-speed computing resources for enterprise-grade applications.",
+    titleKey: "home.solutions.features.cloudComputing.title",
+    descriptionKey: "home.solutions.features.cloudComputing.description",
     icon: "bx:bxs-cloud",
   },
   {
-    title: "Server Hosting",
-    description:
-      "Professional data center server hosting solutions equipped with high-speed T1 connections, ensuring your servers operate in optimal conditions.",
+    titleKey: "home.solutions.features.serverHosting.title",
+    descriptionKey: "home.solutions.features.serverHosting.description",
     icon: "bx:bxs-server",
   },
   {
-    title: "Edge Computing",
-    description:
-      "Distributed edge computing network interconnected via T1 lines offering low-latency processing capabilities closer to end users.",
+    titleKey: "home.solutions.features.edgeComputing.title",
+    descriptionKey: "home.solutions.features.edgeComputing.description",
     icon: "bx:bxs-network-chart",
   },
   {
-    title: "Transit",
-    description:
-      "Global-grade T1 Transit services connecting multiple major network exchange points, delivering high-speed, reliable data transmission capabilities.",
+    titleKey: "home.solutions.features.transit.title",
+    descriptionKey: "home.solutions.features.transit.description",
     icon: "bx:bxs-network-chart",
   },
   {
-    title: "Hardware Leasing and Sales",
-    description:
-      "Flexible network and server hardware leasing and sales solutions to meet IT infrastructure requirements for businesses of all sizes.",
+    titleKey: "home.solutions.features.hardwareLeasing.title",
+    descriptionKey: "home.solutions.features.hardwareLeasing.description",
     icon: "bx:bxs-devices",
   },
   {
-    title: "LIR Services",
-    description:
-      "Professional Local Internet Registry services helping you acquire and manage IP resources, optimize network configuration, and improve connection efficiency.",
+    titleKey: "home.solutions.features.lirServices.title",
+    descriptionKey: "home.solutions.features.lirServices.description",
     icon: "bx:bxs-shield",
   },
 ];
@@ -44,11 +45,10 @@ const features = [
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    T1-Powered Internet & Data Center Solutions
+    {t('home.solutions.title')}
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Offering enterprise-grade ISP and IDC services with direct T1 connections designed for growing businesses, 
-    combining high-speed interconnections with the personal attention and flexibility that only a new, dedicated team can provide.
+    {t('home.solutions.description')}
   </p>
 </div>
 
@@ -56,12 +56,12 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          <h3 class="font-semibold text-lg">{t(item.titleKey)}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{t(item.descriptionKey)}</p>
         </div>
       </div>
     ))

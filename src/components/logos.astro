@@ -1,10 +1,17 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+
+export interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+
+const { locale, t } = Astro.props;
 ---
 
 <div class="mt-24">
-  <h2 class="text-center text-slate-500">Our Partners</h2>
+  <h2 class="text-center text-slate-500">{t('home.partners')}</h2>
   <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
 
     <img class="size-8 md:size-12 rounded-full filter grayscale" src="https://www.juniper.net/favicon.ico" alt="Juniper Networks" />

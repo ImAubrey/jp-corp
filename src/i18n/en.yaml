@@ -1,0 +1,224 @@
+# Navigation
+nav:
+  home: Home
+  hosting: Hosting
+  ipTransit: IP Transit
+  timeline: Timeline
+  about: About
+  contact: Contact
+  logoFirstLetter: A
+  logoRest: strix
+  
+# About page
+about:
+  title: About Us
+  subtitle: Meet our small but dedicated team
+  heading: Building Network Solutions Together
+  description: Founded with a vision to provide honest and straightforward network services, our team brings together enthusiastic professionals with a fresh approach to connectivity solutions. We believe in building lasting relationships with our clients, growing and improving together.
+  
+# Timeline page
+timeline:
+  pageTitle: Timeline
+  sectionTitle: Company Timeline
+  sectionSubtitle: Our journey from inception to present
+  milestonesTitle: Milestones & Progress
+  milestonesDescription: Astrix has grown steadily since its founding, continuously improving our network infrastructure and expanding our service offerings to better serve our clients.
+  ctaButton: Join Us on Our Journey
+  events:
+    event1:
+      date: January 1, 2025
+      title: New Year Celebration
+      description: Kicked off the new year with a special promotion, offering free Singapore servers to celebrate with our community.
+    event2:
+      date: December 20, 2024
+      title: Global Expansion
+      description: Launched our multilingual website to better serve our international customer base.
+    event3:
+      date: December 1, 2024
+      title: Singapore BGP Launch
+      description: Expanded our network with a new Singapore BGP node, featuring premium connectivity and enhanced DNS unlocking capabilities.
+    event4:
+      date: October 13, 2024
+      title: German Powerhouse
+      description: Introduced our high-performance German node powered by AMD 9950X processors, delivering exceptional computing capabilities.
+    event5:
+      date: September 30, 2024
+      title: Ultra-Fast Japan
+      description: Launched SONY Nuro 10G residential bandwidth in Japan, offering lightning-fast connectivity.
+    event6:
+      date: July 1, 2024
+      title: LIR Services
+      description: Introduced comprehensive LIR services, providing RIPE NCC ASN and IPv6 prefix allocation for enhanced network autonomy.
+    event7:
+      date: June 5, 2024
+      title: Hong Kong Expansion
+      description: Launched our Hong Kong Lite product line, bringing cost-effective solutions to the Asian market.
+    event8:
+      date: May 1, 2024
+      title: Grand Opening
+      description: Officially launched Lain.sh with our flagship Japanese server infrastructure, introducing diverse hosting solutions for all needs.
+  
+# Contact page
+contact:
+  title: Contact
+  subtitle: Let's Connect
+  heading: Reach Out to Astrix
+  description: We're here to answer your questions and discuss how our services can help your business grow. As a new company, we value every conversation.
+  address: 2-13-1 Ishiwara, Sumida-ku, Tokyo, Japan
+  phone: +1 (562) 2139 670
+  
+# Hosting page
+hosting:
+  title: Dedicated Hosting
+  subtitle: High-performance dedicated servers in Tokyo (TYO)
+  availableServersTitle: Available Servers
+  availableServersDescription: Our premium dedicated servers are housed in state-of-the-art data centers in Tokyo, providing exceptional performance and reliability for your mission-critical applications.
+  specificationsTitle: Server Specifications
+  servicesTitle: Hosting Services
+  servicesDescription: "All our dedicated servers include these premium features:"
+  contactCta: Contact Us for Availability
+  table:
+    serverId: Server ID
+    status: Status
+    rentalFee: Rental Fee (USD)
+    power: Power (TDP)
+    setupFee: Setup Fee (USD)
+  serverStatus:
+    inUse: In Use
+    available: Available
+  serverSpecs:
+    server1: 1x Intel Xeon Gold 6126 (12 cores, 24 threads) / 64GB RAM / 2x 240GB SATA SSD / dual port 40G NIC
+    server2: H3C R4950G5 / 2x AMD EPYC 7R12 (48 cores, 96 threads) / 8x 64GB DDR4 2933MHz RECC RAM (512GB total) / 2x Kioxia CD6 7.68TB U.2 NVME / Mellanox CX3 dual 40G port NIC
+  features:
+    bandwidth: Unmetered bandwidth on a high-capacity network
+    support: 24/7 technical support
+    ddos: Basic DDoS protection
+    reboot: Remote reboot capability
+
+# IP Transit page
+ipTransit:
+  title: IP Transit Services
+  subtitle: Bring Your Own IP (BYOIP) Announcement Services
+  benefitsTitle: Benefits of BYOIP
+  benefitsDescription: Using your own IP addresses with our announcement services offers several advantages for businesses that need flexible network resources.
+  benefits:
+    cost:
+      title: Cost Effective
+      description: Lower cost compared to leasing IP addresses from our service.
+    management:
+      title: Professional Management
+      description: We help manage and position your announced IP prefixes for optimal performance.
+    control:
+      title: Resource Control
+      description: Maintain full control over your own IP resources.
+  servicesTitle: IP Announcement Services & Pricing
+  table:
+    service: Service
+    details: Details
+    price: Price
+    notes: Notes
+  services:
+    initialSetup:
+      name: Initial Announcement Setup
+      details: Prefix whitelist, IRR check, announcement setup, delivery to customer
+      price: $68 USD / batch of prefixes
+      notes: A batch of prefixes is defined by a single LoA
+    maintenance:
+      name: Announcement Maintenance
+      details: "Maintain IP prefix announcements: IPv4 /24 or IPv6 /32"
+      price: $18 USD / prefix / month
+      notes: " "
+    geolocation:
+      name: Prefix Geolocation
+      details: Contact major geolocation databases to set correct location
+      price: Free
+      notes: " "
+  abuseTitle: Abuse Handling Policy
+  abuseDescription: If an IP address announced through our network is reported for abuse, there will be an abuse report handling fee. For each calendar month, each IP address can incur a maximum of one fee per abuse category.
+  abuseTable:
+    category: Abuse Category
+    description: Description
+    fee: Handling Fee (per month)
+  abuse:
+    copyright:
+      name: Copyright Infringement
+      description: Reported for downloading pirated content via BitTorrent, etc.
+      fee: $2 USD / IP
+    vulnerability:
+      name: Vulnerability Alert
+      description: Customer systems have exploitable CVE vulnerabilities.
+      fee: $8 USD / IP
+    compromise:
+      name: Service Compromised
+      description: Compromise, scanning/brute-forcing, outbound attacks, resource-consuming crypto mining.
+      fee: $12 USD / IP
+    spam:
+      name: Spam
+      description: Sending unsolicited emails.
+      fee: $16 USD / IP
+    malicious:
+      name: Malicious Services
+      description: Phishing sites, malware distribution, command and control servers.
+      fee: $20 USD / IP
+    reportOwner:
+      name: Report to IP Owner
+      description: Any abuse report copied to the IP address owner.
+      fee: $24 USD / IP
+  abuseNote:
+    label: "Note:"
+    text: If an abuse report is copied to the IP address owner, the "Report to IP Owner" fee automatically applies, superseding fees from other categories.
+  examplesTitle: Abuse Fee Examples
+  examplesDescription: "Here are some examples to clarify our abuse fee policy:"
+  examples:
+    example1:
+      title: Example 1
+      description: An IP address receives 20 "Copyright Infringement" reports in one month. The handling fee is $2 USD for that month.
+    example2:
+      title: Example 2
+      description: An IP address receives 20 "Copyright Infringement" reports and 4 "Spam" reports in one month. The handling fees are $2 USD for Copyright and $16 USD for Spam, totaling $18 USD.
+    example3:
+      title: Example 3
+      description: An IP address receives 20 "Copyright Infringement" reports and 4 "Spam" reports in one month. Of the Spam reports, 2 were copied to the IP owner, incurring a $24 USD fee. The remaining 2 Spam reports incur a $16 USD fee, and the Copyright reports incur a $2 USD fee, totaling $42 USD.
+    example4:
+      title: Example 4
+      description: An IP address receives 20 "Copyright Infringement" reports and 4 "Spam" reports in one month. All 4 Spam reports were copied to the IP owner, incurring a $24 USD fee. The Copyright reports incur a $2 USD fee, totaling $26 USD.
+  encouragement: We encourage customers to resolve abuse issues promptly. If the same IP receives abuse reports in the following calendar month, the handling fees will be calculated again.
+  contactCta: Contact Us for IP Transit Services
+  
+# Error page
+error:
+  title: Page not found
+  message: The page you're looking for doesn't exist or has been moved.
+  back: Back to home
+
+# Home page
+home:
+  title: Welcome to Our Website
+  subtitle: Supporting business growth with modern solutions
+  cta: Get Started
+  partners: Our Partners
+  solutions:
+    title: T1-Powered Internet & Data Center Solutions
+    description: Offering enterprise-grade ISP and IDC services with direct T1 connections designed for growing businesses, combining high-speed interconnections with the personal attention and flexibility that only a new, dedicated team can provide.
+    features:
+      cloudComputing:
+        title: Cloud Computing
+        description: High-performance cloud computing platform with direct T1 connections providing stable, high-speed computing resources for enterprise-grade applications.
+      serverHosting:
+        title: Server Hosting
+        description: Professional data center server hosting solutions equipped with high-speed T1 connections, ensuring your servers operate in optimal conditions.
+      edgeComputing:
+        title: Edge Computing
+        description: Distributed edge computing network interconnected via T1 lines offering low-latency processing capabilities closer to end users.
+      transit:
+        title: Transit
+        description: Global-grade T1 Transit services connecting multiple major network exchange points, delivering high-speed, reliable data transmission capabilities.
+      hardwareLeasing:
+        title: Hardware Leasing and Sales
+        description: Flexible network and server hardware leasing and sales solutions to meet IT infrastructure requirements for businesses of all sizes.
+      lirServices:
+        title: LIR Services
+        description: Professional Local Internet Registry services helping you acquire and manage IP resources, optimize network configuration, and improve connection efficiency.
+  hero:
+    title: Astrix
+    description: Bringing fresh perspective to ISP solutions and IDC hosting services. We focus on reliable connectivity, secure infrastructure, and personalized support to help your business thrive in the digital landscape.
