@@ -5,8 +5,6 @@ import { getAvailableLocales, getLocaleName } from "../utils/i18n";
 const currentLocale = getLocale(Astro.url);
 const availableLocales = getAvailableLocales();
 const pathname = Astro.url.pathname;
-
-// Create URLs for language switching
 function createLanguageUrl(locale: string) {
   const isDefault = locale === 'en';
   const cleanPath = pathname.replace(/^\/(en|ja|zh)\//, '/').replace(/\/$/, '') || '/';
@@ -17,8 +15,6 @@ function createLanguageUrl(locale: string) {
     return cleanPath === '/' ? `/${locale}/` : `/${locale}${cleanPath}/`;
   }
 }
-
-// Generate a unique ID for this component instance
 const componentId = Math.random().toString(36).substring(2, 9);
 ---
 
@@ -55,7 +51,6 @@ const componentId = Math.random().toString(36).substring(2, 9);
 
 <script define:vars={{ componentId }}>
   (function() {
-    // 使用闭包避免全局变量污染
     const container = document.getElementById(`lang-switcher-${componentId}`);
     if (!container) return;
     
@@ -66,7 +61,6 @@ const componentId = Math.random().toString(36).substring(2, 9);
     
     let isOpen = false;
     
-    // 打开/关闭下拉菜单
     function toggleDropdown() {
       isOpen = !isOpen;
       if (isOpen) {
@@ -78,20 +72,17 @@ const componentId = Math.random().toString(36).substring(2, 9);
       }
     }
     
-    // 点击按钮切换下拉菜单
     button.addEventListener('click', function(e) {
       e.stopPropagation();
       toggleDropdown();
     });
     
-    // 点击外部关闭下拉菜单
     document.addEventListener('click', function(e) {
       if (!container.contains(e.target) && isOpen) {
         toggleDropdown();
       }
     });
     
-    // 按ESC关闭下拉菜单
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && isOpen) {
         toggleDropdown();
