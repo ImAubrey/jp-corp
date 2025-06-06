@@ -3,6 +3,7 @@ nav:
   home: 首页
   hosting: 主机托管
   ipTransit: IP传输
+  broadband: 家庭宽带
   timeline: 时间线
   about: 关于我们
   blog: 博客
@@ -217,6 +218,105 @@ ipTransit:
       description: 一个IP地址在一个月内收到20份"版权侵犯"报告和4份"垃圾邮件"报告。所有4份垃圾邮件报告都被转发给了IP所有者，产生24美元费用。版权报告产生2美元费用，总计26美元。
   encouragement: 我们鼓励客户及时解决滥用问题。如果同一IP在下一个日历月再次收到滥用报告，将再次计算处理费用。
   contactCta: 联系我们获取IP传输服务
+
+# Broadband page
+broadband:
+  title: 日本家庭宽带
+  subtitle: 面向日本家庭用户的高速光纤互联网
+  hero:
+    title: 为您家庭提供优质光纤互联网
+    description: 体验我们专为日本家庭用户设计的可靠光纤宽带服务，享受闪电般的互联网速度。
+  plans:
+    title: 选择最适合您的套餐
+    popular: 最受欢迎
+    setupFee: 安装费
+    contract: 合约期限
+    contract12: 12个月
+    contract24: 24个月
+    basic:
+      name: 家庭基础套餐
+      features:
+        speed: 上传/下载最高1Gbps
+        unlimited: 无限数据使用量
+        ipv6: 包含IPv6支持
+        wifi: 免费Wi-Fi路由器租赁
+        support: 24/7客户支持
+    premium:
+      name: 家庭高级套餐
+      features:
+        speed: 上传/下载最高2.5Gbps
+        unlimited: 无限数据使用量
+        ipv6: 包含IPv6支持
+        wifi: 高级Wi-Fi 6路由器租赁
+        support: 优先24/7客户支持
+        static: 可选静态IP地址
+    enterprise:
+      name: 企业专线套餐
+      features:
+        speed: 最高10Gbps专用线路
+        unlimited: 无限数据使用量
+        ipv6: 包含IPv6支持
+        dedicated: 专用光纤连接
+        support: 企业级24/7支持
+        static: 多个静态IP地址
+        priority: 优先网络路由
+  coverage:
+    title: 服务覆盖区域
+    description: 我们的高速光纤互联网覆盖日本主要都市圈。
+    tokyo:
+      name: 东京都区部
+      availability: 全面覆盖
+      note: 23个特别区及周边城市完全覆盖
+    kanagawa:
+      name: 神奈川县
+      availability: 广泛覆盖
+      note: 横滨市、川崎市等主要城市可用
+    saitama:
+      name: 埼玉县
+      availability: 部分覆盖
+      note: 城市地区覆盖，正在向郊区扩展
+    chiba:
+      name: 千叶县
+      availability: 部分覆盖
+      note: 主要城市可用，农村地区覆盖正在扩展
+  features:
+    title: 选择我们宽带服务的理由
+    speed:
+      title: 超高速连接
+      description: 利用光纤技术体验超快的互联网速度，完美适用于流媒体、游戏和远程办公。
+    reliable:
+      title: 99.9%在线率
+      description: 我们强大的网络基础设施确保在您最需要时提供可靠的连接。
+    support:
+      title: 专业支持
+      description: 24/7全天候提供日语技术支持团队的帮助。
+    easy:
+      title: 简易安装
+      description: 专业安装服务，灵活安排时间以适应您的方便。
+    price:
+      title: 具有竞争力的价格
+      description: 实惠的月费，无隐藏费用或数据上限。
+    global:
+      title: 全球连接
+      description: 针对国内外内容分发优化的路由。
+  faq:
+    title: 常见问题
+    q1:
+      question: 安装需要多长时间？
+      answer: 安装通常需要2-3小时，可以根据您的方便安排时间。我们的技术人员将处理所有设置。
+    q2:
+      question: 有数据使用限制吗？
+      answer: 没有，我们所有套餐都包含无限数据使用。尽情流媒体、下载和浏览。
+    q3:
+      question: 如果搬到新地址会怎样？
+      answer: 我们在覆盖区域内提供免费服务迁移。请在搬家前2周联系我们。
+    q4:
+      question: 可以提前取消合约吗？
+      answer: 可以提前取消，但需支付终止费。具体详情请联系我们的支持团队。
+  cta:
+    title: 准备升级您的互联网了吗？
+    description: 加入数千名享受超高速光纤互联网的满意客户。
+    button: 立即开始
 
 # Error page
 error:

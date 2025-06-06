@@ -3,6 +3,7 @@ nav:
   home: Home
   hosting: Hosting
   ipTransit: IP Transit
+  broadband: Broadband
   timeline: Timeline
   about: About
   contact: Contact
@@ -184,6 +185,105 @@ ipTransit:
       description: An IP address receives 20 "Copyright Infringement" reports and 4 "Spam" reports in one month. All 4 Spam reports were copied to the IP owner, incurring a $24 USD fee. The Copyright reports incur a $2 USD fee, totaling $26 USD.
   encouragement: We encourage customers to resolve abuse issues promptly. If the same IP receives abuse reports in the following calendar month, the handling fees will be calculated again.
   contactCta: Contact Us for IP Transit Services
+
+# Broadband page
+broadband:
+  title: Japan Home Broadband
+  subtitle: High-speed fiber internet for Japanese residential customers
+  hero:
+    title: Premium Fiber Internet for Your Home
+    description: Experience lightning-fast internet with our reliable fiber optic broadband services, specially designed for Japanese residential customers.
+  plans:
+    title: Choose Your Perfect Plan
+    popular: Most Popular
+    setupFee: Setup Fee
+    contract: Contract Period
+    contract12: 12 months
+    contract24: 24 months
+    basic:
+      name: Home Basic Plan
+      features:
+        speed: Up to 1Gbps download/upload
+        unlimited: Unlimited data usage
+        ipv6: IPv6 support included
+        wifi: Free Wi-Fi router rental
+        support: 24/7 customer support
+    premium:
+      name: Home Premium Plan
+      features:
+        speed: Up to 2.5Gbps download/upload
+        unlimited: Unlimited data usage
+        ipv6: IPv6 support included
+        wifi: Premium Wi-Fi 6 router rental
+        support: Priority 24/7 customer support
+        static: Static IP address available
+    enterprise:
+      name: Business Dedicated Plan
+      features:
+        speed: Up to 10Gbps dedicated line
+        unlimited: Unlimited data usage
+        ipv6: IPv6 support included
+        dedicated: Dedicated fiber connection
+        support: Business-grade 24/7 support
+        static: Multiple static IP addresses
+        priority: Priority network routing
+  coverage:
+    title: Service Coverage Areas
+    description: Our high-speed fiber internet is available in major metropolitan areas across Japan.
+    tokyo:
+      name: Tokyo Metropolitan Area
+      availability: Fully Available
+      note: Complete coverage in all 23 special wards and surrounding cities
+    kanagawa:
+      name: Kanagawa Prefecture
+      availability: Widely Available
+      note: Available in major cities including Yokohama and Kawasaki
+    saitama:
+      name: Saitama Prefecture
+      availability: Partially Available
+      note: Coverage in urban areas, expanding to suburban regions
+    chiba:
+      name: Chiba Prefecture
+      availability: Partially Available
+      note: Available in major cities, rural areas coverage expanding
+  features:
+    title: Why Choose Our Broadband Service
+    speed:
+      title: Ultra-Fast Speeds
+      description: Experience blazing-fast internet with our fiber optic technology, perfect for streaming, gaming, and remote work.
+    reliable:
+      title: 99.9% Uptime
+      description: Our robust network infrastructure ensures reliable connectivity when you need it most.
+    support:
+      title: Expert Support
+      description: Get help from our local Japanese-speaking technical support team available 24/7.
+    easy:
+      title: Easy Installation
+      description: Professional installation service with flexible scheduling to fit your convenience.
+    price:
+      title: Competitive Pricing
+      description: Affordable monthly rates with no hidden fees or data caps.
+    global:
+      title: Global Connectivity
+      description: Optimized routing for both domestic and international content delivery.
+  faq:
+    title: Frequently Asked Questions
+    q1:
+      question: How long does installation take?
+      answer: Installation typically takes 2-3 hours and can be scheduled at your convenience. Our technicians will handle all the setup.
+    q2:
+      question: Is there a data usage limit?
+      answer: No, all our plans include unlimited data usage. Stream, download, and browse as much as you want.
+    q3:
+      question: What happens if I move to a new address?
+      answer: We offer free service relocation within our coverage areas. Simply contact us 2 weeks before your move.
+    q4:
+      question: Can I cancel my contract early?
+      answer: Early cancellation is possible with a termination fee. Please contact our support team for specific details.
+  cta:
+    title: Ready to Upgrade Your Internet?
+    description: Join thousands of satisfied customers enjoying ultra-fast fiber internet.
+    button: Get Started Today
   
 # Error page
 error:

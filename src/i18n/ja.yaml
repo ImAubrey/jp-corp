@@ -3,6 +3,7 @@ nav:
   home: ホーム
   hosting: ホスティング
   ipTransit: IP通信
+  broadband: 家庭用ブロードバンド
   timeline: タイムライン
   about: 会社概要
   contact: お問い合わせ
@@ -216,6 +217,105 @@ ipTransit:
       description: 1ヶ月間に1つのIPアドレスが20件の「著作権侵害」レポートと4件の「スパム」レポートを受けた場合。4件全てのスパムレポートがIP所有者に転送され、24米ドルの料金が発生します。著作権レポートには2米ドルの料金が発生し、合計26米ドルとなります。
   encouragement: お客様には不正利用の問題を迅速に解決することをお勧めします。同じIPが翌暦月に不正利用レポートを受けた場合、処理料金は再度計算されます。
   contactCta: IP通信サービスについてお問い合わせ
+
+# Broadband page
+broadband:
+  title: 日本家庭用ブロードバンド
+  subtitle: 日本国内向け高速光ファイバーインターネット
+  hero:
+    title: ご自宅向けプレミアム光ファイバーインターネット
+    description: 日本のご家庭向けに特別に設計された信頼性の高い光ファイバーブロードバンドサービスで、超高速インターネットをご体験ください。
+  plans:
+    title: あなたにぴったりのプランをお選びください
+    popular: 最も人気
+    setupFee: 設置料金
+    contract: 契約期間
+    contract12: 12ヶ月
+    contract24: 24ヶ月
+    basic:
+      name: 家庭基本プラン
+      features:
+        speed: 最大1Gbps 上り/下り
+        unlimited: データ使用量無制限
+        ipv6: IPv6サポート込み
+        wifi: Wi-Fiルーター無料レンタル
+        support: 24時間カスタマーサポート
+    premium:
+      name: 家庭プレミアムプラン
+      features:
+        speed: 最大2.5Gbps 上り/下り
+        unlimited: データ使用量無制限
+        ipv6: IPv6サポート込み
+        wifi: プレミアムWi-Fi 6ルーターレンタル
+        support: 優先24時間カスタマーサポート
+        static: 固定IPアドレス利用可能
+    enterprise:
+      name: 企業専用プラン
+      features:
+        speed: 最大10Gbps専用回線
+        unlimited: データ使用量無制限
+        ipv6: IPv6サポート込み
+        dedicated: 専用光ファイバー接続
+        support: ビジネス級24時間サポート
+        static: 複数の固定IPアドレス
+        priority: 優先ネットワークルーティング
+  coverage:
+    title: サービス提供エリア
+    description: 日本全国の主要都市圏で高速光ファイバーインターネットをご利用いただけます。
+    tokyo:
+      name: 東京都区部
+      availability: 完全対応
+      note: 23区全域および周辺都市で完全カバー
+    kanagawa:
+      name: 神奈川県
+      availability: 広域対応
+      note: 横浜市・川崎市を含む主要都市で利用可能
+    saitama:
+      name: 埼玉県
+      availability: 部分対応
+      note: 都市部で対応、郊外地域に拡大中
+    chiba:
+      name: 千葉県
+      availability: 部分対応
+      note: 主要都市で利用可能、農村部カバー拡大中
+  features:
+    title: 当社ブロードバンドサービスを選ぶ理由
+    speed:
+      title: 超高速通信
+      description: 光ファイバー技術による超高速インターネットで、ストリーミング、ゲーミング、在宅勤務に最適です。
+    reliable:
+      title: 99.9%稼働率
+      description: 堅牢なネットワークインフラにより、必要な時に確実な接続性を保証します。
+    support:
+      title: 専門サポート
+      description: 24時間365日対応の日本語技術サポートチームによるサポートを受けられます。
+    easy:
+      title: 簡単設置
+      description: お客様のご都合に合わせた柔軟なスケジュールでプロの設置サービスを提供します。
+    price:
+      title: 競争力のある価格
+      description: 隠れた費用やデータ制限のない手頃な月額料金。
+    global:
+      title: グローバル接続
+      description: 国内外のコンテンツ配信に最適化されたルーティング。
+  faq:
+    title: よくある質問
+    q1:
+      question: 設置にはどのくらい時間がかかりますか？
+      answer: 設置は通常2-3時間で、お客様のご都合に合わせてスケジュール調整可能です。技術者が全ての設定を行います。
+    q2:
+      question: データ使用量の制限はありますか？
+      answer: いいえ、全てのプランでデータ使用量は無制限です。思う存分ストリーミング、ダウンロード、ブラウジングをお楽しみください。
+    q3:
+      question: 引っ越しした場合はどうなりますか？
+      answer: サービス提供エリア内であれば無料でサービス移転を承ります。お引っ越しの2週間前にご連絡ください。
+    q4:
+      question: 契約期間内で解約できますか？
+      answer: 早期解約は解約手数料をお支払いいただくことで可能です。詳細はサポートチームにお問い合わせください。
+  cta:
+    title: インターネットをアップグレードしませんか？
+    description: 超高速光ファイバーインターネットをお楽しみいただいている数千人のお客様にご参加ください。
+    button: 今すぐ始める
 
 # Error page
 error:
