@@ -1,0 +1,125 @@
+# filepath: /home/adam/TempHomepage/src/i18n/ja.yaml
+# Navigation
+nav:
+  home: ホーム
+  hosting: ホスティング
+  ipTransit: IP通信
+  timeline: タイムライン
+  about: 会社概要
+  contact: お問い合わせ
+  broadband: ブロードバンド
+  logoFirstLetter: A
+  logoRest: strix
+
+# Home page
+home:
+  title: ウェブサイトへようこそ
+  subtitle: 現代的なソリューションでビジネスの成長をサポートします
+  cta: 始めましょう
+  partners: 私たちのパートナー
+  solutions:
+    title: T1パワードインターネット＆データセンターソリューション
+    description: 成長中のビジネスのために設計された直接T1接続を備えた企業グレードのISPおよびIDCサービスを提供し、高速相互接続と新しい専任チームだけが提供できる個人的な注意と柔軟性を組み合わせています。
+    features:
+      cloudComputing:
+        title: クラウドコンピューティング
+        description: 直接T1接続を備えた高性能クラウドコンピューティングプラットフォームで、企業グレードのアプリケーション向けに安定した高速コンピューティングリソースを提供します。
+      serverHosting:
+        title: サーバーホスティング
+        description: 高速T1接続を備えたプロフェッショナルなデータセンターサーバーホスティングソリューションで、サーバーが最適な条件で動作することを保証します。
+      edgeComputing:
+        title: エッジコンピューティング
+        description: T1回線で相互接続された分散型エッジコンピューティングネットワークで、エンドユーザーに近い場所で低遅延処理機能を提供します。
+      transit:
+        title: トランジット
+        description: 複数の主要なネットワーク交換ポイントを接続するグローバルグレードのT1トランジットサービスで、高速で信頼性の高いデータ転送機能を提供します。
+      hardwareLeasing:
+        title: ハードウェアリースと販売
+        description: あらゆる規模のビジネスのITインフラ要件を満たす柔軟なネットワークおよびサーバーハードウェアのリースと販売ソリューション。
+      lirServices:
+        title: LIRサービス
+        description: IPリソースの取得と管理、ネットワーク構成の最適化、接続効率の向上を支援するプロフェッショナルなローカルインターネットレジストリサービス。
+  hero:
+    title: Astrix
+    description: ISPソリューションとIDCホスティングサービスに新しい視点をもたらします。信頼性の高い接続性、安全なインフラストラクチャ、パーソナライズされたサポートに焦点を当て、デジタル環境でビジネスが繁栄するのを支援します。
+
+# About page
+about:
+  title: 会社概要
+  subtitle: 小さいながらも献身的なチーム
+  heading: ともにネットワークソリューションを構築する
+  description: 誠実でわかりやすいネットワークサービスを提供するというビジョンで設立された当社は、接続ソリューションに新鮮なアプローチを持つ熱心な専門家を集めています。私たちはお客様との長期的な関係を構築し、ともに成長・向上していくことを信念としています。
+
+# Timeline page
+timeline:
+  pageTitle: タイムライン
+  sectionTitle: 会社の歴史
+  sectionSubtitle: 設立から現在までの私たちの歩み
+  milestonesTitle: マイルストーンと進歩
+  milestonesDescription: Astrixは設立以来、着実に成長を続け、ネットワークインフラを継続的に改善し、サービス提供を拡大してお客様により良いサービスを提供しています。
+  ctaButton: 私たちの旅に参加しましょう
+  events:
+    event1:
+      date: 2025年1月1日
+      title: 新年のお祝い
+      description: コミュニティと共に祝うため、シンガポールサーバーを無料提供する特別なプロモーションで新年を迎えました。
+    event2:
+      date: 2024年12月20日
+      title: グローバル展開
+      description: 国際的な顧客層により良いサービスを提供するため、多言語対応のウェブサイトを立ち上げました。
+    event3:
+      date: 2024年12月1日
+      title: シンガポールBGPの開始
+      description: プレミアム接続性と強化されたDNSロック解除機能を備えた、新しいシンガポールBGPノードでネットワークを拡張しました。
+    event4:
+      date: 2024年10月13日
+      title: ドイツの高性能ノード
+      description: AMD 9950Xプロセッサを搭載した高性能ドイツノードを導入し、卓越した計算能力を提供しています。
+    event5:
+      date: 2024年9月30日
+      title: 超高速日本
+      description: 日本でSONY Nuro 10G住宅向け帯域幅を立ち上げ、超高速接続を提供しています。
+    event6:
+      date: 2024年7月1日
+      title: LIRサービス
+      description: RIPE NCC ASNとIPv6プレフィックス割り当てを提供する包括的なLIRサービスを導入し、ネットワークの自律性を高めました。
+    event7:
+      date: 2024年6月5日
+      title: 香港への展開
+      description: 香港Liteプロダクトラインを立ち上げ、アジア市場にコスト効率の高いソリューションを提供しています。
+    event8:
+      date: 2024年5月1日
+      title: グランドオープン
+      description: 旗艦の日本サーバーインフラを備えたAstrixを正式に立ち上げ、あらゆるニーズに対応した多様なホスティングソリューションを提供しています。
+
+# Contact page
+contact:
+  title: お問い合わせ
+  subtitle: ご連絡ください
+  heading: Astrixへのお問い合わせ
+  description: お客様のご質問にお答えし、当社のサービスがビジネスの成長にどのように役立つかについてご説明します。新しい会社として、すべての対話を大切にしています。
+  address: 〒130-0011 東京都墨田区石原2-13-1
+  phone: +1 (562) 2139 670
+
+# Broadband page
+broadband:
+  title: ブロードバンドサービス
+  subtitle: 高速インターネット接続を提供
+  description: 当社のブロードバンドサービスは、さまざまなニーズに対応するために設計されています。以下のプランからお選びください。
+  plans:
+    plan1:
+      name: スタンダードプラン
+      speed: 100Mbps
+      price: 4,500円/月
+      description: 家庭向けの基本的なインターネット接続。
+    plan2:
+      name: プレミアムプラン
+      speed: 300Mbps
+      price: 6,500円/月
+      description: より高速な接続が必要な家庭や小規模オフィス向け。
+    plan3:
+      name: ビジネスプラン
+      speed: 1Gbps
+      price: 10,000円/月
+      description: ビジネス用途に最適な高速インターネット接続。
+  contactCta: お問い合わせは、サポートチームまでご連絡ください。

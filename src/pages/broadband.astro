@@ -1,0 +1,293 @@
+---
+import Container from "../components/container.astro";
+import Sectionhead from "../components/sectionhead.astro";
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import { getLocale } from "astro-i18n-aut";
+import { useTranslations } from "../utils/i18n";
+
+// Get locale and translations function
+const locale = getLocale(Astro.url);
+const t = useTranslations(Astro.url);
+
+// Helper function to create locale-aware paths
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
+
+// Broadband service plans
+const plans = [
+  {
+    nameKey: "broadband.plans.basic.name",
+    speed: "1Gbps",
+    price: "¥3,980",
+    originalPrice: "¥4,500",
+    popular: false,
+    features: [
+      "broadband.plans.basic.features.speed",
+      "broadband.plans.basic.features.unlimited",
+      "broadband.plans.basic.features.ipv6",
+      "broadband.plans.basic.features.wifi",
+      "broadband.plans.basic.features.support"
+    ],
+    setupFee: "¥0",
+    contractKey: "broadband.plans.contract24"
+  },
+  {
+    nameKey: "broadband.plans.premium.name", 
+    speed: "2.5Gbps",
+    price: "¥5,980",
+    originalPrice: "¥7,200",
+    popular: true,
+    features: [
+      "broadband.plans.premium.features.speed",
+      "broadband.plans.premium.features.unlimited",
+      "broadband.plans.premium.features.ipv6",
+      "broadband.plans.premium.features.wifi",
+      "broadband.plans.premium.features.support",
+      "broadband.plans.premium.features.static"
+    ],
+    setupFee: "¥0",
+    contractKey: "broadband.plans.contract24"
+  },
+  {
+    nameKey: "broadband.plans.enterprise.name",
+    speed: "10Gbps",
+    price: "¥15,800",
+    originalPrice: "¥18,000",
+    popular: false,
+    features: [
+      "broadband.plans.enterprise.features.speed",
+      "broadband.plans.enterprise.features.unlimited",
+      "broadband.plans.enterprise.features.ipv6",
+      "broadband.plans.enterprise.features.dedicated",
+      "broadband.plans.enterprise.features.support",
+      "broadband.plans.enterprise.features.static",
+      "broadband.plans.enterprise.features.priority"
+    ],
+    setupFee: "¥5,000",
+    contractKey: "broadband.plans.contract12"
+  }
+];
+
+// Coverage areas
+const coverageAreas = [
+  {
+    regionKey: "broadband.coverage.tokyo.name",
+    availability: "broadband.coverage.tokyo.availability",
+    note: "broadband.coverage.tokyo.note"
+  },
+  {
+    regionKey: "broadband.coverage.kanagawa.name", 
+    availability: "broadband.coverage.kanagawa.availability",
+    note: "broadband.coverage.kanagawa.note"
+  },
+  {
+    regionKey: "broadband.coverage.saitama.name",
+    availability: "broadband.coverage.saitama.availability", 
+    note: "broadband.coverage.saitama.note"
+  },
+  {
+    regionKey: "broadband.coverage.chiba.name",
+    availability: "broadband.coverage.chiba.availability",
+    note: "broadband.coverage.chiba.note"
+  }
+];
+---
+
+<Layout title={t('broadband.title')}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{t('broadband.title')}</Fragment>
+      <Fragment slot="desc">{t('broadband.subtitle')}</Fragment>
+    </Sectionhead>
+
+    <!-- Hero Section -->
+    <div class="mx-auto max-w-4xl mt-16 text-center">
+      <h2 class="font-bold text-4xl text-gray-800 mb-6">
+        {t('broadband.hero.title')}
+      </h2>
+      <p class="text-xl leading-relaxed text-slate-600 mb-8">
+        {t('broadband.hero.description')}
+      </p>
+    </div>
+
+    <!-- Service Plans -->
+    <div class="mx-auto max-w-6xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800 mb-8 text-center">
+        {t('broadband.plans.title')}
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {plans.map((plan) => (
+          <div class={`relative bg-white rounded-lg shadow-lg border-2 ${plan.popular ? 'border-blue-500' : 'border-gray-200'} p-8`}>
+            {plan.popular && (
+              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                  {t('broadband.plans.popular')}
+                </span>
+              </div>
+            )}
+            
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">{t(plan.nameKey)}</h3>
+              <div class="flex items-center justify-center mb-2">
+                <span class="text-3xl font-bold text-blue-600">{plan.price}</span>
+                <span class="text-gray-500 ml-2">/月</span>
+              </div>
+              {plan.originalPrice && (
+                <div class="text-sm text-gray-400 line-through">{plan.originalPrice}/月</div>
+              )}
+              <div class="text-lg font-semibold text-gray-700 mt-2">{plan.speed}</div>
+            </div>
+
+            <ul class="space-y-3 mb-8">
+              {plan.features.map((feature) => (
+                <li class="flex items-start">
+                  <Icon class="text-green-500 w-5 h-5 mr-3 mt-0.5" name="uil:check" />
+                  <span class="text-gray-600">{t(feature)}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="border-t pt-4 mb-6">
+              <div class="flex justify-between text-sm text-gray-600 mb-2">
+                <span>{t('broadband.plans.setupFee')}</span>
+                <span class="font-medium">{plan.setupFee}</span>
+              </div>
+              <div class="flex justify-between text-sm text-gray-600">
+                <span>{t('broadband.plans.contract')}</span>
+                <span class="font-medium">{t(plan.contractKey)}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Coverage Areas -->
+    <div class="mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800 mb-8 text-center">
+        {t('broadband.coverage.title')}
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-600 mb-8 text-center">
+        {t('broadband.coverage.description')}
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        {coverageAreas.map((area) => (
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">{t(area.regionKey)}</h3>
+            <div class="flex items-center mb-2">
+              <Icon class="text-green-500 w-5 h-5 mr-2" name="uil:check-circle" />
+              <span class="text-green-600 font-medium">{t(area.availability)}</span>
+            </div>
+            <p class="text-gray-600 text-sm">{t(area.note)}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800 mb-8 text-center">
+        {t('broadband.features.title')}
+      </h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-blue-600 w-8 h-8" name="uil:wifi" />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.speed.title')}</h3>
+          <p class="text-gray-600">{t('broadband.features.speed.description')}</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-green-600 w-8 h-8" name="uil:shield-check" />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.reliable.title')}</h3>
+          <p class="text-gray-600">{t('broadband.features.reliable.description')}</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-purple-600 w-8 h-8" name="uil:headphones-alt" />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.support.title')}</h3>
+          <p class="text-gray-600">{t('broadband.features.support.description')}</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-orange-600 w-8 h-8" name="uil:rocket" />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.easy.title')}</h3>
+          <p class="text-gray-600">{t('broadband.features.easy.description')}</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-red-600 w-8 h-8" name="uil:money-bill" />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.price.title')}</h3>
+          <p class="text-gray-600">{t('broadband.features.price.description')}</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-indigo-600 w-8 h-8" name="uil:globe" />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.global.title')}</h3>
+          <p class="text-gray-600">{t('broadband.features.global.description')}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800 mb-8 text-center">
+        {t('broadband.faq.title')}
+      </h2>
+      
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.faq.q1.question')}</h3>
+          <p class="text-gray-600">{t('broadband.faq.q1.answer')}</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.faq.q2.question')}</h3>
+          <p class="text-gray-600">{t('broadband.faq.q2.answer')}</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.faq.q3.question')}</h3>
+          <p class="text-gray-600">{t('broadband.faq.q3.answer')}</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.faq.q4.question')}</h3>
+          <p class="text-gray-600">{t('broadband.faq.q4.answer')}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mx-auto max-w-4xl mt-16 text-center">
+      <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-8 text-white">
+        <h2 class="text-3xl font-bold mb-4">{t('broadband.cta.title')}</h2>
+        <p class="text-xl mb-8">{t('broadband.cta.description')}</p>
+        <a 
+          href={createLocalePath("/contact")} 
+          class="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          {t('broadband.cta.button')}
+        </a>
+      </div>
+    </div>
+  </Container>
+</Layout>

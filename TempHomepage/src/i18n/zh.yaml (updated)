@@ -1,0 +1,123 @@
+# filepath: /home/adam/TempHomepage/src/i18n/zh.yaml
+# Navigation
+nav:
+  home: 首页
+  hosting: 主机托管
+  ipTransit: IP传输
+  timeline: 时间线
+  about: 关于我们
+  blog: 博客
+  contact: 联系我们
+  broadband: 宽带服务
+  logoFirstLetter: A
+  logoRest: strix
+
+# Home page
+home:
+  title: 欢迎访问我们的网站
+  subtitle: 以现代解决方案支持企业成长
+  cta: 开始使用
+  partners: 我们的合作伙伴
+  solutions:
+    title: T1级互联网和数据中心解决方案
+    description: 提供企业级ISP和IDC服务，配备直接T1连接，专为成长中的企业设计，将高速互连与只有新成立的专业团队才能提供的个性化关注和灵活性相结合。
+    features:
+      cloudComputing:
+        title: 云计算
+        description: 高性能云计算平台，通过直接T1连接提供稳定、高速的计算资源，适用于企业级应用。
+      serverHosting:
+        title: 服务器托管
+        description: 专业数据中心服务器托管解决方案，配备高速T1连接，确保您的服务器在最佳条件下运行。
+      edgeComputing:
+        title: 边缘计算
+        description: 通过T1线路互连的分布式边缘计算网络，在更靠近终端用户的位置提供低延迟处理能力。
+      transit:
+        title: 网络传输
+        description: 连接多个主要网络交换点的全球级T1传输服务，提供高速、可靠的数据传输能力。
+      hardwareLeasing:
+        title: 硬件租赁和销售
+        description: 灵活的网络和服务器硬件租赁与销售解决方案，满足各种规模企业的IT基础设施需求。
+      lirServices:
+        title: LIR服务
+        description: 专业的本地互联网注册服务，帮助您获取和管理IP资源，优化网络配置，提高连接效率。
+  hero:
+    title: Astrix
+    description: 为ISP解决方案和IDC托管服务带来全新视角。我们专注于可靠的连接、安全的基础设施和个性化支持，帮助您的企业在数字领域蓬勃发展。
+
+# About page
+about:
+  title: 关于我们
+  subtitle: 认识我们小而专注的团队
+  heading: 共同构建网络解决方案
+  description: 我们的团队以提供诚实、直接的网络服务为愿景而成立，汇集了对连接解决方案采取全新方法的热情专业人士。我们相信与客户建立持久的关系，共同成长和改进。
+
+# Timeline page
+timeline:
+  pageTitle: 时间线
+  sectionTitle: 公司发展历程
+  sectionSubtitle: 从创立至今的旅程
+  milestonesTitle: 里程碑与进展
+  milestonesDescription: Astrix自成立以来稳步发展，不断改进我们的网络基础设施并扩展服务范围，以更好地服务客户。
+  ctaButton: 加入我们的旅程
+  events:
+    event1:
+      date: 2025年1月1日
+      title: 新年庆典
+      description: 通过特别促销活动迎接新年，向我们的社区提供免费的新加坡服务器。
+    event2:
+      date: 2024年12月20日
+      title: 全球扩张
+      description: 推出多语言网站，更好地服务于我们的国际客户群。
+    event3:
+      date: 2024年12月1日
+      title: 新加坡BGP启动
+      description: 通过新的新加坡BGP节点扩展我们的网络，提供优质连接和增强的DNS解锁功能。
+    event4:
+      date: 2024年10月13日
+      title: 德国高性能服务器
+      description: 引入由AMD 9950X处理器驱动的高性能德国节点，提供卓越的计算能力。
+    event5:
+      date: 2024年9月30日
+      title: 日本超高速网络
+      description: 在日本推出SONY Nuro 10G住宅带宽，提供闪电般的连接速度。
+    event6:
+      date: 2024年7月1日
+      title: LIR服务
+      description: 推出全面的LIR服务，提供RIPE NCC ASN和IPv6前缀分配，增强网络自主性。
+    event7:
+      date: 2024年6月5日
+      title: 香港扩展
+      description: 推出香港Lite产品线，为亚洲市场带来经济高效的解决方案。
+    event8:
+      date: 2024年5月1日
+      title: 盛大开业
+      description: 正式启动Astrix，配备我们旗舰的日本服务器基础设施，提供多样化的托管解决方案，满足所有需求。
+
+# Contact page
+contact:
+  title: 联系我们
+  subtitle: 让我们建立联系
+  heading: 联系Astrix
+  description: 我们随时准备回答您的问题，讨论我们的服务如何帮助您的业务成长。作为一家新公司，我们重视每一次对话。
+  address: 日本东京都墨田区石原2-13-1
+  phone: +1 (562) 2139 670
+
+# Broadband page
+broadband:
+  title: 宽带服务
+  subtitle: 选择适合您的宽带计划
+  description: 我们提供多种宽带计划，满足不同用户的需求。以下是我们的基本定价信息：
+  plans:
+    - name: 基础计划
+      speed: 100 Mbps
+      price: ¥4,000/月
+      description: 适合家庭用户，提供稳定的网络连接。
+    - name: 标准计划
+      speed: 300 Mbps
+      price: ¥6,000/月
+      description: 适合中小型企业，支持多设备连接。
+    - name: 高级计划
+      speed: 1 Gbps
+      price: ¥10,000/月
+      description: 适合大企业，提供超高速连接和优先支持。
+  cta: 立即注册，享受高速互联网服务！
