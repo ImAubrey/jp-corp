@@ -1,0 +1,168 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+
+const { locale, t } = Astro.props;
+
+// Helper function to create locale-aware paths
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
+
+const broadbandFeatures = [
+  {
+    titleKey: "home.broadband.features.speed.title",
+    descriptionKey: "home.broadband.features.speed.description",
+    icon: "bx:bx-tachometer"
+  },
+  {
+    titleKey: "home.broadband.features.reliability.title", 
+    descriptionKey: "home.broadband.features.reliability.description",
+    icon: "bx:bx-shield"
+  },
+  {
+    titleKey: "home.broadband.features.coverage.title",
+    descriptionKey: "home.broadband.features.coverage.description", 
+    icon: "bx:bx-map"
+  },
+  {
+    titleKey: "home.broadband.features.support.title",
+    descriptionKey: "home.broadband.features.support.description",
+    icon: "bx:bx-phone"
+  },
+  {
+    titleKey: "home.broadband.features.pricing.title",
+    descriptionKey: "home.broadband.features.pricing.description",
+    icon: "bx:bx-purchase-tag"
+  },
+  {
+    titleKey: "home.broadband.features.installation.title",
+    descriptionKey: "home.broadband.features.installation.description",
+    icon: "bx:bx-wrench"
+  }
+];
+---
+
+<div class="mt-16">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-gray-800">
+      {t('home.broadband.features.title')}
+    </h2>
+    <p class="text-xl mt-4 text-slate-600 max-w-3xl mx-auto">
+      {t('home.broadband.features.subtitle')}
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+    {
+      broadbandFeatures.map((item) => (
+        <div class="p-4 border border-slate-200 rounded-lg shadow-sm">
+          <div class="flex gap-4 items-start">
+            <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+              <Icon class="text-white" name={item.icon} />
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">{t(item.titleKey)}</h3>
+              <p class="text-slate-500 mt-2 leading-relaxed">{t(item.descriptionKey)}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Coverage Map Section -->
+  <div class="bg-gray-50 rounded-2xl p-8 mb-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 class="text-3xl font-bold text-gray-800 mb-6">{t('home.broadband.coverage.title')}</h3>
+        <p class="text-lg text-gray-600 mb-6">{t('home.broadband.coverage.description')}</p>
+        
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center space-x-3">
+            <div class="w-3 h-3 bg-gray-800 rounded-full"></div>
+            <span class="font-medium text-gray-800">{t('home.broadband.coverage.available')}</span>
+            <span class="text-gray-600">- {t('home.broadband.coverage.tokyo')} & {t('home.broadband.coverage.kanagawa')}</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
+            <span class="font-medium text-gray-800">{t('home.broadband.coverage.expanding')}</span>
+            <span class="text-gray-600">- {t('home.broadband.coverage.saitama')} & {t('home.broadband.coverage.chiba')}</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+            <span class="font-medium text-gray-800">{t('home.broadband.coverage.planned')}</span>
+            <span class="text-gray-600">- {t('home.broadband.coverage.other')}</span>
+          </div>
+        </div>
+
+        <a 
+          href={createLocalePath("/broadband/")} 
+          class="inline-flex items-center space-x-2 bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium"
+        >
+          <span>{t('home.broadband.coverage.checkCoverage')}</span>
+          <Icon name="bx:bx-right-arrow-alt" class="w-5 h-5" />
+        </a>
+      </div>
+      
+      <div class="relative">
+        <!-- Simple map representation -->
+        <div class="bg-white rounded-xl p-6 shadow-lg">
+          <h4 class="font-semibold text-gray-800 mb-4 text-center">{t('home.broadband.coverage.mapTitle')}</h4>
+          <div class="relative h-64 bg-gray-100 rounded-lg overflow-hidden">
+            <!-- Tokyo area -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div class="relative">
+                <div class="w-16 h-16 bg-gray-400 rounded-full opacity-30 animate-pulse"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+                  <Icon name="bx:bx-wifi" class="text-white w-4 h-4" />
+                </div>
+                <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-700 whitespace-nowrap">
+                  Tokyo/Kanagawa
+                </div>
+              </div>
+            </div>
+            
+            <!-- Expanding areas -->
+            <div class="absolute top-1/4 right-1/4">
+              <div class="w-12 h-12 bg-gray-300 rounded-full opacity-20 animate-pulse"></div>
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gray-500 rounded-full"></div>
+            </div>
+            
+            <div class="absolute bottom-1/3 left-1/4">
+              <div class="w-12 h-12 bg-gray-300 rounded-full opacity-20 animate-pulse"></div>
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gray-500 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="text-center bg-black rounded-2xl p-12 text-white">
+    <h3 class="text-3xl font-bold mb-4">{t('home.broadband.cta.title')}</h3>
+    <p class="text-xl mb-8 opacity-90">{t('home.broadband.cta.subtitle')}</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a 
+        href={createLocalePath("/broadband/")} 
+        class="inline-flex items-center justify-center px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-colors"
+      >
+        {t('home.broadband.cta.primary')}
+      </a>
+      <a 
+        href={createLocalePath("/contact/")} 
+        class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-black transition-colors"
+      >
+        {t('home.broadband.cta.secondary')}
+      </a>
+    </div>
+  </div>
+</div>

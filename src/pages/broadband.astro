@@ -107,38 +107,38 @@ const coverageAreas = [
 
     <!-- Hero Section -->
     <div class="mx-auto max-w-4xl mt-16 text-center">
-      <h2 class="font-bold text-4xl text-gray-800 mb-6">
+      <h2 class="font-bold text-4xl text-black mb-6">
         {t('broadband.hero.title')}
       </h2>
-      <p class="text-xl leading-relaxed text-slate-600 mb-8">
+      <p class="text-xl leading-relaxed text-gray-700 mb-8">
         {t('broadband.hero.description')}
       </p>
     </div>
 
     <!-- Service Plans -->
     <div class="mx-auto max-w-6xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800 mb-8 text-center">
+      <h2 class="font-bold text-3xl text-black mb-8 text-center">
         {t('broadband.plans.title')}
       </h2>
       <div class="grid md:grid-cols-3 gap-8">
         {plans.map((plan) => (
-          <div class={`relative bg-white rounded-lg shadow-lg border-2 ${plan.popular ? 'border-blue-500' : 'border-gray-200'} p-8`}>
+          <div class={`relative bg-white rounded-lg shadow-lg border-2 ${plan.popular ? 'border-black' : 'border-gray-300'} p-8`}>
             {plan.popular && (
               <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                <span class="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
                   {t('broadband.plans.popular')}
                 </span>
               </div>
             )}
             
             <div class="text-center mb-6">
-              <h3 class="text-xl font-bold text-gray-800 mb-2">{t(plan.nameKey)}</h3>
+              <h3 class="text-xl font-bold text-black mb-2">{t(plan.nameKey)}</h3>
               <div class="flex items-center justify-center mb-2">
-                <span class="text-3xl font-bold text-blue-600">{plan.price}</span>
-                <span class="text-gray-500 ml-2">/月</span>
+                <span class="text-3xl font-bold text-black">{plan.price}</span>
+                <span class="text-gray-600 ml-2">/月</span>
               </div>
               {plan.originalPrice && (
-                <div class="text-sm text-gray-400 line-through">{plan.originalPrice}/月</div>
+                <div class="text-sm text-gray-500 line-through">{plan.originalPrice}/月</div>
               )}
               <div class="text-lg font-semibold text-gray-700 mt-2">{plan.speed}</div>
             </div>
@@ -146,18 +146,18 @@ const coverageAreas = [
             <ul class="space-y-3 mb-8">
               {plan.features.map((feature) => (
                 <li class="flex items-start">
-                  <Icon class="text-green-500 w-5 h-5 mr-3 mt-0.5" name="uil:check" />
-                  <span class="text-gray-600">{t(feature)}</span>
+                  <Icon class="text-black w-5 h-5 mr-3 mt-0.5" name="uil:check" />
+                  <span class="text-gray-700">{t(feature)}</span>
                 </li>
               ))}
             </ul>
 
             <div class="border-t pt-4 mb-6">
-              <div class="flex justify-between text-sm text-gray-600 mb-2">
+              <div class="flex justify-between text-sm text-gray-700 mb-2">
                 <span>{t('broadband.plans.setupFee')}</span>
                 <span class="font-medium">{plan.setupFee}</span>
               </div>
-              <div class="flex justify-between text-sm text-gray-600">
+              <div class="flex justify-between text-sm text-gray-700">
                 <span>{t('broadband.plans.contract')}</span>
                 <span class="font-medium">{t(plan.contractKey)}</span>
               </div>
@@ -169,22 +169,22 @@ const coverageAreas = [
 
     <!-- Coverage Areas -->
     <div class="mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800 mb-8 text-center">
+      <h2 class="font-bold text-3xl text-black mb-8 text-center">
         {t('broadband.coverage.title')}
       </h2>
-      <p class="text-lg leading-relaxed text-slate-600 mb-8 text-center">
+      <p class="text-lg leading-relaxed text-gray-700 mb-8 text-center">
         {t('broadband.coverage.description')}
       </p>
       
       <div class="grid md:grid-cols-2 gap-6">
         {coverageAreas.map((area) => (
-          <div class="bg-white p-6 rounded-lg border border-gray-200">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">{t(area.regionKey)}</h3>
+          <div class="bg-white p-6 rounded-lg border border-gray-300">
+            <h3 class="text-lg font-semibold text-black mb-2">{t(area.regionKey)}</h3>
             <div class="flex items-center mb-2">
-              <Icon class="text-green-500 w-5 h-5 mr-2" name="uil:check-circle" />
-              <span class="text-green-600 font-medium">{t(area.availability)}</span>
+              <Icon class="text-black w-5 h-5 mr-2" name="uil:check-circle" />
+              <span class="text-black font-medium">{t(area.availability)}</span>
             </div>
-            <p class="text-gray-600 text-sm">{t(area.note)}</p>
+            <p class="text-gray-700 text-sm">{t(area.note)}</p>
           </div>
         ))}
       </div>
@@ -192,98 +192,98 @@ const coverageAreas = [
 
     <!-- Features Section -->
     <div class="mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800 mb-8 text-center">
+      <h2 class="font-bold text-3xl text-black mb-8 text-center">
         {t('broadband.features.title')}
       </h2>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="text-center">
-          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Icon class="text-blue-600 w-8 h-8" name="uil:wifi" />
+          <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-white w-8 h-8" name="uil:wifi" />
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.speed.title')}</h3>
-          <p class="text-gray-600">{t('broadband.features.speed.description')}</p>
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.features.speed.title')}</h3>
+          <p class="text-gray-700">{t('broadband.features.speed.description')}</p>
         </div>
 
         <div class="text-center">
-          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Icon class="text-green-600 w-8 h-8" name="uil:shield-check" />
+          <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-white w-8 h-8" name="uil:shield-check" />
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.reliable.title')}</h3>
-          <p class="text-gray-600">{t('broadband.features.reliable.description')}</p>
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.features.reliable.title')}</h3>
+          <p class="text-gray-700">{t('broadband.features.reliable.description')}</p>
         </div>
 
         <div class="text-center">
-          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Icon class="text-purple-600 w-8 h-8" name="uil:headphones-alt" />
+          <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-white w-8 h-8" name="uil:headphones-alt" />
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.support.title')}</h3>
-          <p class="text-gray-600">{t('broadband.features.support.description')}</p>
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.features.support.title')}</h3>
+          <p class="text-gray-700">{t('broadband.features.support.description')}</p>
         </div>
 
         <div class="text-center">
-          <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Icon class="text-orange-600 w-8 h-8" name="uil:rocket" />
+          <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-white w-8 h-8" name="uil:rocket" />
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.easy.title')}</h3>
-          <p class="text-gray-600">{t('broadband.features.easy.description')}</p>
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.features.easy.title')}</h3>
+          <p class="text-gray-700">{t('broadband.features.easy.description')}</p>
         </div>
 
         <div class="text-center">
-          <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Icon class="text-red-600 w-8 h-8" name="uil:money-bill" />
+          <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-white w-8 h-8" name="uil:money-bill" />
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.price.title')}</h3>
-          <p class="text-gray-600">{t('broadband.features.price.description')}</p>
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.features.price.title')}</h3>
+          <p class="text-gray-700">{t('broadband.features.price.description')}</p>
         </div>
 
         <div class="text-center">
-          <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Icon class="text-indigo-600 w-8 h-8" name="uil:globe" />
+          <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon class="text-white w-8 h-8" name="uil:globe" />
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.features.global.title')}</h3>
-          <p class="text-gray-600">{t('broadband.features.global.description')}</p>
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.features.global.title')}</h3>
+          <p class="text-gray-700">{t('broadband.features.global.description')}</p>
         </div>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800 mb-8 text-center">
+      <h2 class="font-bold text-3xl text-black mb-8 text-center">
         {t('broadband.faq.title')}
       </h2>
       
       <div class="space-y-6">
-        <div class="bg-white p-6 rounded-lg border border-gray-200">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.faq.q1.question')}</h3>
-          <p class="text-gray-600">{t('broadband.faq.q1.answer')}</p>
+        <div class="bg-white p-6 rounded-lg border border-gray-300">
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.faq.q1.question')}</h3>
+          <p class="text-gray-700">{t('broadband.faq.q1.answer')}</p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg border border-gray-200">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.faq.q2.question')}</h3>
-          <p class="text-gray-600">{t('broadband.faq.q2.answer')}</p>
+        <div class="bg-white p-6 rounded-lg border border-gray-300">
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.faq.q2.question')}</h3>
+          <p class="text-gray-700">{t('broadband.faq.q2.answer')}</p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg border border-gray-200">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.faq.q3.question')}</h3>
-          <p class="text-gray-600">{t('broadband.faq.q3.answer')}</p>
+        <div class="bg-white p-6 rounded-lg border border-gray-300">
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.faq.q3.question')}</h3>
+          <p class="text-gray-700">{t('broadband.faq.q3.answer')}</p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg border border-gray-200">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">{t('broadband.faq.q4.question')}</h3>
-          <p class="text-gray-600">{t('broadband.faq.q4.answer')}</p>
+        <div class="bg-white p-6 rounded-lg border border-gray-300">
+          <h3 class="text-lg font-semibold text-black mb-2">{t('broadband.faq.q4.question')}</h3>
+          <p class="text-gray-700">{t('broadband.faq.q4.answer')}</p>
         </div>
       </div>
     </div>
 
     <!-- CTA Section -->
     <div class="mx-auto max-w-4xl mt-16 text-center">
-      <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-8 text-white">
+      <div class="bg-black rounded-lg p-8 text-white">
         <h2 class="text-3xl font-bold mb-4">{t('broadband.cta.title')}</h2>
         <p class="text-xl mb-8">{t('broadband.cta.description')}</p>
         <a 
           href={createLocalePath("/contact")} 
-          class="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+          class="inline-flex items-center justify-center px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-colors"
         >
           {t('broadband.cta.button')}
         </a>

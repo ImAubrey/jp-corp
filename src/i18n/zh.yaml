@@ -17,6 +17,78 @@ home:
   subtitle: 以现代解决方案支持企业成长
   cta: 开始使用
   partners: 我们的合作伙伴
+  broadband:
+    hero:
+      title: 日本超高速光纤互联网
+      description: 通过我们尖端的光纤网络体验家庭互联网的未来。在日本主要都市圈提供闪电般的速度、无与伦比的可靠性和卓越的服务。
+      ctaPrimary: 查看套餐和价格
+      ctaSecondary: 检查覆盖
+    stats:
+      maxSpeed: 最大速度
+      uptime: 网络正常运行时间
+      support: 支持可用
+    visual:
+      currentSpeed: 当前速度
+      connected: 已连接且稳定
+      location: 东京都市圈
+      coverage: 服务覆盖
+      tokyo: 东京可用
+      kanagawa: 神奈川可用
+      expanding: 即将扩展
+      badge: 高级光纤
+    plans:
+      title: 选择您的完美速度
+      subtitle: 从家庭流媒体到商业运营，我们为您提供合适的套餐
+      popular: 最受欢迎
+      viewDetails: 查看详情
+      basic:
+        name: 家庭基础
+        description: 适合家庭和远程办公
+      premium:
+        name: 家庭高级
+        description: 适合流媒体和游戏
+      enterprise:
+        name: 商业专业
+        description: 企业专用性能
+    features:
+      title: 选择我们光纤互联网的理由
+      subtitle: 以日本品质和可靠性打造现代数字生活方式
+      speed:
+        title: 闪电般的速度
+        description: 高达10Gbps的光纤连接，为您的所有设备和应用程序提供一致的性能。
+      reliability:
+        title: 99.9%正常运行时间保证
+        description: 坚如磐石的网络基础设施，具有冗余连接，确保您在最重要的时候保持连接。
+      coverage:
+        title: 扩展覆盖
+        description: 东京都市圈的全面覆盖，并迅速扩展到周边县市。
+      support:
+        title: 24/7专家支持
+        description: 本地日语技术支持团队全天候为您提供所需的任何帮助。
+      pricing:
+        title: 透明定价
+        description: 无隐藏费用，无数据上限，无意外。只有诚实、有竞争力的优质互联网服务定价。
+      installation:
+        title: 专业安装
+        description: 专家技术人员处理完整的设置和配置，确保从第一天起就达到最佳性能。
+    coverage:
+      title: 服务覆盖区域
+      description: 我们的高速光纤网络正在日本人口最密集的地区快速扩展
+      available: 完全可用
+      expanding: 扩展中
+      planned: 即将到来
+      tokyo: 东京
+      kanagawa: 神奈川
+      saitama: 埼玉
+      chiba: 千叶
+      other: 其他县
+      checkCoverage: 检查您的区域
+      mapTitle: 当前和计划覆盖
+    cta:
+      title: 准备体验超高速互联网了吗？
+      subtitle: 加入数千名在日本享受优质光纤互联网的满意客户
+      primary: 立即开始
+      secondary: 联系销售
   solutions:
     title: T1级互联网和数据中心解决方案
     description: 提供企业级ISP和IDC服务，配备直接T1连接，专为成长中的企业设计，将高速互连与只有新成立的专业团队才能提供的个性化关注和灵活性相结合。

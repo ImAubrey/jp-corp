@@ -16,6 +16,78 @@ home:
   subtitle: 現代的なソリューションでビジネスの成長をサポートします
   cta: 始めましょう
   partners: 私たちのパートナー
+  broadband:
+    hero:
+      title: 日本向け超高速光ファイバーインターネット
+      description: 最先端の光ファイバーネットワークで、家庭用インターネットの未来をご体験ください。日本の主要都市圏で超高速通信、比類のない信頼性、卓越したサービスを提供しています。
+      ctaPrimary: プラン・料金を見る
+      ctaSecondary: エリア確認
+    stats:
+      maxSpeed: 最大速度
+      uptime: ネットワーク稼働率
+      support: サポート対応
+    visual:
+      currentSpeed: 現在の速度
+      connected: 接続中・安定
+      location: 東京都市圏
+      coverage: サービスエリア
+      tokyo: 東京対応済み
+      kanagawa: 神奈川対応済み
+      expanding: 近日拡大
+      badge: プレミアム光ファイバー
+    plans:
+      title: 最適な速度をお選びください
+      subtitle: 家庭でのストリーミングからビジネス用途まで、あなたにぴったりのプランをご用意
+      popular: 最も人気
+      viewDetails: 詳細を見る
+      basic:
+        name: ホームエッセンシャル
+        description: ご家族やリモートワークに最適
+      premium:
+        name: ホームプレミアム
+        description: ストリーミングやゲームに理想的
+      enterprise:
+        name: ビジネスプロ
+        description: 企業向け専用パフォーマンス
+    features:
+      title: 当社光ファイバーインターネットを選ぶ理由
+      subtitle: 日本品質の信頼性で、現代のデジタルライフスタイルに対応
+      speed:
+        title: 超高速通信
+        description: 最大10Gbpsの光ファイバー接続で、すべてのデバイスとアプリケーションに一貫したパフォーマンスを提供。
+      reliability:
+        title: 99.9%稼働率保証
+        description: 冗長接続を備えた堅牢なネットワークインフラで、重要な時に確実な接続を保証します。
+      coverage:
+        title: 拡大中のカバレッジ
+        description: 東京都市圏の包括的カバレッジと、周辺県への急速な拡大。
+      support:
+        title: 24時間365日専門サポート
+        description: 必要な際にいつでもご利用いただける、地域の日本語対応技術サポートチーム。
+      pricing:
+        title: 透明な料金体系
+        description: 隠れた費用なし、データ制限なし、驚きなし。プレミアムインターネットサービスのための正直で競争力のある料金。
+      installation:
+        title: プロフェッショナル設置
+        description: 専門技術者が完全なセットアップと設定を行い、初日から最適なパフォーマンスを保証します。
+    coverage:
+      title: サービス提供エリア
+      description: 高速光ファイバーネットワークは日本の最も人口の多い地域で急速に拡大中
+      available: 完全対応
+      expanding: 拡大中
+      planned: 近日開始
+      tokyo: 東京
+      kanagawa: 神奈川
+      saitama: 埼玉
+      chiba: 千葉
+      other: その他の県
+      checkCoverage: エリア確認
+      mapTitle: 現在・予定カバレッジ
+    cta:
+      title: 超高速インターネットを体験する準備はできましたか？
+      subtitle: 日本全国でプレミアム光ファイバーインターネットをお楽しみいただいている数千人のお客様にご参加ください
+      primary: 今すぐ始める
+      secondary: 営業担当に連絡
   solutions:
     title: T1パワードインターネット＆データセンターソリューション
     description: 成長中のビジネスのために設計された直接T1接続を備えた企業グレードのISPおよびIDCサービスを提供し、高速相互接続と新しい専任チームだけが提供できる個人的な注意と柔軟性を組み合わせています。

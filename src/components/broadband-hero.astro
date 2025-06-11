@@ -1,0 +1,173 @@
+---
+export interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+
+const { locale, t } = Astro.props;
+
+// Helper function to create locale-aware paths
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
+---
+
+<main class="pt-16 pb-8 md:pt-12 md:pb-24">
+  <!-- Main Hero Section -->
+  <div class="grid lg:grid-cols-2 place-items-center gap-12 mb-20">
+    <div class="order-2 lg:order-1">
+      <h1 class="text-5xl lg:text6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+        {t('home.broadband.hero.title')}
+      </h1>
+      <p class="text-xl mt-6 text-slate-600 max-w-xl leading-relaxed">
+        {t('home.broadband.hero.description')}
+      </p>
+      
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a 
+          href={createLocalePath("/broadband/")} 
+          class="inline-flex items-center justify-center px-8 py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors text-lg"
+        >
+          {t('home.broadband.hero.ctaPrimary')}
+        </a>
+        <a 
+          href={createLocalePath("/contact/")} 
+          class="inline-flex items-center justify-center px-8 py-3 border-2 border-gray-600 text-gray-600 font-medium rounded-lg hover:bg-gray-100 transition-colors text-lg"
+        >
+          {t('home.broadband.hero.ctaSecondary')}
+        </a>
+      </div>
+
+      <!-- Key Stats -->
+      <div class="mt-12 grid grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-gray-800">10Gbps</div>
+          <div class="text-sm text-gray-600 mt-1">{t('home.broadband.stats.maxSpeed')}</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-gray-800">99.9%</div>
+          <div class="text-sm text-gray-600 mt-1">{t('home.broadband.stats.uptime')}</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-gray-800">24/7</div>
+          <div class="text-sm text-gray-600 mt-1">{t('home.broadband.stats.support')}</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="order-1 lg:order-2">
+      <div class="relative">
+        <!-- Main visual representation -->
+        <div class="bg-gray-100 rounded-2xl p-8 shadow-xl">
+          <div class="space-y-6">
+            <!-- Speed indicator -->
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-gray-600 font-medium">{t('home.broadband.visual.currentSpeed')}</span>
+                <span class="text-gray-800 font-bold">10 Gbps</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="bg-gray-800 h-3 rounded-full w-full"></div>
+              </div>
+            </div>
+            
+            <!-- Connection status -->
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <div class="flex items-center space-x-3">
+                <div class="w-3 h-3 bg-gray-800 rounded-full"></div>
+                <span class="text-gray-700 font-medium">{t('home.broadband.visual.connected')}</span>
+              </div>
+              <div class="mt-3 text-sm text-gray-600">
+                {t('home.broadband.visual.location')}
+              </div>
+            </div>
+            
+            <!-- Coverage areas -->
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <h4 class="font-semibold text-gray-800 mb-3">{t('home.broadband.visual.coverage')}</h4>
+              <div class="space-y-2">
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-gray-800 rounded-full"></div>
+                  <span class="text-sm text-gray-600">{t('home.broadband.visual.tokyo')}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-gray-800 rounded-full"></div>
+                  <span class="text-sm text-gray-600">{t('home.broadband.visual.kanagawa')}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-gray-500 rounded-full"></div>
+                  <span class="text-sm text-gray-600">{t('home.broadband.visual.expanding')}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="absolute -top-4 -right-4 bg-black text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+          {t('home.broadband.visual.badge')}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Plans Preview -->
+  <div class="bg-gray-50 rounded-2xl p-8 mb-16">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">{t('home.broadband.plans.title')}</h2>
+      <p class="text-lg text-gray-600">{t('home.broadband.plans.subtitle')}</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <!-- Basic Plan -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div class="text-center">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">{t('home.broadband.plans.basic.name')}</h3>
+          <div class="text-3xl font-bold text-gray-800 mb-1">¥3,980</div>
+          <div class="text-gray-500 text-sm mb-4">/月</div>
+          <div class="text-lg font-medium text-gray-700 mb-4">1Gbps</div>
+          <div class="text-sm text-gray-600 mb-6">{t('home.broadband.plans.basic.description')}</div>
+          <a href={createLocalePath("/broadband/")} class="w-full inline-block text-center py-2 px-4 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium">
+            {t('home.broadband.plans.viewDetails')}
+          </a>
+        </div>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-800 relative">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <span class="bg-black text-white px-4 py-1 rounded-full text-sm font-medium">
+            {t('home.broadband.plans.popular')}
+          </span>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">{t('home.broadband.plans.premium.name')}</h3>
+          <div class="text-3xl font-bold text-gray-800 mb-1">¥5,980</div>
+          <div class="text-gray-500 text-sm mb-4">/月</div>
+          <div class="text-lg font-medium text-gray-700 mb-4">2.5Gbps</div>
+          <div class="text-sm text-gray-600 mb-6">{t('home.broadband.plans.premium.description')}</div>
+          <a href={createLocalePath("/broadband/")} class="w-full inline-block text-center py-2 px-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium">
+            {t('home.broadband.plans.viewDetails')}
+          </a>
+        </div>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div class="text-center">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">{t('home.broadband.plans.enterprise.name')}</h3>
+          <div class="text-3xl font-bold text-gray-800 mb-1">¥15,800</div>
+          <div class="text-gray-500 text-sm mb-4">/月</div>
+          <div class="text-lg font-medium text-gray-700 mb-4">10Gbps</div>
+          <div class="text-sm text-gray-600 mb-6">{t('home.broadband.plans.enterprise.description')}</div>
+          <a href={createLocalePath("/broadband/")} class="w-full inline-block text-center py-2 px-4 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium">
+            {t('home.broadband.plans.viewDetails')}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,7 +1,7 @@
 ---
 import Container from "../components/container.astro";
-import Features from "../components/features.astro";
-import Hero from "../components/hero.astro";
+import BroadbandHero from "../components/broadband-hero.astro";
+import BroadbandFeatures from "../components/broadband-features.astro";
 import Logos from "../components/logos.astro";
 import Layout from "../layouts/Layout.astro";
 import { getLocale } from "astro-i18n-aut";
@@ -14,8 +14,8 @@ const t = useTranslations(Astro.url);
 
 <Layout title={t('home.title')}>
   <Container>
-    <Hero locale={locale} t={t} />
-    <Features locale={locale} t={t} />
+    <BroadbandHero locale={locale} t={t} />
+    <BroadbandFeatures locale={locale} t={t} />
     <Logos locale={locale} t={t} />
   </Container>
 </Layout>

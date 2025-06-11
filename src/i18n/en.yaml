@@ -297,6 +297,78 @@ home:
   subtitle: Supporting business growth with modern solutions
   cta: Get Started
   partners: Our Partners
+  broadband:
+    hero:
+      title: Ultra-Fast Fiber Internet for Japan
+      description: Experience the future of home internet with our cutting-edge fiber optic network. Delivering lightning-fast speeds, unmatched reliability, and exceptional service across Japan's major metropolitan areas.
+      ctaPrimary: View Plans & Pricing
+      ctaSecondary: Check Coverage
+    stats:
+      maxSpeed: Maximum Speed
+      uptime: Network Uptime
+      support: Support Available
+    visual:
+      currentSpeed: Current Speed
+      connected: Connected & Stable
+      location: Tokyo Metropolitan Area
+      coverage: Service Coverage
+      tokyo: Tokyo Available
+      kanagawa: Kanagawa Available
+      expanding: Expanding Soon
+      badge: Premium Fiber
+    plans:
+      title: Choose Your Perfect Speed
+      subtitle: From home streaming to business operations, we have the right plan for you
+      popular: Most Popular
+      viewDetails: View Details
+      basic:
+        name: Home Essential
+        description: Perfect for families and remote work
+      premium:
+        name: Home Premium
+        description: Ideal for streaming and gaming
+      enterprise:
+        name: Business Pro
+        description: Dedicated performance for enterprises
+    features:
+      title: Why Choose Our Fiber Internet
+      subtitle: Built for the modern digital lifestyle with Japanese quality and reliability
+      speed:
+        title: Lightning Fast Speeds
+        description: Up to 10Gbps fiber connections with consistent performance for all your devices and applications.
+      reliability:
+        title: 99.9% Uptime Guarantee
+        description: Rock-solid network infrastructure with redundant connections ensuring you stay connected when it matters most.
+      coverage:
+        title: Expanding Coverage
+        description: Comprehensive coverage across Tokyo metropolitan area with rapid expansion to surrounding prefectures.
+      support:
+        title: 24/7 Expert Support
+        description: Local Japanese-speaking technical support team available around the clock for any assistance you need.
+      pricing:
+        title: Transparent Pricing
+        description: No hidden fees, no data caps, no surprises. Just honest, competitive pricing for premium internet service.
+      installation:
+        title: Professional Installation
+        description: Expert technicians handle complete setup and configuration, ensuring optimal performance from day one.
+    coverage:
+      title: Service Coverage Areas
+      description: Our high-speed fiber network is rapidly expanding across Japan's most populated regions
+      available: Fully Available
+      expanding: Expanding
+      planned: Coming Soon
+      tokyo: Tokyo
+      kanagawa: Kanagawa
+      saitama: Saitama
+      chiba: Chiba
+      other: Other Prefectures
+      checkCoverage: Check Your Area
+      mapTitle: Current & Planned Coverage
+    cta:
+      title: Ready to Experience Ultra-Fast Internet?
+      subtitle: Join thousands of satisfied customers enjoying premium fiber internet across Japan
+      primary: Get Started Today
+      secondary: Contact Sales
   solutions:
     title: T1-Powered Internet & Data Center Solutions
     description: Offering enterprise-grade ISP and IDC services with direct T1 connections designed for growing businesses, combining high-speed interconnections with the personal attention and flexibility that only a new, dedicated team can provide.
