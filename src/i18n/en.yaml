@@ -5,17 +5,9 @@ nav:
   ipTransit: IP Transit
   broadband: Broadband
   timeline: Timeline
-  about: About
   contact: Contact
   logoFirstLetter: A
   logoRest: strix
-  
-# About page
-about:
-  title: About Us
-  subtitle: Meet our small but dedicated team
-  heading: Building Network Solutions Together
-  description: Founded with a vision to provide honest and straightforward network services, our team brings together enthusiastic professionals with a fresh approach to connectivity solutions. We believe in building lasting relationships with our clients, growing and improving together.
   
 # Timeline page
 timeline:
@@ -369,6 +361,71 @@ home:
       subtitle: Join thousands of satisfied customers enjoying premium fiber internet across Japan
       primary: Get Started Today
       secondary: Contact Sales
+  enterprise:
+    hero:
+      title: Enterprise Network & Infrastructure Solutions
+      subtitle: Professional IT infrastructure services for businesses seeking reliable connectivity, secure hosting, and expert maintenance solutions.
+      primaryCta: Contact Our Team
+      secondaryCta: Explore IP Transit
+    services:
+      title: Core Enterprise Services
+      subtitle: Comprehensive infrastructure solutions tailored for business needs
+      learnMore: Learn More
+      transit:
+        name: IP Transit Services
+        description: High-performance BGP transit with global connectivity and DDoS protection for mission-critical operations.
+        price: From ¥50,000/month
+      hosting:
+        name: Dedicated Server Hosting
+        description: Enterprise-grade bare metal servers with 24/7 monitoring, backup services, and guaranteed uptime SLA.
+        price: From ¥25,000/month
+      maintenance:
+        name: Infrastructure Maintenance
+        description: Proactive monitoring, security updates, performance optimization, and technical support for your IT infrastructure.
+        price: Custom Pricing
+    features:
+      title: Enterprise-Grade Infrastructure
+      subtitle: Built for reliability, security, and performance at scale
+      redundancy:
+        title: Network Redundancy
+        description: Multiple upstream providers and failover systems ensure 99.9% uptime for your critical business operations.
+      monitoring:
+        title: 24/7 Monitoring
+        description: Continuous network and system monitoring with real-time alerts and proactive issue resolution.
+      support:
+        title: Dedicated Support
+        description: Direct access to senior engineers and technical specialists with expertise in enterprise networking.
+      sla:
+        title: Service Level Agreements
+        description: Guaranteed uptime, response times, and performance metrics backed by comprehensive SLAs.
+      scalability:
+        title: Scalable Solutions
+        description: Infrastructure that grows with your business, from startup to enterprise scale.
+      security:
+        title: Advanced Security
+        description: Multi-layered security including DDoS protection, firewall management, and security monitoring.
+    transit:
+      title: IP Transit Excellence
+      description: Premium IP transit services with direct connections to major internet exchanges and content delivery networks.
+      learnMore: View Transit Details
+      topologyTitle: Network Topology
+      peering:
+        title: Premium Peering
+        description: Direct peering relationships with major networks for optimal routing and low latency.
+      bgp:
+        title: BGP Management
+        description: Expert BGP configuration and optimization with 24/7 monitoring and route management.
+      global:
+        title: Global Connectivity
+        description: Worldwide reach through tier-1 transit providers and international peering agreements.
+      ddos:
+        title: DDoS Mitigation
+        description: Advanced DDoS protection with real-time traffic analysis and automated mitigation.
+    cta:
+      title: Ready to Upgrade Your Infrastructure?
+      subtitle: Let our experts design a solution that meets your specific requirements
+      hosting: Explore Hosting
+      consultation: Schedule Consultation
   solutions:
     title: T1-Powered Internet & Data Center Solutions
     description: Offering enterprise-grade ISP and IDC services with direct T1 connections designed for growing businesses, combining high-speed interconnections with the personal attention and flexibility that only a new, dedicated team can provide.

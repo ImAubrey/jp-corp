@@ -5,7 +5,6 @@ nav:
   ipTransit: IP通信
   broadband: 家庭用ブロードバンド
   timeline: タイムライン
-  about: 会社概要
   contact: お問い合わせ
   logoFirstLetter: A
   logoRest: strix
@@ -88,6 +87,71 @@ home:
       subtitle: 日本全国でプレミアム光ファイバーインターネットをお楽しみいただいている数千人のお客様にご参加ください
       primary: 今すぐ始める
       secondary: 営業担当に連絡
+  enterprise:
+    hero:
+      title: 企業向けネットワーク・インフラストラクチャソリューション
+      subtitle: 信頼性の高い接続性、安全なホスティング、専門的なメンテナンスソリューションを求める企業向けの専門的ITインフラストラクチャサービス。
+      primaryCta: チームにお問い合わせ
+      secondaryCta: IP通信を探索
+    services:
+      title: コア企業サービス
+      subtitle: ビジネスニーズに合わせた包括的なインフラストラクチャソリューション
+      learnMore: 詳細を見る
+      transit:
+        name: IP通信サービス
+        description: ミッションクリティカルな運用のためのグローバル接続とDDoS保護を備えた高性能BGP通信。
+        price: ¥50,000/月から
+      hosting:
+        name: 専用サーバーホスティング
+        description: 24/7監視、バックアップサービス、および保証されたアップタイムSLAを備えた企業グレードのベアメタルサーバー。
+        price: ¥25,000/月から
+      maintenance:
+        name: インフラストラクチャメンテナンス
+        description: ITインフラストラクチャの予防的監視、セキュリティ更新、パフォーマンス最適化、技術サポート。
+        price: カスタム価格
+    features:
+      title: エンタープライズグレードインフラストラクチャ
+      subtitle: 大規模な信頼性、セキュリティ、パフォーマンスのために構築
+      redundancy:
+        title: ネットワーク冗長性
+        description: 複数のアップストリームプロバイダーとフェイルオーバーシステムが、お客様の重要なビジネス運営に99.9%のアップタイムを保証します。
+      monitoring:
+        title: 24/7監視
+        description: リアルタイムアラートと予防的問題解決を備えた継続的なネットワークおよびシステム監視。
+      support:
+        title: 専用サポート
+        description: エンタープライズネットワーキングの専門知識を持つシニアエンジニアと技術スペシャリストへの直接アクセス。
+      sla:
+        title: サービスレベル合意
+        description: 包括的なSLAに裏付けられた保証されたアップタイム、応答時間、パフォーマンス指標。
+      scalability:
+        title: スケーラブルソリューション
+        description: スタートアップからエンタープライズ規模まで、お客様のビジネスとともに成長するインフラストラクチャ。
+      security:
+        title: 高度なセキュリティ
+        description: DDoS保護、ファイアウォール管理、セキュリティ監視を含む多層セキュリティ。
+    transit:
+      title: IP通信エクセレンス
+      description: 主要なインターネット交換ポイントとコンテンツ配信ネットワークへの直接接続を備えたプレミアムIP通信サービス。
+      learnMore: 通信詳細を見る
+      topologyTitle: ネットワークトポロジー
+      peering:
+        title: プレミアムピアリング
+        description: 最適なルーティングと低遅延のための主要ネットワークとの直接ピアリング関係。
+      bgp:
+        title: BGP管理
+        description: 24/7監視とルート管理を備えた専門的なBGP設定と最適化。
+      global:
+        title: グローバル接続性
+        description: ティア1通信プロバイダーと国際ピアリング合意による世界規模のリーチ。
+      ddos:
+        title: DDoS軽減
+        description: リアルタイムトラフィック分析と自動軽減を備えた高度なDDoS保護。
+    cta:
+      title: インフラストラクチャをアップグレードする準備はできましたか？
+      subtitle: お客様の特定の要件を満たすソリューションを当社の専門家が設計します
+      hosting: ホスティングを探索
+      consultation: 相談をスケジュール
   solutions:
     title: T1パワードインターネット＆データセンターソリューション
     description: 成長中のビジネスのために設計された直接T1接続を備えた企業グレードのISPおよびIDCサービスを提供し、高速相互接続と新しい専任チームだけが提供できる個人的な注意と柔軟性を組み合わせています。
@@ -113,13 +177,6 @@ home:
   hero:
     title: Astrix
     description: ISPソリューションとIDCホスティングサービスに新しい視点をもたらします。信頼性の高い接続性、安全なインフラストラクチャ、パーソナライズされたサポートに焦点を当て、デジタル環境でビジネスが繁栄するのを支援します。
-
-# About page
-about:
-  title: 会社概要
-  subtitle: 小さいながらも献身的なチーム
-  heading: ともにネットワークソリューションを構築する
-  description: 誠実でわかりやすいネットワークサービスを提供するというビジョンで設立された当社は、接続ソリューションに新鮮なアプローチを持つ熱心な専門家を集めています。私たちはお客様との長期的な関係を構築し、ともに成長・向上していくことを信念としています。
 
 # Timeline page
 timeline:
@@ -394,3 +451,69 @@ error:
   title: ページが見つかりません
   message: お探しのページは存在しないか、移動されました。
   back: ホームに戻る
+
+enterprise:
+    hero:
+      title: 企業向けネットワーク・インフラソリューション
+      subtitle: 信頼性の高い接続、安全なホスティング、専門的な保守サービスを求める企業向けの専門的ITインフラサービス。
+      primaryCta: チームにお問い合わせ
+      secondaryCta: IP通信サービスを見る
+    services:
+      title: 主要企業サービス
+      subtitle: ビジネスニーズに合わせた包括的なインフラソリューション
+      learnMore: 詳細を見る
+      transit:
+        name: IP通信サービス
+        description: ミッションクリティカルな運用向けのグローバル接続とDDoS保護を備えた高性能BGP通信。
+        price: 月額¥50,000〜
+      hosting:
+        name: 専用サーバーホスティング
+        description: 24時間365日監視、バックアップサービス、アップタイムSLA保証付きのエンタープライズグレードベアメタルサーバー。
+        price: 月額¥25,000〜
+      maintenance:
+        name: インフラ保守
+        description: ITインフラの予防的監視、セキュリティ更新、パフォーマンス最適化、技術サポート。
+        price: カスタム価格
+    features:
+      title: エンタープライズグレードインフラ
+      subtitle: スケールでの信頼性、セキュリティ、パフォーマンスを重視した構築
+      redundancy:
+        title: ネットワーク冗長性
+        description: 複数のアップストリームプロバイダーとフェイルオーバーシステムが、重要な業務運営の99.9%アップタイムを保証。
+      monitoring:
+        title: 24時間365日監視
+        description: リアルタイムアラートと予防的問題解決による継続的なネットワークとシステム監視。
+      support:
+        title: 専任サポート
+        description: エンタープライズネットワーキングの専門知識を持つシニアエンジニアと技術スペシャリストへの直接アクセス。
+      sla:
+        title: サービスレベル合意
+        description: 包括的なSLAに支えられた稼働率、応答時間、パフォーマンス指標の保証。
+      scalability:
+        title: 拡張可能なソリューション
+        description: スタートアップから企業規模まで、ビジネスとともに成長するインフラ。
+      security:
+        title: 高度なセキュリティ
+        description: DDoS保護、ファイアウォール管理、セキュリティ監視を含む多層セキュリティ。
+    transit:
+      title: IP通信エクセレンス
+      subtitle: 主要インターネット交換ポイントおよびコンテンツ配信ネットワークへの直接接続を備えたプレミアムIP通信サービス。
+      learnMore: 通信詳細を見る
+      topologyTitle: ネットワークトポロジー
+      peering:
+        title: プレミアムピアリング
+        description: 最適なルーティングと低遅延のための主要ネットワークとの直接ピアリング関係。
+      bgp:
+        title: BGP管理
+        description: 24時間365日監視とルート管理による専門的なBGP設定と最適化。
+      global:
+        title: グローバル接続
+        description: ティア1通信プロバイダーと国際ピアリング合意による世界的なリーチ。
+      ddos:
+        title: DDoS軽減
+        description: リアルタイムトラフィック分析と自動軽減による高度なDDoS保護。
+    cta:
+      title: インフラをアップグレードする準備はできていますか？
+      subtitle: 特定の要件に合わせたソリューションを設計いたします
+      hosting: ホスティングを見る
+      consultation: 相談予約

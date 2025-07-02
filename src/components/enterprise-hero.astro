@@ -1,0 +1,162 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+
+const { locale, t } = Astro.props;
+
+// Helper function to create locale-aware paths
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
+
+const enterpriseServices = [
+  {
+    nameKey: "home.enterprise.services.transit.name",
+    descriptionKey: "home.enterprise.services.transit.description", 
+    priceKey: "home.enterprise.services.transit.price",
+    icon: "bx:bx-network-chart",
+    path: "/ip-transit/"
+  },
+  {
+    nameKey: "home.enterprise.services.hosting.name",
+    descriptionKey: "home.enterprise.services.hosting.description",
+    priceKey: "home.enterprise.services.hosting.price", 
+    icon: "bx:bx-server",
+    path: "/hosting/"
+  },
+  {
+    nameKey: "home.enterprise.services.maintenance.name",
+    descriptionKey: "home.enterprise.services.maintenance.description",
+    priceKey: "home.enterprise.services.maintenance.price",
+    icon: "bx:bx-wrench",
+    path: "/contact/"
+  }
+];
+---
+
+<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <div class="relative">
+      <!-- Enterprise infrastructure illustration -->
+      <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 w-96 h-96 flex items-center justify-center">
+        <!-- Infrastructure grid -->
+        <div class="grid grid-cols-3 gap-6 items-center">
+          <!-- Top row -->
+          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+            <Icon name="bx:bx-world" class="text-white w-6 h-6" />
+          </div>
+          <div class="bg-black rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+            <Icon name="bx:bx-cloud" class="text-white w-6 h-6" />
+          </div>
+          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+            <Icon name="bx:bx-network-chart" class="text-white w-6 h-6" />
+          </div>
+          
+          <!-- Middle row - vertical spacer -->
+          <div class="h-4"></div>
+          <div class="h-4"></div>
+          <div class="h-4"></div>
+          
+          <!-- Center server -->
+          <div class="bg-black rounded-xl p-4 shadow-lg col-span-3 flex justify-center">
+            <Icon name="bx:bx-server" class="text-white w-12 h-12" />
+          </div>
+          
+          <!-- Bottom spacer -->
+          <div class="h-4"></div>
+          <div class="h-4"></div>
+          <div class="h-4"></div>
+          
+          <!-- Bottom row -->
+          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+            <Icon name="bx:bx-shield" class="text-white w-6 h-6" />
+          </div>
+          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+            <Icon name="bx:bx-wrench" class="text-white w-6 h-6" />
+          </div>
+          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+            <Icon name="bx:bx-support" class="text-white w-6 h-6" />
+          </div>
+        </div>
+        
+        <!-- Status indicators -->
+        <div class="absolute top-4 right-4 bg-black text-white text-xs px-3 py-1 rounded-full font-medium">
+          Enterprise Ready
+        </div>
+        <div class="absolute bottom-4 left-4 bg-gray-800 text-white text-xs px-3 py-1 rounded-full font-medium">
+          24/7 Support
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-black">
+      {t('home.enterprise.hero.title')}
+    </h1>
+    <p class="text-lg mt-4 text-gray-700 max-w-xl">
+      {t('home.enterprise.hero.subtitle')}
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <a
+        href={createLocalePath("/contact/")}
+        class="flex gap-1 items-center justify-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium">
+        <Icon class="text-white w-5 h-5" name="bx:bx-message-dots" />
+        {t('home.enterprise.hero.primaryCta')}
+      </a>
+      <a
+        href={createLocalePath("/ip-transit/")}
+        class="flex gap-1 items-center justify-center border-2 border-black text-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition-colors font-medium">
+        <Icon class="w-5 h-5" name="bx:bx-network-chart" />
+        {t('home.enterprise.hero.secondaryCta')}
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- Services Preview Section -->
+<div class="mt-16">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-black">
+      {t('home.enterprise.services.title')}
+    </h2>
+    <p class="text-xl mt-4 text-gray-700 max-w-3xl mx-auto">
+      {t('home.enterprise.services.subtitle')}
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    {
+      enterpriseServices.map((service) => (
+        <div class="p-6 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex gap-4 items-start">
+            <div class="mt-1 bg-black rounded-full p-3 w-12 h-12 shrink-0">
+              <Icon class="text-white w-6 h-6" name={service.icon} />
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-xl text-black mb-2">{t(service.nameKey)}</h3>
+              <p class="text-gray-700 mb-3 leading-relaxed">{t(service.descriptionKey)}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-black">{t(service.priceKey)}</span>
+                <a 
+                  href={createLocalePath(service.path)} 
+                  class="inline-flex items-center space-x-1 text-black hover:text-gray-700 font-medium"
+                >
+                  <span>{t('home.enterprise.services.learnMore')}</span>
+                  <Icon name="bx:bx-right-arrow-alt" class="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

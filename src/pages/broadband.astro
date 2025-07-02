@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 import { getLocale } from "astro-i18n-aut";
 import { useTranslations } from "../utils/i18n";
+import { detectGeoLocation, shouldShowBroadband } from "../utils/geo";
 
 // Get locale and translations function
 const locale = getLocale(Astro.url);
@@ -16,6 +17,15 @@ function createLocalePath(path: string) {
     return path;
   }
   return `/${locale}${path}`;
+}
+
+// 检测用户地理位置
+const geoLocation = await detectGeoLocation();
+const showBroadband = shouldShowBroadband(geoLocation, Astro.url);
+
+// 如果是日本IP且没有强制参数，重定向到IP transit页面
+if (!showBroadband) {
+  return Astro.redirect(createLocalePath("/ip-transit/"));
 }
 
 // Broadband service plans

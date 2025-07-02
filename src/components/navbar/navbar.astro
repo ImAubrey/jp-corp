@@ -3,14 +3,19 @@ import Container from "../container.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import { getLocale } from "astro-i18n-aut";
 import { useTranslations } from "../../utils/i18n";
+import { detectGeoLocation, shouldShowBroadband } from "../../utils/geo";
 import LanguageSwitcher from "../LanguageSwitcher.astro";
 
 // Get current locale
 const locale = getLocale(Astro.url);
 const t = useTranslations(Astro.url);
 
+// 检测用户地理位置
+const geoLocation = await detectGeoLocation();
+const showBroadband = shouldShowBroadband(geoLocation, Astro.url);
+
 // Define menu items with translation keys
-const menuitems = [
+const baseMenuItems = [
   {
     titleKey: "nav.home",
     path: "/",
@@ -23,23 +28,29 @@ const menuitems = [
     titleKey: "nav.ipTransit",
     path: "/ip-transit/",
   },
+];
+
+// 条件性添加家庭宽带菜单项
+const conditionalMenuItems = showBroadband ? [
   {
     titleKey: "nav.broadband",
     path: "/broadband/",
-  },
+  }
+] : [];
+
+const endMenuItems = [
   {
     titleKey: "nav.timeline",
     path: "/timeline/",
-  },
-  {
-    titleKey: "nav.about",
-    path: "/about/",
   },
   {
     titleKey: "nav.contact",
     path: "/contact/",
   },
 ];
+
+// 合并菜单项
+const menuitems = [...baseMenuItems, ...conditionalMenuItems, ...endMenuItems];
 
 // Function to create locale-aware paths
 function createLocalePath(path: string) {

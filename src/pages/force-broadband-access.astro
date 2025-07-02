@@ -1,0 +1,18 @@
+---
+import { getLocale } from "astro-i18n-aut";
+
+// Get locale 
+const locale = getLocale(Astro.url);
+
+// Helper function to create locale-aware paths
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
+
+// 重定向到家宽页面，并添加强制参数
+const broadbandUrl = createLocalePath("/broadband/") + "?force_broadband=1";
+return Astro.redirect(broadbandUrl);
+---

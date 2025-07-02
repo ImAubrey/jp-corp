@@ -5,7 +5,6 @@ nav:
   ipTransit: IP传输
   broadband: 家庭宽带
   timeline: 时间线
-  about: 关于我们
   blog: 博客
   contact: 联系我们
   logoFirstLetter: A
@@ -89,6 +88,71 @@ home:
       subtitle: 加入数千名在日本享受优质光纤互联网的满意客户
       primary: 立即开始
       secondary: 联系销售
+  enterprise:
+    hero:
+      title: 企业网络与基础设施解决方案
+      subtitle: 为寻求可靠连接、安全托管和专业维护解决方案的企业提供专业IT基础设施服务。
+      primaryCta: 联系我们的团队
+      secondaryCta: 探索IP传输
+    services:
+      title: 核心企业服务
+      subtitle: 为业务需求量身定制的全面基础设施解决方案
+      learnMore: 了解更多
+      transit:
+        name: IP传输服务
+        description: 为关键任务运营提供全球连接和DDoS保护的高性能BGP传输。
+        price: 从¥50,000/月起
+      hosting:
+        name: 专用服务器托管
+        description: 企业级裸机服务器，配备24/7监控、备份服务和保证的正常运行时间SLA。
+        price: 从¥25,000/月起
+      maintenance:
+        name: 基础设施维护
+        description: 对您的IT基础设施进行主动监控、安全更新、性能优化和技术支持。
+        price: 定制价格
+    features:
+      title: 企业级基础设施
+      subtitle: 为大规模的可靠性、安全性和性能而构建
+      redundancy:
+        title: 网络冗余
+        description: 多个上游提供商和故障转移系统确保您的关键业务运营99.9%的正常运行时间。
+      monitoring:
+        title: 24/7监控
+        description: 持续的网络和系统监控，配备实时警报和主动问题解决。
+      support:
+        title: 专用支持
+        description: 直接接触具有企业网络专业知识的高级工程师和技术专家。
+      sla:
+        title: 服务级别协议
+        description: 由全面SLA支持的保证正常运行时间、响应时间和性能指标。
+      scalability:
+        title: 可扩展解决方案
+        description: 与您的业务一起成长的基础设施，从初创企业到企业规模。
+      security:
+        title: 高级安全
+        description: 多层安全，包括DDoS保护、防火墙管理和安全监控。
+    transit:
+      title: IP传输卓越
+      description: 与主要互联网交换点和内容分发网络直接连接的优质IP传输服务。
+      learnMore: 查看传输详情
+      topologyTitle: 网络拓扑
+      peering:
+        title: 优质对等
+        description: 与主要网络的直接对等关系，实现最佳路由和低延迟。
+      bgp:
+        title: BGP管理
+        description: 专业的BGP配置和优化，配备24/7监控和路由管理。
+      global:
+        title: 全球连接
+        description: 通过一级传输提供商和国际对等协议实现全球覆盖。
+      ddos:
+        title: DDoS缓解
+        description: 具有实时流量分析和自动缓解的高级DDoS保护。
+    cta:
+      title: 准备升级您的基础设施了吗？
+      subtitle: 让我们的专家设计满足您特定要求的解决方案
+      hosting: 探索托管
+      consultation: 安排咨询
   solutions:
     title: T1级互联网和数据中心解决方案
     description: 提供企业级ISP和IDC服务，配备直接T1连接，专为成长中的企业设计，将高速互连与只有新成立的专业团队才能提供的个性化关注和灵活性相结合。
@@ -115,13 +179,6 @@ home:
     title: Astrix
     description: 为ISP解决方案和IDC托管服务带来全新视角。我们专注于可靠的连接、安全的基础设施和个性化支持，帮助您的企业在数字领域蓬勃发展。
 
-# About page
-about:
-  title: 关于我们
-  subtitle: 认识我们小而专注的团队
-  heading: 共同构建网络解决方案
-  description: 我们的团队以提供诚实、直接的网络服务为愿景而成立，汇集了对连接解决方案采取全新方法的热情专业人士。我们相信与客户建立持久的关系，共同成长和改进。
-  
 # Timeline page
 timeline:
   pageTitle: 时间线
