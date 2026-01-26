@@ -76,10 +76,10 @@ const transitBenefits = [
 <div class="mt-16">
   <!-- Enterprise Features Section -->
   <div class="text-center mb-12">
-    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-black">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-slate-900">
       {t('home.enterprise.features.title')}
     </h2>
-    <p class="text-xl mt-4 text-gray-700 max-w-3xl mx-auto">
+    <p class="text-xl mt-4 text-slate-600 max-w-3xl mx-auto">
       {t('home.enterprise.features.subtitle')}
     </p>
   </div>
@@ -87,14 +87,14 @@ const transitBenefits = [
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
     {
       enterpriseFeatures.map((item) => (
-        <div class="p-4 border border-gray-300 rounded-lg shadow-sm">
+        <div class="glass-card lift rounded-2xl p-6">
           <div class="flex gap-4 items-start">
-            <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+            <div class="mt-1 bg-slate-900 rounded-full p-2 w-8 h-8 shrink-0 shadow-lg shadow-slate-900/20">
               <Icon class="text-white" name={item.icon} />
             </div>
             <div>
-              <h3 class="font-semibold text-lg text-black">{t(item.titleKey)}</h3>
-              <p class="text-gray-700 mt-2 leading-relaxed">{t(item.descriptionKey)}</p>
+              <h3 class="font-semibold text-lg text-slate-900">{t(item.titleKey)}</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">{t(item.descriptionKey)}</p>
             </div>
           </div>
         </div>
@@ -103,22 +103,22 @@ const transitBenefits = [
   </div>
 
   <!-- IP Transit Highlights -->
-  <div class="bg-gray-50 rounded-2xl p-8 mb-16">
+  <div class="glass-panel rounded-3xl p-8 mb-16">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h3 class="text-3xl font-bold text-black mb-6">{t('home.enterprise.transit.title')}</h3>
-        <p class="text-lg text-gray-700 mb-6">{t('home.enterprise.transit.description')}</p>
+        <h3 class="text-3xl font-bold text-slate-900 mb-6">{t('home.enterprise.transit.title')}</h3>
+        <p class="text-lg text-slate-600 mb-6">{t('home.enterprise.transit.description')}</p>
         
         <div class="space-y-4 mb-8">
           {
             transitBenefits.map((benefit) => (
               <div class="flex items-start space-x-3">
-                <div class="mt-1 bg-black rounded-full p-1 w-6 h-6 shrink-0">
+                <div class="mt-1 bg-slate-900 rounded-full p-1 w-6 h-6 shrink-0 shadow-lg shadow-slate-900/20">
                   <Icon class="text-white w-4 h-4" name={benefit.icon} />
                 </div>
                 <div>
-                  <h4 class="font-medium text-black">{t(benefit.titleKey)}</h4>
-                  <p class="text-gray-700 text-sm">{t(benefit.descriptionKey)}</p>
+                  <h4 class="font-medium text-slate-900">{t(benefit.titleKey)}</h4>
+                  <p class="text-slate-600 text-sm">{t(benefit.descriptionKey)}</p>
                 </div>
               </div>
             ))
@@ -127,7 +127,7 @@ const transitBenefits = [
 
         <a 
           href={createLocalePath("/ip-transit/")} 
-          class="inline-flex items-center space-x-2 bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium"
+          class="inline-flex items-center space-x-2 bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-800 transition-all font-medium shadow-lg shadow-slate-900/20"
         >
           <span>{t('home.enterprise.transit.learnMore')}</span>
           <Icon name="bx:bx-right-arrow-alt" class="w-5 h-5" />
@@ -136,52 +136,52 @@ const transitBenefits = [
       
       <div class="relative">
         <!-- Network topology visualization -->
-        <div class="bg-white rounded-xl p-6 shadow-lg">
-          <h4 class="font-semibold text-black mb-4 text-center">{t('home.enterprise.transit.topologyTitle')}</h4>
-          <div class="relative h-64 bg-gray-100 rounded-lg overflow-hidden p-4">
+        <div class="glass-card lift rounded-2xl p-6">
+          <h4 class="font-semibold text-slate-900 mb-4 text-center">{t('home.enterprise.transit.topologyTitle')}</h4>
+          <div class="relative h-64 bg-slate-100/70 rounded-lg overflow-hidden p-4">
             <!-- Network nodes -->
             <div class="absolute top-4 left-1/2 transform -translate-x-1/2">
-              <div class="bg-black rounded-full p-2 shadow-lg">
+              <div class="bg-slate-900 rounded-full p-2 shadow-lg shadow-slate-900/20">
                 <Icon name="bx:bx-server" class="text-white w-6 h-6" />
               </div>
-              <div class="text-xs font-medium text-center mt-1 text-gray-700">Core</div>
+              <div class="text-xs font-medium text-center mt-1 text-slate-700">Core</div>
             </div>
             
             <!-- Regional nodes -->
             <div class="absolute top-1/2 left-4">
-              <div class="bg-gray-800 rounded-full p-2">
+              <div class="bg-slate-800 rounded-full p-2">
                 <Icon name="bx:bx-network-chart" class="text-white w-4 h-4" />
               </div>
-              <div class="text-xs text-center mt-1 text-gray-700">Asia</div>
+              <div class="text-xs text-center mt-1 text-slate-700">Asia</div>
             </div>
             
             <div class="absolute top-1/2 right-4">
-              <div class="bg-gray-800 rounded-full p-2">
+              <div class="bg-slate-800 rounded-full p-2">
                 <Icon name="bx:bx-network-chart" class="text-white w-4 h-4" />
               </div>
-              <div class="text-xs text-center mt-1 text-gray-700">Global</div>
+              <div class="text-xs text-center mt-1 text-slate-700">Global</div>
             </div>
             
             <div class="absolute bottom-4 left-1/4">
-              <div class="bg-gray-600 rounded-full p-2">
+              <div class="bg-slate-600 rounded-full p-2">
                 <Icon name="bx:bx-wifi" class="text-white w-4 h-4" />
               </div>
-              <div class="text-xs text-center mt-1 text-gray-700">Edge</div>
+              <div class="text-xs text-center mt-1 text-slate-700">Edge</div>
             </div>
             
             <div class="absolute bottom-4 right-1/4">
-              <div class="bg-gray-600 rounded-full p-2">
+              <div class="bg-slate-600 rounded-full p-2">
                 <Icon name="bx:bx-wifi" class="text-white w-4 h-4" />
               </div>
-              <div class="text-xs text-center mt-1 text-gray-700">Edge</div>
+              <div class="text-xs text-center mt-1 text-slate-700">Edge</div>
             </div>
             
             <!-- Connection lines -->
             <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <line x1="50%" y1="20%" x2="10%" y2="50%" stroke="#374151" stroke-width="2" opacity="0.6"/>
-              <line x1="50%" y1="20%" x2="90%" y2="50%" stroke="#374151" stroke-width="2" opacity="0.6"/>
-              <line x1="50%" y1="20%" x2="25%" y2="80%" stroke="#374151" stroke-width="2" opacity="0.6"/>
-              <line x1="50%" y1="20%" x2="75%" y2="80%" stroke="#374151" stroke-width="2" opacity="0.6"/>
+              <line x1="50%" y1="20%" x2="10%" y2="50%" stroke="#334155" stroke-width="2" opacity="0.6"/>
+              <line x1="50%" y1="20%" x2="90%" y2="50%" stroke="#334155" stroke-width="2" opacity="0.6"/>
+              <line x1="50%" y1="20%" x2="25%" y2="80%" stroke="#334155" stroke-width="2" opacity="0.6"/>
+              <line x1="50%" y1="20%" x2="75%" y2="80%" stroke="#334155" stroke-width="2" opacity="0.6"/>
             </svg>
           </div>
         </div>
@@ -189,23 +189,4 @@ const transitBenefits = [
     </div>
   </div>
 
-  <!-- Hosting & Maintenance CTA -->
-  <div class="text-center bg-black rounded-2xl p-12 text-white">
-    <h3 class="text-3xl font-bold mb-4">{t('home.enterprise.cta.title')}</h3>
-    <p class="text-xl mb-8 opacity-90">{t('home.enterprise.cta.subtitle')}</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a 
-        href={createLocalePath("/hosting/")} 
-        class="inline-flex items-center justify-center px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-colors"
-      >
-        {t('home.enterprise.cta.hosting')}
-      </a>
-      <a 
-        href={createLocalePath("/contact/")} 
-        class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-black transition-colors"
-      >
-        {t('home.enterprise.cta.consultation')}
-      </a>
-    </div>
-  </div>
 </div>

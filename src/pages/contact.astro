@@ -19,25 +19,35 @@ const t = useTranslations(Astro.url);
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-      <div>
+      <div class="rounded-2xl border border-gray-200 bg-white/90 p-6 shadow-sm">
         <h2 class="font-medium text-2xl text-gray-800">{t('contact.heading')}</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
           {t('contact.description')}
         </p>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>{t('contact.address')}</span>
+        <div class="mt-6 space-y-3">
+          <div class="flex items-start gap-3 text-gray-700">
+            <Icon class="text-gray-400 w-5 h-5 mt-1" name="uil:map-marker" />
+            <address class="not-italic leading-relaxed">
+              {t('contact.address')}
+            </address>
           </div>
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
-            <a href="mailto:support@astrix.email">support@astrix.email</a>
+          <div class="flex items-center gap-3 text-gray-700">
+            <Icon class="text-gray-400 w-5 h-5" name="uil:envelope" />
+            <a class="hover:text-gray-900" href="mailto:support@astrix.email">support@astrix.email</a>
+          </div>
+          <div>
+            <a
+              href="mailto:support@astrix.email"
+              class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
+            >
+              {t('contact.emailButton')}
+            </a>
           </div>
         </div>
       </div>
-      <div class="h-96 rounded-lg overflow-hidden">
+      <div class="h-96 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6480.116073847961!2d139.8013289!3d35.7001894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ecd2c991d17%3A0x397b8b938d42078f!2zSmFwYW4sIOOAkjEzMC0wMDExIFRva3lvLCBTdW1pZGEgQ2l0eSwgSXNoaXdhcmEsIDItY2jFjW1l4oiSMTPiiJIxIOeUsOS4reODk-ODqw!5e0!3m2!1sen!2sus!4v1740983800908!5m2!1sen!2sus"
+          src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E7%99%BE%E4%BA%BA%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%95%EF%BC%8D%EF%BC%94%E5%9C%9F%E5%B1%8B%E3%83%93%E3%83%AB%EF%BC%92%E9%9A%8E%EF%BC%AC%EF%BC%A9%EF%BC%AE%EF%BC%AB%EF%BC%B3%EF%BD%90%EF%BD%85%EF%BD%83%EF%BD%85%EF%BC%8B&z=16&output=embed"
           width="100%"
           height="100%"
           style="border:0;"

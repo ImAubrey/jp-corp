@@ -2,6 +2,7 @@
 nav:
   home: Home
   hosting: Hosting
+  dataCenters: Data Centers
   ipTransit: IP Transit
   broadband: Broadband
   timeline: Timeline
@@ -18,6 +19,14 @@ timeline:
   milestonesDescription: Astrix has grown steadily since its founding, continuously improving our network infrastructure and expanding our service offerings to better serve our clients.
   ctaButton: Join Us on Our Journey
   events:
+    event9:
+      date: December 2025
+      title: TY8 Node Live
+      description: Brought the Equinix TY8 node online in Tokyo to expand Japan coverage and interconnect options.
+    event10:
+      date: October 2025
+      title: Guangzhou–Hong Kong IEPL Online
+      description: Integrated the Guangzhou (Mainland China) to Hong Kong IEPL circuit to boost cross-border stability and low latency.
     event1:
       date: January 1, 2025
       title: New Year Celebration
@@ -57,8 +66,9 @@ contact:
   subtitle: Let's Connect
   heading: Reach Out to Astrix
   description: We're here to answer your questions and discuss how our services can help your business grow. As a new company, we value every conversation.
-  address: 2-13-1 Ishiwara, Sumida-ku, Tokyo, Japan
+  address: 東京都新宿区百人町２丁目５－４土屋ビル２階ＬＩＮＫＳｐｅｃｅ＋
   phone: +1 (562) 2139 670
+  emailButton: Email Us
   
 # Hosting page
 hosting:
@@ -88,23 +98,149 @@ hosting:
     ddos: Basic DDoS protection
     reboot: Remote reboot capability
 
+# Data Centers page
+dataCenters:
+  title: Data Centers
+  hero:
+    kicker: Data Center Footprint
+    title: Regional data centers across premium campuses
+    description: We operate across Equinix TY8, TY1, and HK2, plus HK COLO facilities to cover Tokyo and Hong Kong deployments.
+    contactCta: Talk to Our Team
+    servicesCta: View Hosting
+    liveBadge: Live Sites
+    statusNote: Includes Equinix and HK COLO facilities currently in service.
+    globeCaption: Live footprint across Tokyo and Hong Kong.
+  locations:
+    kicker: Active Facilities
+    title: Current Locations
+    description: A mix of Equinix and HK COLO facilities anchor our infrastructure across Japan and Hong Kong.
+    providerLabel: Provider
+    cityLabel: City
+    regionLabel: Region
+    statusLabel: Status
+    statusValue: Live
+    cards:
+      ty8:
+        name: Equinix TY8
+        city: Tokyo
+        region: Japan
+        summary: Tokyo campus node for our infrastructure.
+      ty1:
+        name: Equinix TY1
+        city: Tokyo
+        region: Japan
+        summary: Second Tokyo campus node.
+      hk2:
+        name: Equinix HK2
+        city: Hong Kong
+        region: Hong Kong SAR
+        summary: Hong Kong campus node.
+      hkcolo:
+        name: HK COLO
+        city: Hong Kong
+        region: Hong Kong SAR
+        summary: Additional Hong Kong colocation facility.
+  footprint:
+    title: Regional Footprint
+    description: A quick snapshot of how our sites map to key markets.
+    japan:
+      name: Japan
+      campuses: TY8 / TY1
+      description: Tokyo campuses supporting Japan deployments.
+    hongkong:
+      name: Hong Kong
+      campuses: HK2 / HK COLO
+      description: Hong Kong presence for regional workloads.
+  principles:
+    title: Operational Focus
+    description: What we prioritize in facility selection and operations.
+    reliability:
+      title: Reliability First
+      description: Careful change management and operational discipline.
+    interconnect:
+      title: Interconnection Options
+      description: Facilities chosen for ecosystem access and flexibility.
+    support:
+      title: Remote Hands Support
+      description: 24/7 remote hands coverage with on-site arrival as fast as 30 minutes.
+  cta:
+    title: Planning a deployment in Tokyo or Hong Kong?
+    description: Tell us your requirements and we will recommend the right site.
+    button: Contact Us
+
 # IP Transit page
 ipTransit:
   title: IP Transit Services
   subtitle: Bring Your Own IP (BYOIP) Announcement Services
   benefitsTitle: Benefits of BYOIP
-  benefitsDescription: Using your own IP addresses with our announcement services offers several advantages for businesses that need flexible network resources.
+  benefitsDescription: Keep ownership of your prefixes while gaining dependable global reach. Our announcement service improves route stability, enables BGP traffic steering, protects IP reputation from collateral abuse, and keeps costs predictable without long leases.
   benefits:
     cost:
       title: Cost Effective
-      description: Lower cost compared to leasing IP addresses from our service.
+      description: Avoid long-term IP leasing and pay only for announcements and upkeep as you scale.
     management:
       title: Professional Management
-      description: We help manage and position your announced IP prefixes for optimal performance.
+      description: 24/7 monitoring, IRR validation, and careful prefix hygiene for clean routing.
     control:
       title: Resource Control
-      description: Maintain full control over your own IP resources.
+      description: Keep portability, adjust announcements by region, and retain full ownership.
+    routing:
+      title: Custom BGP Routing
+      description: Influence paths, balance upstreams, and optimize latency with your own policy.
+    reputation:
+      title: Cleaner IP Reputation
+      description: Reduce collateral abuse restrictions by staying off shared IP pools.
+  networkTitle: Network & Routing Capabilities
+  networkDescription: Announce IPv4/IPv6 prefixes with clean filtering and policy support. BYOIP transit is ideal for carriers, SaaS platforms, and enterprises that need deterministic routing and reputation control.
+  networkNote: Ask for region-specific routing, community guidance, and capacity planning tailored to your traffic.
+  networkLinks:
+    dataCenters: View data center footprint
+    pricing: See pricing overview
+  networkStats:
+    reach:
+      label: Reach
+      value: Multi-upstream coverage
+    routing:
+      label: Routing
+      value: Custom BGP policies
+    monitoring:
+      label: Monitoring
+      value: 24/7 NOC visibility
+    availability:
+      label: Stability
+      value: Consistent global reach
+  capabilities:
+    items:
+      policy:
+        title: Policy control
+        description: Use communities and prepends to steer traffic by region or upstream.
+      redundancy:
+        title: Multi-upstream resilience
+        description: Diverse upstreams improve reachability and reduce congestion.
+      ipv6:
+        title: IPv4 + IPv6 ready
+        description: Support for dual-stack announcements to future-proof your network.
+      security:
+        title: Prefix hygiene
+        description: IRR checks and clean filtering protect your route reputation.
+  onboardingTitle: Onboarding & Routing Workflow
+  onboardingDescription: A clear process that keeps your announcements safe, predictable, and auditable.
+  onboarding:
+    steps:
+      step1:
+        title: Share ASN & prefixes
+        description: Provide ASN, prefixes, and LoA; we validate IRR and filters.
+      step2:
+        title: Policy alignment
+        description: Define communities, prepends, and failover preferences.
+      step3:
+        title: Announcement & validation
+        description: We announce routes and verify global propagation.
+      step4:
+        title: Operate & optimize
+        description: Continuous monitoring with adjustments as your traffic changes.
   servicesTitle: IP Announcement Services & Pricing
+  servicesDescription: Transparent setup and monthly fees with clear scope. Pricing is per prefix and scales with your network.
   table:
     service: Service
     details: Details
@@ -127,6 +263,7 @@ ipTransit:
       price: Free
       notes: " "
   abuseTitle: Abuse Handling Policy
+  abuseToggleHint: Click to expand abuse fees and examples.
   abuseDescription: If an IP address announced through our network is reported for abuse, there will be an abuse report handling fee. For each calendar month, each IP address can incur a maximum of one fee per abuse category.
   abuseTable:
     category: Abuse Category
@@ -177,6 +314,83 @@ ipTransit:
       description: An IP address receives 20 "Copyright Infringement" reports and 4 "Spam" reports in one month. All 4 Spam reports were copied to the IP owner, incurring a $24 USD fee. The Copyright reports incur a $2 USD fee, totaling $26 USD.
   encouragement: We encourage customers to resolve abuse issues promptly. If the same IP receives abuse reports in the following calendar month, the handling fees will be calculated again.
   contactCta: Contact Us for IP Transit Services
+  useCasesTitle: Common BYOIP Use Cases
+  useCasesDescription: Designed for teams that need ownership, routing control, and predictable costs.
+  useCases:
+    isp:
+      title: ISP and carrier networks
+      description: Maintain IP ownership while improving routing control across upstreams.
+    hosting:
+      title: Hosting & cloud platforms
+      description: Announce customer prefixes cleanly without shared IP reputation risk.
+    enterprise:
+      title: Enterprise multi-region networks
+      description: Keep a single IP identity across regions and providers.
+    content:
+      title: Content delivery & realtime apps
+      description: Optimize latency by steering traffic toward regional edges.
+  faqTitle: IP Transit FAQ
+  faqDescription: Answers to the most common BYOIP and routing questions.
+  faq:
+    items:
+      q1:
+        question: Do you support IPv6?
+        answer: Yes. We announce IPv4 /24 and IPv6 /32 prefixes with the same policy controls.
+      q2:
+        question: Can I set BGP communities or custom routing policies?
+        answer: Yes. We can align communities, prepends, and routing preferences to your requirements.
+      q3:
+        question: What does the setup process look like?
+        answer: After LoA and IRR validation, we announce your routes and confirm propagation with you.
+      q4:
+        question: Is geolocation assistance included?
+        answer: Yes. Prefix geolocation updates are included at no cost upon request.
+  finalCta:
+    title: Ready to announce your prefixes?
+    description: Tell us your ASN, prefix list, and target regions. We will design a routing plan that fits your traffic.
+    primary: Contact our team
+    secondary: View pricing overview
+
+# Transit pricing intro page
+transitPricing:
+  title: Transit Pricing Overview
+  subtitle: A quick introduction to how IP transit pricing works.
+  hero:
+    badge: Transparent pricing
+    title: IP Transit Pricing, Simplified
+    description: Predictable setup and monthly costs for BYOIP announcements, with clear policy coverage.
+    primaryCta: View Full Transit Details
+    secondaryCta: Contact Sales
+  snapshot:
+    title: Pricing Snapshot
+    setupNote: One-time per LoA batch
+    maintenanceNote: Per prefix, per month
+    geolocationNote: Free on request
+  pillars:
+    title: How Pricing Works
+    subtitle: Built for predictable budgeting and clear operations.
+    item1:
+      title: BYOIP first
+      description: You keep ownership of your prefixes; we manage announcements.
+    item2:
+      title: Monthly clarity
+      description: Per-prefix billing makes planning and scaling straightforward.
+    item3:
+      title: Policy-driven fees
+      description: Abuse handling is documented with clear monthly limits.
+  rules:
+    title: Pricing Rules at a Glance
+    item1: Setup is billed once per LoA batch.
+    item2: Maintenance is billed per prefix (/24 or /32) each month.
+    item3: Abuse handling fees apply at most once per category per month.
+  policy:
+    title: Abuse Handling Policy
+    description: Review the full policy, fee table, and real examples.
+    cta: Read the policy details
+  cta:
+    title: Need a tailored quote?
+    description: Share your prefixes and target regions for a custom plan.
+    button: Talk to an engineer
 
 # Broadband page
 broadband:
@@ -426,6 +640,26 @@ home:
       subtitle: Let our experts design a solution that meets your specific requirements
       hosting: Explore Hosting
       consultation: Schedule Consultation
+  services:
+    title: End-to-End Delivery & Operations
+    subtitle: From requirements and procurement to deployment and day-to-day ops, we cover the full lifecycle.
+    ops:
+      title: Dedicated Operations Team
+      description: 24/7 monitoring, incident response, and routine maintenance to keep services stable.
+    procurement:
+      title: One-Stop Hardware Procurement
+      description: Sourcing, pricing, and acceptance inspection with full visibility.
+    deployment:
+      title: Rack, Cabling & Deployment
+      description: Rack installation, cabling, system install, and initial configuration.
+    spare:
+      title: Spares & Lifecycle Management
+      description: Spare parts, replacements, asset tracking, and refresh planning.
+    highlights:
+      response: 24/7 SLA response
+      delivery: Procure -> deliver -> deploy
+      onsite: Remote + on-site execution
+    cta: Talk to Our Ops Team
   solutions:
     title: T1-Powered Internet & Data Center Solutions
     description: Offering enterprise-grade ISP and IDC services with direct T1 connections designed for growing businesses, combining high-speed interconnections with the personal attention and flexibility that only a new, dedicated team can provide.

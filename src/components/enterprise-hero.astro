@@ -45,17 +45,19 @@ const enterpriseServices = [
   <div class="py-6 md:order-1 hidden md:block">
     <div class="relative">
       <!-- Enterprise infrastructure illustration -->
-      <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 w-96 h-96 flex items-center justify-center">
+      <div class="absolute -top-8 -left-10 h-28 w-28 rounded-full bg-sky-300/40 blur-3xl glow"></div>
+      <div class="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-emerald-300/30 blur-3xl glow"></div>
+      <div class="glass-panel rounded-3xl p-8 w-96 h-96 flex items-center justify-center relative overflow-hidden floaty">
         <!-- Infrastructure grid -->
         <div class="grid grid-cols-3 gap-6 items-center">
           <!-- Top row -->
-          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
             <Icon name="bx:bx-world" class="text-white w-6 h-6" />
           </div>
-          <div class="bg-black rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+          <div class="bg-slate-900 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
             <Icon name="bx:bx-cloud" class="text-white w-6 h-6" />
           </div>
-          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
             <Icon name="bx:bx-network-chart" class="text-white w-6 h-6" />
           </div>
           
@@ -65,7 +67,7 @@ const enterpriseServices = [
           <div class="h-4"></div>
           
           <!-- Center server -->
-          <div class="bg-black rounded-xl p-4 shadow-lg col-span-3 flex justify-center">
+          <div class="bg-slate-900 rounded-2xl p-4 shadow-lg col-span-3 flex justify-center">
             <Icon name="bx:bx-server" class="text-white w-12 h-12" />
           </div>
           
@@ -75,22 +77,22 @@ const enterpriseServices = [
           <div class="h-4"></div>
           
           <!-- Bottom row -->
-          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
             <Icon name="bx:bx-shield" class="text-white w-6 h-6" />
           </div>
-          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
             <Icon name="bx:bx-wrench" class="text-white w-6 h-6" />
           </div>
-          <div class="bg-gray-700 rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow">
+          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
             <Icon name="bx:bx-support" class="text-white w-6 h-6" />
           </div>
         </div>
         
         <!-- Status indicators -->
-        <div class="absolute top-4 right-4 bg-black text-white text-xs px-3 py-1 rounded-full font-medium">
+        <div class="absolute top-4 right-4 glass-chip text-slate-700 text-xs px-3 py-1 rounded-full font-semibold">
           Enterprise Ready
         </div>
-        <div class="absolute bottom-4 left-4 bg-gray-800 text-white text-xs px-3 py-1 rounded-full font-medium">
+        <div class="absolute bottom-4 left-4 glass-chip text-slate-700 text-xs px-3 py-1 rounded-full font-semibold">
           24/7 Support
         </div>
       </div>
@@ -98,22 +100,22 @@ const enterpriseServices = [
   </div>
   
   <div>
-    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-black">
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-slate-900">
       {t('home.enterprise.hero.title')}
     </h1>
-    <p class="text-lg mt-4 text-gray-700 max-w-xl">
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
       {t('home.enterprise.hero.subtitle')}
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <a
         href={createLocalePath("/contact/")}
-        class="flex gap-1 items-center justify-center bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium">
+        class="flex gap-1 items-center justify-center bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-800 transition-all font-medium shadow-lg shadow-slate-900/20">
         <Icon class="text-white w-5 h-5" name="bx:bx-message-dots" />
         {t('home.enterprise.hero.primaryCta')}
       </a>
       <a
         href={createLocalePath("/ip-transit/")}
-        class="flex gap-1 items-center justify-center border-2 border-black text-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition-colors font-medium">
+        class="flex gap-1 items-center justify-center glass-chip text-slate-700 px-6 py-3 rounded-full hover:text-slate-900 transition-all font-medium">
         <Icon class="w-5 h-5" name="bx:bx-network-chart" />
         {t('home.enterprise.hero.secondaryCta')}
       </a>
@@ -124,10 +126,10 @@ const enterpriseServices = [
 <!-- Services Preview Section -->
 <div class="mt-16">
   <div class="text-center mb-12">
-    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-black">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-slate-900">
       {t('home.enterprise.services.title')}
     </h2>
-    <p class="text-xl mt-4 text-gray-700 max-w-3xl mx-auto">
+    <p class="text-xl mt-4 text-slate-600 max-w-3xl mx-auto">
       {t('home.enterprise.services.subtitle')}
     </p>
   </div>
@@ -135,19 +137,19 @@ const enterpriseServices = [
   <div class="grid md:grid-cols-3 gap-8">
     {
       enterpriseServices.map((service) => (
-        <div class="p-6 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <div class="glass-card lift rounded-2xl p-6">
           <div class="flex gap-4 items-start">
-            <div class="mt-1 bg-black rounded-full p-3 w-12 h-12 shrink-0">
+            <div class="mt-1 bg-slate-900 rounded-full p-3 w-12 h-12 shrink-0 shadow-lg shadow-slate-900/20">
               <Icon class="text-white w-6 h-6" name={service.icon} />
             </div>
             <div class="flex-1">
-              <h3 class="font-semibold text-xl text-black mb-2">{t(service.nameKey)}</h3>
-              <p class="text-gray-700 mb-3 leading-relaxed">{t(service.descriptionKey)}</p>
+              <h3 class="font-semibold text-xl text-slate-900 mb-2">{t(service.nameKey)}</h3>
+              <p class="text-slate-600 mb-3 leading-relaxed">{t(service.descriptionKey)}</p>
               <div class="flex items-center justify-between">
-                <span class="text-lg font-bold text-black">{t(service.priceKey)}</span>
+                <span class="text-lg font-bold text-slate-900">{t(service.priceKey)}</span>
                 <a 
                   href={createLocalePath(service.path)} 
-                  class="inline-flex items-center space-x-1 text-black hover:text-gray-700 font-medium"
+                  class="inline-flex items-center space-x-1 text-slate-900 hover:text-slate-600 font-medium"
                 >
                   <span>{t('home.enterprise.services.learnMore')}</span>
                   <Icon name="bx:bx-right-arrow-alt" class="w-4 h-4" />

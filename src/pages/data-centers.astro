@@ -1,0 +1,477 @@
+---
+import Container from "../components/container.astro";
+import Layout from "../layouts/Layout.astro";
+import { getLocale } from "astro-i18n-aut";
+import { useTranslations } from "../utils/i18n";
+
+const locale = getLocale(Astro.url);
+const t = useTranslations(Astro.url);
+
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
+
+const locations = [
+  {
+    code: "TY8",
+    nameKey: "dataCenters.locations.cards.ty8.name",
+    cityKey: "dataCenters.locations.cards.ty8.city",
+    regionKey: "dataCenters.locations.cards.ty8.region",
+    summaryKey: "dataCenters.locations.cards.ty8.summary",
+    provider: "Equinix",
+    accent: "#f2c4a4",
+  },
+  {
+    code: "TY1",
+    nameKey: "dataCenters.locations.cards.ty1.name",
+    cityKey: "dataCenters.locations.cards.ty1.city",
+    regionKey: "dataCenters.locations.cards.ty1.region",
+    summaryKey: "dataCenters.locations.cards.ty1.summary",
+    provider: "Equinix",
+    accent: "#a9c5f2",
+  },
+  {
+    code: "HK2",
+    nameKey: "dataCenters.locations.cards.hk2.name",
+    cityKey: "dataCenters.locations.cards.hk2.city",
+    regionKey: "dataCenters.locations.cards.hk2.region",
+    summaryKey: "dataCenters.locations.cards.hk2.summary",
+    provider: "Equinix",
+    accent: "#97d6c0",
+  },
+  {
+    code: "HK COLO",
+    nameKey: "dataCenters.locations.cards.hkcolo.name",
+    cityKey: "dataCenters.locations.cards.hkcolo.city",
+    regionKey: "dataCenters.locations.cards.hkcolo.region",
+    summaryKey: "dataCenters.locations.cards.hkcolo.summary",
+    provider: "HK COLO",
+    accent: "#f4b184",
+  },
+];
+
+const footprints = [
+  {
+    nameKey: "dataCenters.footprint.japan.name",
+    campusesKey: "dataCenters.footprint.japan.campuses",
+    descriptionKey: "dataCenters.footprint.japan.description",
+  },
+  {
+    nameKey: "dataCenters.footprint.hongkong.name",
+    campusesKey: "dataCenters.footprint.hongkong.campuses",
+    descriptionKey: "dataCenters.footprint.hongkong.description",
+  },
+];
+
+const principles = [
+  {
+    titleKey: "dataCenters.principles.reliability.title",
+    descriptionKey: "dataCenters.principles.reliability.description",
+  },
+  {
+    titleKey: "dataCenters.principles.interconnect.title",
+    descriptionKey: "dataCenters.principles.interconnect.description",
+  },
+  {
+    titleKey: "dataCenters.principles.support.title",
+    descriptionKey: "dataCenters.principles.support.description",
+  },
+];
+---
+
+<Layout title={t("dataCenters.title")}>
+  <div class="data-centers">
+    <section class="dc-hero relative overflow-hidden">
+      <div class="dc-hero__glow"></div>
+      <div class="dc-hero__grid"></div>
+      <Container>
+        <div class="relative z-10 grid items-center gap-10 py-16 md:grid-cols-[1.15fr_0.85fr] md:py-20">
+          <div class="dc-reveal dc-reveal--1">
+            <span class="text-xs uppercase tracking-[0.3em] text-slate-500">
+              {t("dataCenters.hero.kicker")}
+            </span>
+            <h1 class="mt-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
+              {t("dataCenters.hero.title")}
+            </h1>
+            <p class="mt-5 text-lg text-slate-600">
+              {t("dataCenters.hero.description")}
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              {locations.map((location) => (
+                <span class="dc-pill">{location.code} / {t(location.cityKey)}</span>
+              ))}
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a
+                href={createLocalePath("/contact")}
+                class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-slate-800"
+              >
+                {t("dataCenters.hero.contactCta")}
+              </a>
+              <a
+                href={createLocalePath("/hosting")}
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:text-slate-900"
+              >
+                {t("dataCenters.hero.servicesCta")}
+              </a>
+            </div>
+          </div>
+          <div class="dc-reveal dc-reveal--2">
+            <div class="space-y-6">
+              <div class="dc-card">
+                <div class="flex items-center justify-between">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-500">
+                    {t("dataCenters.hero.liveBadge")}
+                  </p>
+                  <span class="dc-badge">{locations.length}</span>
+                </div>
+                <div class="relative mt-6 space-y-4">
+                  <div class="absolute left-2 top-3 bottom-3 w-px" style="background: var(--dc-line);"></div>
+                  {locations.map((location) => (
+                    <div class="relative flex gap-3">
+                      <span class="dc-dot"></span>
+                      <div>
+                        <p class="text-sm font-semibold text-slate-900">
+                          {t(location.nameKey)}
+                        </p>
+                        <p class="text-sm text-slate-500">
+                          {t(location.cityKey)}, {t(location.regionKey)}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p class="mt-6 text-sm text-slate-600">
+                  {t("dataCenters.hero.statusNote")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <Container>
+        <div class="dc-section-head dc-reveal dc-reveal--1">
+          <p class="text-xs uppercase tracking-[0.3em] text-slate-500">
+            {t("dataCenters.locations.kicker")}
+          </p>
+          <h2 class="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
+            {t("dataCenters.locations.title")}
+          </h2>
+          <p class="mt-4 max-w-2xl text-lg text-slate-600">
+            {t("dataCenters.locations.description")}
+          </p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          {locations.map((location, index) => (
+            <div
+              class="dc-location-card p-6 dc-reveal"
+              style={`animation-delay: ${0.1 + index * 0.1}s;`}
+            >
+              <div class="dc-location-accent" style={`--dc-accent: ${location.accent};`}></div>
+              <div class="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-slate-400">
+                <span>{t("dataCenters.locations.providerLabel")}</span>
+                <span>{location.provider}</span>
+              </div>
+              <h3 class="mt-4 text-xl font-semibold text-slate-900">
+                {t(location.nameKey)}
+              </h3>
+              <p class="mt-2 text-sm text-slate-600">
+                {t(location.summaryKey)}
+              </p>
+              <div class="mt-6 space-y-2 text-sm text-slate-600">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-[0.2em] text-slate-400">
+                    {t("dataCenters.locations.cityLabel")}
+                  </span>
+                  <span class="font-medium text-slate-700">{t(location.cityKey)}</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-[0.2em] text-slate-400">
+                    {t("dataCenters.locations.regionLabel")}
+                  </span>
+                  <span class="font-medium text-slate-700">{t(location.regionKey)}</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-[0.2em] text-slate-400">
+                    {t("dataCenters.locations.statusLabel")}
+                  </span>
+                  <span class="font-medium text-emerald-700">
+                    {t("dataCenters.locations.statusValue")}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <Container>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div class="dc-panel p-6 md:p-8 dc-reveal dc-reveal--1">
+            <h2 class="text-2xl font-bold text-slate-900 md:text-3xl">
+              {t("dataCenters.footprint.title")}
+            </h2>
+            <p class="mt-3 text-lg text-slate-600">
+              {t("dataCenters.footprint.description")}
+            </p>
+            <div class="mt-6 space-y-4">
+              {footprints.map((footprint) => (
+                <div class="flex items-start justify-between gap-4 rounded-xl border border-slate-200 bg-white/80 p-4">
+                  <div>
+                    <p class="text-base font-semibold text-slate-900">{t(footprint.nameKey)}</p>
+                    <p class="mt-1 text-sm text-slate-600">{t(footprint.descriptionKey)}</p>
+                  </div>
+                  <span class="dc-chip">{t(footprint.campusesKey)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="dc-panel p-6 md:p-8 dc-reveal dc-reveal--2">
+            <h2 class="text-2xl font-bold text-slate-900 md:text-3xl">
+              {t("dataCenters.principles.title")}
+            </h2>
+            <p class="mt-3 text-lg text-slate-600">
+              {t("dataCenters.principles.description")}
+            </p>
+            <div class="mt-6 space-y-4">
+              {principles.map((principle) => (
+                <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white/80 p-4">
+                  <span class="dc-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <div>
+                    <p class="text-base font-semibold text-slate-900">{t(principle.titleKey)}</p>
+                    <p class="mt-1 text-sm text-slate-600">{t(principle.descriptionKey)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <section class="py-16 md:py-20">
+      <Container>
+        <div class="dc-cta p-8 md:p-12 dc-reveal dc-reveal--1">
+          <div class="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 class="text-3xl font-bold text-white">{t("dataCenters.cta.title")}</h2>
+              <p class="mt-3 text-lg text-slate-200">{t("dataCenters.cta.description")}</p>
+            </div>
+            <a
+              href={createLocalePath("/contact")}
+              class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-slate-100"
+            >
+              {t("dataCenters.cta.button")}
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .data-centers {
+    --dc-ink: #0f172a;
+    --dc-mist: #f8f3ea;
+    --dc-sky: #e5f4ff;
+    --dc-ember: rgba(242, 196, 164, 0.45);
+    --dc-lagoon: rgba(14, 116, 144, 0.18);
+    --dc-glow: rgba(56, 189, 248, 0.18);
+    --dc-line: rgba(15, 23, 42, 0.12);
+  }
+
+  .data-centers .dc-hero {
+    background: linear-gradient(135deg, var(--dc-mist) 0%, #ffffff 45%, var(--dc-sky) 100%);
+  }
+
+  .data-centers .dc-hero__glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 12% 18%, var(--dc-ember), transparent 45%),
+      radial-gradient(circle at 88% 10%, var(--dc-lagoon), transparent 45%),
+      radial-gradient(circle at 90% 78%, var(--dc-glow), transparent 40%);
+    pointer-events: none;
+  }
+
+  .data-centers .dc-hero__grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.08) 1px, transparent 0);
+    background-size: 18px 18px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .data-centers .dc-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.15);
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .data-centers .dc-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .data-centers .dc-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 999px;
+    background: var(--dc-ink);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .data-centers .dc-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    margin-top: 0.45rem;
+    border-radius: 999px;
+    background: var(--dc-ink);
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.08);
+    z-index: 1;
+  }
+
+
+  .data-centers .dc-location-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 1.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.92));
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
+  }
+
+  .data-centers .dc-location-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(15, 23, 42, 0.06), transparent 45%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .data-centers .dc-location-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .data-centers .dc-location-accent {
+    width: 3rem;
+    height: 0.35rem;
+    border-radius: 999px;
+    background: var(--dc-accent);
+  }
+
+  .data-centers .dc-panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 1.75rem;
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.95), rgba(245, 247, 255, 0.8));
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+  }
+
+  .data-centers .dc-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: var(--dc-ink);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .data-centers .dc-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.75rem;
+    background: var(--dc-ink);
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .data-centers .dc-cta {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 45%, #0f766e 100%);
+  }
+
+  .data-centers .dc-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.25), transparent 50%),
+      radial-gradient(circle at 85% 80%, rgba(244, 177, 128, 0.22), transparent 45%);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .data-centers .dc-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: dc-reveal 0.85s ease forwards;
+  }
+
+  .data-centers .dc-reveal--2 {
+    animation-delay: 0.15s;
+  }
+
+  .data-centers .dc-reveal--3 {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes dc-reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .data-centers .dc-reveal {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
