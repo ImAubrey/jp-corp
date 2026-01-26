@@ -2,6 +2,7 @@
 nav:
   home: ホーム
   hosting: ホスティング
+  dataCenters: データセンター
   ipTransit: IP通信
   broadband: 家庭用ブロードバンド
   timeline: タイムライン
@@ -152,6 +153,26 @@ home:
       subtitle: お客様の特定の要件を満たすソリューションを当社の専門家が設計します
       hosting: ホスティングを探索
       consultation: 相談をスケジュール
+  services:
+    title: ワンストップの導入・運用体制
+    subtitle: 要件整理から調達、導入、日常運用まで一貫して支援します
+    ops:
+      title: 運用チーム
+      description: 24時間365日監視、障害対応、定期メンテナンスで安定運用を支援。
+    procurement:
+      title: ハードウェア調達ワンストップ
+      description: 要件に合わせた選定・調達・受入検査を可視化。
+    deployment:
+      title: ラック設置・配線・導入
+      description: ラック搭載、配線整理、OS導入と初期設定。
+    spare:
+      title: 予備部品とライフサイクル管理
+      description: 予備部品の確保、交換対応、資産台帳と更新計画。
+    highlights:
+      response: 24/7 SLA対応
+      delivery: 調達→納品→導入
+      onsite: リモート + 現地対応
+    cta: 運用相談
   solutions:
     title: T1パワードインターネット＆データセンターソリューション
     description: 成長中のビジネスのために設計された直接T1接続を備えた企業グレードのISPおよびIDCサービスを提供し、高速相互接続と新しい専任チームだけが提供できる個人的な注意と柔軟性を組み合わせています。
@@ -187,6 +208,14 @@ timeline:
   milestonesDescription: Astrixは設立以来、着実に成長を続け、ネットワークインフラを継続的に改善し、サービス提供を拡大してお客様により良いサービスを提供しています。
   ctaButton: 私たちの旅に参加しましょう
   events:
+    event9:
+      date: 2025年12月
+      title: TY8ノード開通
+      description: 東京でEquinix TY8ノードを稼働開始し、日本拠点のカバレッジと相互接続を拡充しました。
+    event10:
+      date: 2025年10月
+      title: 広州〜香港IEPL接続
+      description: 中国本土・広州から香港までのIEPL回線を接続し、越境通信の安定性と低遅延を強化しました。
     event1:
       date: 2025年1月1日
       title: 新年のお祝い
@@ -226,8 +255,9 @@ contact:
   subtitle: ご連絡ください
   heading: Astrixへのお問い合わせ
   description: お客様のご質問にお答えし、当社のサービスがビジネスの成長にどのように役立つかについてご説明します。新しい会社として、すべての対話を大切にしています。
-  address: 〒130-0011 東京都墨田区石原2-13-1
+  address: 東京都新宿区百人町２丁目５－４土屋ビル２階ＬＩＮＫＳｐｅｃｅ＋
   phone: +1 (562) 2139 670
+  emailButton: メールで問い合わせる
 
 # Hosting page
 hosting:
@@ -257,23 +287,149 @@ hosting:
     ddos: 基本的なDDoS保護
     reboot: リモートリブート機能
 
+# Data Centers page
+dataCenters:
+  title: データセンター
+  hero:
+    kicker: データセンター拠点
+    title: プレミアムキャンパスに広がる地域データセンター
+    description: 現在、Equinix TY8・TY1・HK2に加え、香港のHK COLO施設でも運用しています。東京と香港の展開を支えます。
+    contactCta: お問い合わせ
+    servicesCta: ホスティングを見る
+    liveBadge: 稼働中拠点
+    statusNote: EquinixとHK COLOの拠点が稼働中です。
+    globeCaption: 東京・香港の稼働拠点を可視化。
+  locations:
+    kicker: 稼働中の施設
+    title: 現在のロケーション
+    description: EquinixとHK COLOの拠点で日本と香港をカバーしています。
+    providerLabel: 運営元
+    cityLabel: 都市
+    regionLabel: 地域
+    statusLabel: ステータス
+    statusValue: 稼働中
+    cards:
+      ty8:
+        name: Equinix TY8
+        city: 東京
+        region: 日本
+        summary: 東京の拠点の一つ。
+      ty1:
+        name: Equinix TY1
+        city: 東京
+        region: 日本
+        summary: 東京のもう一つの拠点。
+      hk2:
+        name: Equinix HK2
+        city: 香港
+        region: 香港
+        summary: 香港エリアの拠点。
+      hkcolo:
+        name: HK COLO
+        city: 香港
+        region: 香港
+        summary: 香港の追加コロケーション拠点。
+  footprint:
+    title: 地域フットプリント
+    description: 主要市場への配置をひと目で。
+    japan:
+      name: 日本
+      campuses: TY8 / TY1
+      description: 日本向け展開を支える東京拠点。
+    hongkong:
+      name: 香港
+      campuses: HK2 / HK COLO
+      description: 香港向け展開を支える拠点。
+  principles:
+    title: 運用方針
+    description: 拠点選定と運用で重視していること。
+    reliability:
+      title: 安定運用
+      description: 慎重な変更管理と運用規律。
+    interconnect:
+      title: 接続性の選択肢
+      description: エコシステムにアクセスしやすい施設を選定。
+    support:
+      title: オンサイト連携
+      description: 明確なメンテナンス告知と迅速な対応。
+  cta:
+    title: 東京または香港での展開をご検討ですか？
+    description: 要件を共有いただければ最適な拠点をご提案します。
+    button: お問い合わせ
+
 # IP Transit page
 ipTransit:
   title: IP通信サービス
   subtitle: 自己所有IP（BYOIP）アナウンスサービス
   benefitsTitle: BYOIPの利点
-  benefitsDescription: 当社のアナウンスサービスで自己所有IPアドレスを使用することで、柔軟なネットワークリソースを必要とする企業に様々な利点を提供します。
+  benefitsDescription: プレフィックスの所有権を維持したまま、安定したグローバル到達性を実現します。BGPの経路制御やIP評価の保全、長期リースに縛られない明確なコストで運用できます。
   benefits:
     cost:
       title: コスト効率
-      description: 当社サービスからIPアドレスをリースする場合と比較して低コスト。
+      description: 長期リースを避け、アナウンスと保守にだけ支払う運用へ。
     management:
       title: プロフェッショナルな管理
-      description: 最適なパフォーマンスを得るため、アナウンスされたIPプレフィックスの管理と配置をサポートします。
+      description: 24/7監視、IRR検証、プレフィックスの衛生管理で安定運用。
     control:
       title: リソース制御
-      description: 自社のIPリソースを完全に管理できます。
+      description: 地域ごとのアナウンス調整や可搬性を保った運用が可能。
+    routing:
+      title: BGP経路の最適化
+      description: 自社ポリシーで経路を選択し、遅延や冗長性を最適化。
+    reputation:
+      title: IP評価の保全
+      description: 共有IPに起因する不正利用の巻き添え制限を低減。
+  networkTitle: ネットワークとルーティング能力
+  networkDescription: IPv4/IPv6プレフィックスをクリーンなフィルタとポリシーでアナウンス。BYOIPはキャリア、SaaS、エンタープライズの決定的なルーティングと評価管理に最適です。
+  networkNote: 地域別ルーティングやコミュニティ、容量計画はご相談ください。
+  networkLinks:
+    dataCenters: データセンターを見る
+    pricing: 料金概要を見る
+  networkStats:
+    reach:
+      label: 到達性
+      value: 複数上流カバレッジ
+    routing:
+      label: ルーティング
+      value: カスタムBGPポリシー
+    monitoring:
+      label: 監視
+      value: 24/7 NOC
+    availability:
+      label: 安定性
+      value: グローバル到達性
+  capabilities:
+    items:
+      policy:
+        title: ポリシー制御
+        description: コミュニティやプリペンドで地域/上流を調整。
+      redundancy:
+        title: マルチ上流の冗長性
+        description: 複数上流で到達性を高め、混雑を抑制。
+      ipv6:
+        title: IPv4/IPv6対応
+        description: デュアルスタックのアナウンスをサポート。
+      security:
+        title: プレフィックス衛生
+        description: IRRチェックとフィルタでルート評価を保護。
+  onboardingTitle: 導入とルーティングの流れ
+  onboardingDescription: 安全で予測可能、監査可能なアナウンスのための明確なプロセス。
+  onboarding:
+    steps:
+      step1:
+        title: ASNとプレフィックス共有
+        description: ASN、プレフィックス、LoAを提供いただき、IRRを確認。
+      step2:
+        title: ポリシー調整
+        description: コミュニティ、プリペンド、フェイルオーバーを整理。
+      step3:
+        title: アナウンスと検証
+        description: ルートをアナウンスし、到達性を確認。
+      step4:
+        title: 運用と最適化
+        description: トラフィック変化に合わせて継続的に調整。
   servicesTitle: IPアナウンスサービスと料金
+  servicesDescription: 初期費用と月額費用を明確にし、プレフィックス単位でスケールします。
   table:
     service: サービス
     details: 詳細
@@ -296,6 +452,7 @@ ipTransit:
       price: 無料
       notes: " "
   abuseTitle: 不正利用対応ポリシー
+  abuseToggleHint: 料金表と具体例を表示する
   abuseDescription: 当社のネットワークを通じてアナウンスされたIPアドレスが不正利用として報告された場合、不正利用レポート処理料金が発生します。各暦月において、各IPアドレスは不正利用カテゴリごとに最大1回の料金が発生します。
   abuseTable:
     category: 不正利用カテゴリ
@@ -346,6 +503,83 @@ ipTransit:
       description: 1ヶ月間に1つのIPアドレスが20件の「著作権侵害」レポートと4件の「スパム」レポートを受けた場合。4件全てのスパムレポートがIP所有者に転送され、24米ドルの料金が発生します。著作権レポートには2米ドルの料金が発生し、合計26米ドルとなります。
   encouragement: お客様には不正利用の問題を迅速に解決することをお勧めします。同じIPが翌暦月に不正利用レポートを受けた場合、処理料金は再度計算されます。
   contactCta: IP通信サービスについてお問い合わせ
+  useCasesTitle: BYOIPの代表的な用途
+  useCasesDescription: 所有権・ルーティング制御・明確なコストが必要なチーム向け。
+  useCases:
+    isp:
+      title: ISP・キャリアネットワーク
+      description: IP所有権を維持しながら、上流間のルーティング制御を強化。
+    hosting:
+      title: ホスティング・クラウド
+      description: 共有IPのリスクを避けてプレフィックスをクリーンに運用。
+    enterprise:
+      title: 企業のマルチリージョン網
+      description: 地域やプロバイダーを跨いでも同一IPを維持。
+    content:
+      title: 配信・リアルタイムアプリ
+      description: エッジに誘導して遅延を最適化。
+  faqTitle: IPトランジットFAQ
+  faqDescription: BYOIPやルーティングに関するよくある質問。
+  faq:
+    items:
+      q1:
+        question: IPv6に対応していますか？
+        answer: はい。IPv4 /24 と IPv6 /32 を同様のポリシーでアナウンスします。
+      q2:
+        question: BGPコミュニティや経路ポリシーは指定できますか？
+        answer: はい。コミュニティ、プリペンド、優先経路の調整が可能です。
+      q3:
+        question: セットアップの流れは？
+        answer: LoAとIRRの確認後、アナウンスを実施し伝播を確認します。
+      q4:
+        question: ジオロケーション調整は含まれますか？
+        answer: はい。ご依頼に応じて無料で対応します。
+  finalCta:
+    title: プレフィックスをアナウンスしませんか？
+    description: ASN、プレフィックス、対象地域を共有いただければ最適なルーティングをご提案します。
+    primary: チームに問い合わせる
+    secondary: 料金概要を見る
+
+# Transit pricing intro page
+transitPricing:
+  title: トランジット料金の概要
+  subtitle: IPトランジットの料金体系を簡潔にご紹介します。
+  hero:
+    badge: 透明な料金
+    title: IPトランジット料金をわかりやすく
+    description: BYOIPアナウンスの初期費用と月額費用を明確にし、ポリシーも公開しています。
+    primaryCta: 詳細を見る
+    secondaryCta: お問い合わせ
+  snapshot:
+    title: 料金サマリー
+    setupNote: LoAバッチごとの一回費用
+    maintenanceNote: プレフィックス単位の月額
+    geolocationNote: 依頼時は無料
+  pillars:
+    title: 料金のしくみ
+    subtitle: 予算計画をしやすい、明確な料金体系。
+    item1:
+      title: BYOIP前提
+      description: プレフィックスの所有権はお客様のまま、当社がアナウンスを管理します。
+    item2:
+      title: 月額の見通し
+      description: プレフィックス単位の料金でスケール計画が容易です。
+    item3:
+      title: ポリシーに基づく料金
+      description: 不正利用対応は月次上限付きで明記されています。
+  rules:
+    title: 料金のポイント
+    item1: 初期設定はLoAバッチ単位で一度だけ課金。
+    item2: メンテナンスは /24 または /32 単位で月額課金。
+    item3: 不正利用の処理料金はカテゴリごとに月1回まで。
+  policy:
+    title: 不正利用対応ポリシー
+    description: 料金表と具体例を含む詳細をご確認ください。
+    cta: ポリシー詳細を見る
+  cta:
+    title: 個別見積りが必要ですか？
+    description: プレフィックスと対象地域をお知らせください。
+    button: エンジニアに相談
 
 # Broadband page
 broadband:

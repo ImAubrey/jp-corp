@@ -2,8 +2,10 @@
 import Container from "../components/container.astro";
 import BroadbandHero from "../components/broadband-hero.astro";
 import BroadbandFeatures from "../components/broadband-features.astro";
+import EnterpriseCta from "../components/enterprise-cta.astro";
 import EnterpriseHero from "../components/enterprise-hero.astro";
 import EnterpriseFeatures from "../components/enterprise-features.astro";
+import HomeServices from "../components/home-services.astro";
 import Logos from "../components/logos.astro";
 import Layout from "../layouts/Layout.astro";
 import { getLocale } from "astro-i18n-aut";
@@ -21,18 +23,258 @@ const highlightEnterprise = shouldHighlightEnterpriseServices(geoLocation, Astro
 ---
 
 <Layout title={t('home.title')}>
-  <Container>
-    {showBroadband ? (
-      <>
-        <BroadbandHero locale={locale} t={t} />
-        <BroadbandFeatures locale={locale} t={t} />
-      </>
-    ) : (
-      <>
-        <EnterpriseHero locale={locale} t={t} />
-        <EnterpriseFeatures locale={locale} t={t} />
-      </>
-    )}
-    <Logos locale={locale} t={t} />
-  </Container>
+  <div class="home-hero relative z-0 overflow-hidden">
+    <div class="home-bg" aria-hidden="true">
+      <div class="home-glow"></div>
+      <div class="home-lines"></div>
+      <div class="home-lines home-lines--diagonal"></div>
+      <svg class="home-geo home-geo--one" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="300" cy="300" r="220" stroke="rgba(15, 23, 42, 0.3)" stroke-width="2" stroke-dasharray="8 10" />
+        <polygon points="300,80 520,220 460,480 140,480 80,220" stroke="rgba(37, 99, 235, 0.6)" stroke-width="2" fill="none" />
+      </svg>
+      <svg class="home-geo home-geo--two" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="80" y="80" width="360" height="360" rx="28" stroke="rgba(5, 150, 105, 0.6)" stroke-width="2" stroke-dasharray="10 12" />
+        <path d="M120 380 L260 140 L400 380 Z" stroke="rgba(14, 116, 144, 0.5)" stroke-width="2" fill="none" />
+      </svg>
+      <svg class="home-geo home-geo--three" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 180 L160 60 L320 160 L480 80 L620 180" stroke="rgba(236, 72, 153, 0.6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 10" />
+        <path d="M20 220 L160 340 L320 240 L480 320 L620 220" stroke="rgba(14, 165, 233, 0.6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 10" />
+      </svg>
+      <div class="home-sparks"></div>
+      <div class="home-noise"></div>
+    </div>
+    <Container>
+      {showBroadband ? (
+        <>
+          <BroadbandHero locale={locale} t={t} />
+          <BroadbandFeatures locale={locale} t={t} />
+        </>
+      ) : (
+        <>
+          <EnterpriseHero locale={locale} t={t} />
+          <EnterpriseFeatures locale={locale} t={t} />
+        </>
+      )}
+      <HomeServices locale={locale} t={t} />
+      {!showBroadband ? <EnterpriseCta locale={locale} t={t} /> : null}
+      <Logos locale={locale} t={t} />
+    </Container>
+  </div>
 </Layout>
+
+<style>
+  .home-hero {
+    isolation: isolate;
+    margin-top: -5rem;
+    padding-top: 5rem;
+  }
+
+  .home-bg {
+    position: absolute;
+    inset: -12%;
+    z-index: -10;
+    pointer-events: none;
+  }
+
+  .home-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(120deg, rgba(15, 23, 42, 0.1) 1px, transparent 1px),
+      linear-gradient(300deg, rgba(15, 23, 42, 0.1) 1px, transparent 1px);
+    background-size: 140px 140px;
+    animation: home-drift 38s linear infinite, home-pulse 12s ease-in-out infinite;
+    opacity: 0.4;
+  }
+
+  .home-lines--diagonal {
+    background-image:
+      repeating-linear-gradient(135deg, rgba(59, 130, 246, 0.22) 0, rgba(59, 130, 246, 0.22) 1px, transparent 1px, transparent 24px),
+      repeating-linear-gradient(45deg, rgba(16, 185, 129, 0.22) 0, rgba(16, 185, 129, 0.22) 1px, transparent 1px, transparent 28px);
+    background-size: 260px 260px;
+    animation: home-drift 52s linear infinite reverse, home-pulse 16s ease-in-out infinite;
+    opacity: 0.6;
+  }
+
+  .home-geo {
+    position: absolute;
+    width: min(52vw, 520px);
+    opacity: 0.7;
+    filter: drop-shadow(0 18px 36px rgba(15, 23, 42, 0.15));
+    transform-origin: center;
+    animation: home-float 18s ease-in-out infinite, home-spin 120s linear infinite, home-breathe 10s ease-in-out infinite;
+  }
+
+  .home-geo--one {
+    top: 6%;
+    right: -6%;
+    animation-duration: 22s, 160s, 12s;
+    animation-delay: 0s, -40s, -4s;
+  }
+
+  .home-geo--two {
+    bottom: 6%;
+    left: -4%;
+    animation-duration: 26s, 180s, 14s;
+    animation-delay: -6s, -80s, -2s;
+  }
+
+  .home-geo--three {
+    top: 48%;
+    left: 12%;
+    width: min(60vw, 640px);
+    opacity: 0.55;
+    animation-duration: 30s, 200s, 16s;
+    animation-delay: -10s, -120s, -6s;
+  }
+
+  .home-geo circle,
+  .home-geo rect,
+  .home-geo polygon,
+  .home-geo path {
+    stroke-dasharray: 12 10;
+    animation: home-dash 22s linear infinite;
+  }
+
+  .home-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.25), transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.2), transparent 45%),
+      radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.2), transparent 55%);
+    opacity: 0.6;
+    animation: home-glow 18s ease-in-out infinite;
+  }
+
+  .home-sparks {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px);
+    background-size: 160px 160px;
+    opacity: 0.22;
+    animation: home-spark-drift 28s linear infinite;
+  }
+
+  .home-noise {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(15, 23, 42, 0.08) 0.5px, transparent 0.5px);
+    background-size: 120px 120px;
+    opacity: 0.12;
+    mix-blend-mode: multiply;
+  }
+
+  @keyframes home-drift {
+    0% {
+      background-position: 0 0, 0 0;
+    }
+    100% {
+      background-position: 280px 320px, -240px 280px;
+    }
+  }
+
+  @keyframes home-float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -18px, 0);
+    }
+  }
+
+  @keyframes home-spin {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) rotate(360deg);
+    }
+  }
+
+  @keyframes home-breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.04);
+    }
+  }
+
+  @keyframes home-pulse {
+    0%,
+    100% {
+      opacity: 0.45;
+    }
+    50% {
+      opacity: 0.75;
+    }
+  }
+
+  @keyframes home-glow {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(40px, -30px, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes home-spark-drift {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 240px 320px;
+    }
+  }
+
+  @keyframes home-dash {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 360;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .home-bg {
+      inset: -22%;
+    }
+
+    .home-geo {
+      width: min(70vw, 420px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .home-hero {
+      margin-top: -6rem;
+      padding-top: 6rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-lines,
+    .home-geo {
+      animation: none;
+    }
+
+    .home-geo circle,
+    .home-geo rect,
+    .home-geo polygon,
+    .home-geo path {
+      animation: none;
+    }
+
+    .home-glow,
+    .home-sparks {
+      animation: none;
+    }
+  }
+</style>

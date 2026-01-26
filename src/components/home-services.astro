@@ -1,0 +1,97 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+
+const { locale, t } = Astro.props;
+
+function createLocalePath(path: string) {
+  if (locale === "en") {
+    return path;
+  }
+  return `/${locale}${path}`;
+}
+
+const serviceItems = [
+  {
+    titleKey: "home.services.ops.title",
+    descriptionKey: "home.services.ops.description",
+    icon: "bx:bx-support",
+  },
+  {
+    titleKey: "home.services.procurement.title",
+    descriptionKey: "home.services.procurement.description",
+    icon: "bx:bx-purchase-tag",
+  },
+  {
+    titleKey: "home.services.deployment.title",
+    descriptionKey: "home.services.deployment.description",
+    icon: "bx:bx-server",
+  },
+  {
+    titleKey: "home.services.spare.title",
+    descriptionKey: "home.services.spare.description",
+    icon: "bx:bx-shield",
+  },
+];
+---
+
+<section class="mt-16">
+  <div class="glass-panel rounded-3xl p-8 md:p-10 relative overflow-hidden">
+    <div class="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-sky-300/20 blur-3xl glow"></div>
+    <div class="absolute -bottom-12 -left-10 h-36 w-36 rounded-full bg-emerald-300/20 blur-3xl glow"></div>
+
+    <div class="text-center mb-10 relative">
+      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-slate-900">
+        {t("home.services.title")}
+      </h2>
+      <p class="text-lg mt-4 text-slate-600 max-w-3xl mx-auto">
+        {t("home.services.subtitle")}
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      {
+        serviceItems.map((item) => (
+          <div class="glass-card lift rounded-2xl p-6 h-full">
+            <div class="flex items-start gap-4">
+              <div class="bg-slate-900 rounded-full p-3 w-12 h-12 shrink-0 shadow-lg shadow-slate-900/20">
+                <Icon class="text-white w-6 h-6" name={item.icon} />
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg text-slate-900">{t(item.titleKey)}</h3>
+                <p class="text-slate-600 mt-2 leading-relaxed text-sm">
+                  {t(item.descriptionKey)}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <span class="glass-chip px-4 py-2 rounded-full text-sm font-medium text-slate-700">
+        {t("home.services.highlights.response")}
+      </span>
+      <span class="glass-chip px-4 py-2 rounded-full text-sm font-medium text-slate-700">
+        {t("home.services.highlights.delivery")}
+      </span>
+      <span class="glass-chip px-4 py-2 rounded-full text-sm font-medium text-slate-700">
+        {t("home.services.highlights.onsite")}
+      </span>
+    </div>
+
+    <div class="mt-8 flex justify-center">
+      <a
+        href={createLocalePath("/contact/")}
+        class="inline-flex items-center justify-center px-8 py-3 bg-slate-900 text-white font-medium rounded-full hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20"
+      >
+        {t("home.services.cta")}
+      </a>
+    </div>
+  </div>
+</section>

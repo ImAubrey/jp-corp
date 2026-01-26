@@ -10,14 +10,16 @@ const { locale, t } = Astro.props;
 ---
 
 <div class="mt-24">
-  <h2 class="text-center text-slate-500">{t('home.partners')}</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-
-    <img class="size-8 md:size-12 rounded-full filter grayscale" src="https://www.juniper.net/favicon.ico" alt="Juniper Networks" />
-    <img class="size-8 md:size-12 rounded-full filter grayscale" src="https://support.edcl.io/api/v1/system_assets/product_logo/6ce74091be007e39f7438a4aaa8faef5.png" alt="EDCL" />
-    <img class="size-8 md:size-12 rounded-full filter grayscale" src="https://www.dcconnectglobal.com/wp-content/uploads/2024/01/dcconnectglobal_logo-1-jpeg.webp" alt="DC Connect" />
-    <img class="size-8 md:size-12 rounded-full filter grayscale" src="https://www.equinix.com/etc.clientlibs/eqxcorp/clientlibs/clientlibs-resources/resources/favicon-228.png" alt="Equinix" />
-    <Icon class="size-8 md:size-12" name="simple-icons:cloudflare" />
-
+  <div class="glass-panel rounded-3xl p-8 md:p-10 text-center">
+    <h2 class="text-center text-slate-600">{t('home.partners')}</h2>
+    <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
+      <Icon class="size-8 md:size-12 text-slate-500 opacity-70 hover:opacity-100 transition" name="simple-icons:junipernetworks" />
+      <img class="h-8 md:h-12 w-auto filter grayscale opacity-70 hover:opacity-100 transition" src="/partners/h3c-logo.png" alt="H3C" />
+      <img class="h-8 md:h-12 w-auto filter grayscale opacity-70 hover:opacity-100 transition" src="/partners/ipxo-logo.svg" alt="IPXO" />
+      <img class="size-8 md:size-12 rounded-full filter grayscale opacity-70 hover:opacity-100 transition" src="https://support.edcl.io/api/v1/system_assets/product_logo/6ce74091be007e39f7438a4aaa8faef5.png" alt="EDCL" />
+      <img class="size-8 md:size-12 rounded-full filter grayscale opacity-70 hover:opacity-100 transition" src="https://www.dcconnectglobal.com/wp-content/uploads/2024/01/dcconnectglobal_logo-1-jpeg.webp" alt="DC Connect" />
+      <img class="size-8 md:size-12 rounded-full filter grayscale opacity-70 hover:opacity-100 transition" src="https://www.equinix.com/etc.clientlibs/eqxcorp/clientlibs/clientlibs-resources/resources/favicon-228.png" alt="Equinix" />
+      <Icon class="size-8 md:size-12 text-slate-500" name="simple-icons:cloudflare" />
+    </div>
   </div>
 </div>

@@ -2,6 +2,7 @@
 nav:
   home: 首页
   hosting: 主机托管
+  dataCenters: 数据中心
   ipTransit: IP传输
   broadband: 家庭宽带
   timeline: 时间线
@@ -153,6 +154,26 @@ home:
       subtitle: 让我们的专家设计满足您特定要求的解决方案
       hosting: 探索托管
       consultation: 安排咨询
+  services:
+    title: 一站式交付与运维保障
+    subtitle: 从需求评估、采购交付到日常运维，提供完整的一体化服务
+    ops:
+      title: 专业运维团队
+      description: 7×24监控、故障响应与例行维护，确保业务稳定运行。
+    procurement:
+      title: 硬件采购一条龙
+      description: 方案选型、比价采购、到货验收全流程可视化。
+    deployment:
+      title: 上架布线与部署
+      description: 机房上架、线缆整理、系统安装与初始化配置。
+    spare:
+      title: 备件与生命周期管理
+      description: 备件储备、故障替换、资产台账与更新规划。
+    highlights:
+      response: 7×24 SLA 响应
+      delivery: 采购-到货-上架全流程
+      onsite: 远程 + 驻场协同
+    cta: 咨询运维方案
   solutions:
     title: T1级互联网和数据中心解决方案
     description: 提供企业级ISP和IDC服务，配备直接T1连接，专为成长中的企业设计，将高速互连与只有新成立的专业团队才能提供的个性化关注和灵活性相结合。
@@ -188,6 +209,14 @@ timeline:
   milestonesDescription: Astrix自成立以来稳步发展，不断改进我们的网络基础设施并扩展服务范围，以更好地服务客户。
   ctaButton: 加入我们的旅程
   events:
+    event9:
+      date: 2025年12月
+      title: TY8节点开通
+      description: 在东京上线Equinix TY8节点，扩展日本机房覆盖与互联能力。
+    event10:
+      date: 2025年10月
+      title: 广州至香港IEPL接入
+      description: 接入中国大陆广州到香港的IEPL业务，提升跨境连接的稳定性与低时延表现。
     event1:
       date: 2025年1月1日
       title: 新年庆典
@@ -227,8 +256,9 @@ contact:
   subtitle: 让我们建立联系
   heading: 联系Astrix
   description: 我们随时准备回答您的问题，讨论我们的服务如何帮助您的业务成长。作为一家新公司，我们重视每一次对话。
-  address: 日本东京都墨田区石原2-13-1
+  address: 東京都新宿区百人町２丁目５－４土屋ビル２階ＬＩＮＫＳｐｅｃｅ＋
   phone: +1 (562) 2139 670
+  emailButton: 邮件联系
   
 # Hosting page
 hosting:
@@ -258,23 +288,149 @@ hosting:
     ddos: 基本DDoS保护
     reboot: 远程重启功能
 
+# Data Centers page
+dataCenters:
+  title: 数据中心
+  hero:
+    kicker: 数据中心布局
+    title: 覆盖优质园区的区域数据中心
+    description: 我们目前位于 Equinix TY8、TY1、HK2，同时也在香港 HK COLO 机房部署，覆盖东京与香港的业务。
+    contactCta: 联系我们
+    servicesCta: 查看托管
+    liveBadge: 运行中站点
+    statusNote: 包含 Equinix 与 HK COLO 机房，当前均在运行中。
+    globeCaption: 东京与香港的运行中站点分布。
+  locations:
+    kicker: 运行中的机房
+    title: 当前位置
+    description: Equinix 与 HK COLO 机房共同构成我们在日本与香港的布局。
+    providerLabel: 机房方
+    cityLabel: 城市
+    regionLabel: 区域
+    statusLabel: 状态
+    statusValue: 运行中
+    cards:
+      ty8:
+        name: Equinix TY8
+        city: 东京
+        region: 日本
+        summary: 东京的一处机房节点。
+      ty1:
+        name: Equinix TY1
+        city: 东京
+        region: 日本
+        summary: 东京的另一处机房节点。
+      hk2:
+        name: Equinix HK2
+        city: 香港
+        region: 中国香港
+        summary: 香港区域的机房节点。
+      hkcolo:
+        name: HK COLO
+        city: 香港
+        region: 中国香港
+        summary: 香港的额外机房节点。
+  footprint:
+    title: 区域布局
+    description: 关键市场的站点一览。
+    japan:
+      name: 日本
+      campuses: TY8 / TY1
+      description: 支撑日本区域部署的东京站点。
+    hongkong:
+      name: 香港
+      campuses: HK2 / HK COLO
+      description: 支撑香港区域部署的站点。
+  principles:
+    title: 运维侧重点
+    description: 在选址与运维中坚持的原则。
+    reliability:
+      title: 稳定可靠
+      description: 严谨的变更流程与运维纪律。
+    interconnect:
+      title: 互联选择
+      description: 选择具备互联生态的机房。
+    support:
+      title: 远程手支持
+      description: 支持24小时远程手服务，最快30分钟抵达机房处理。
+  cta:
+    title: 计划在东京或香港部署吗？
+    description: 告诉我们需求，我们会推荐合适的站点。
+    button: 联系我们
+
 # IP Transit page
 ipTransit:
   title: IP传输服务
   subtitle: 自带IP（BYOIP）宣告服务
   benefitsTitle: BYOIP的好处
-  benefitsDescription: 使用您自己的IP地址配合我们的宣告服务，为需要灵活网络资源的企业提供多种优势。
+  benefitsDescription: 保持前缀所有权，同时获得稳定的全球可达性。可自定义BGP路由、维护IP信誉、降低共享IP带来的牵连限制，成本清晰且不受长期租赁限制。
   benefits:
     cost:
       title: 成本效益
-      description: 与从我们的服务租赁IP地址相比，成本更低。
+      description: 避免长期IP租赁，只为宣告与维护付费。
     management:
       title: 专业管理
-      description: 我们帮助管理并优化您的IP前缀宣告，以获得最佳性能。
+      description: 7×24监控、IRR校验与前缀治理，保证路由质量。
     control:
       title: 资源控制
-      description: 保持对自有IP资源的完全控制。
+      description: 保持可携带性，按地区调整宣告策略。
+    routing:
+      title: BGP路由可定制
+      description: 自定义路由策略、上游分流与延迟优化。
+    reputation:
+      title: IP信誉更可控
+      description: 避免共享IP带来的误报牵连，降低滥用影响。
+  networkTitle: 网络与路由能力
+  networkDescription: 以清洁过滤与策略支持宣告IPv4/IPv6前缀。BYOIP适合运营商、SaaS与企业在可控路由与信誉管理上的需求。
+  networkNote: 可按区域提供路由与社区建议，并进行容量规划。
+  networkLinks:
+    dataCenters: 查看数据中心覆盖
+    pricing: 查看价格概览
+  networkStats:
+    reach:
+      label: 可达性
+      value: 多上游覆盖
+    routing:
+      label: 路由
+      value: 可定制BGP策略
+    monitoring:
+      label: 监控
+      value: 7×24 NOC
+    availability:
+      label: 稳定性
+      value: 全球一致可达
+  capabilities:
+    items:
+      policy:
+        title: 策略可控
+        description: 使用社区与prepend按区域/上游引导流量。
+      redundancy:
+        title: 多上游冗余
+        description: 多家上游提升可达性并降低拥塞。
+      ipv6:
+        title: IPv4/IPv6就绪
+        description: 支持双栈宣告，面向未来演进。
+      security:
+        title: 前缀治理
+        description: IRR校验与过滤保障路由信誉。
+  onboardingTitle: 接入与路由流程
+  onboardingDescription: 清晰流程确保宣告安全、可预期、可审计。
+  onboarding:
+    steps:
+      step1:
+        title: 提供ASN与前缀
+        description: 提交ASN、前缀与LoA，我们完成IRR校验。
+      step2:
+        title: 策略对齐
+        description: 确认社区、prepend与故障切换偏好。
+      step3:
+        title: 宣告与验证
+        description: 完成宣告并验证全球可达。
+      step4:
+        title: 持续运营与优化
+        description: 根据流量变化持续监控与优化。
   servicesTitle: IP宣告服务和定价
+  servicesDescription: 初始费用与月费清晰透明，按前缀计费便于扩展。
   table:
     service: 服务
     details: 详情
@@ -297,6 +453,7 @@ ipTransit:
       price: 免费
       notes: " "
   abuseTitle: 滥用处理政策
+  abuseToggleHint: 点击展开费用与示例
   abuseDescription: 如果通过我们的网络宣告的IP地址被报告滥用，将产生滥用报告处理费。对于每个日历月，每个IP地址在每个滥用类别中最多收取一次费用。
   abuseTable:
     category: 滥用类别
@@ -347,6 +504,83 @@ ipTransit:
       description: 一个IP地址在一个月内收到20份"版权侵犯"报告和4份"垃圾邮件"报告。所有4份垃圾邮件报告都被转发给了IP所有者，产生24美元费用。版权报告产生2美元费用，总计26美元。
   encouragement: 我们鼓励客户及时解决滥用问题。如果同一IP在下一个日历月再次收到滥用报告，将再次计算处理费用。
   contactCta: 联系我们获取IP传输服务
+  useCasesTitle: BYOIP适用场景
+  useCasesDescription: 适合需要拥有权、路由控制与清晰成本的团队。
+  useCases:
+    isp:
+      title: ISP与运营商网络
+      description: 保持IP所有权，同时提升多上游路由控制。
+    hosting:
+      title: 主机托管与云平台
+      description: 避免共享IP的声誉风险，干净地宣告前缀。
+    enterprise:
+      title: 企业多地域网络
+      description: 跨区域和供应商保持统一IP身份。
+    content:
+      title: 内容分发与实时应用
+      description: 将流量引导到区域边缘降低延迟。
+  faqTitle: IP传输常见问题
+  faqDescription: 关于BYOIP与路由策略的常见问答。
+  faq:
+    items:
+      q1:
+        question: 支持IPv6吗？
+        answer: 支持。我们可宣告 IPv4 /24 和 IPv6 /32。
+      q2:
+        question: 可以定制BGP社区或路由策略吗？
+        answer: 可以。我们支持社区、prepend与优先路由设置。
+      q3:
+        question: 开通流程是什么？
+        answer: 完成LoA与IRR校验后执行宣告并验证传播。
+      q4:
+        question: 地理位置更新是否包含？
+        answer: 包含。按需免费协助更新地理位置。
+  finalCta:
+    title: 准备宣告您的前缀了吗？
+    description: 提供ASN、前缀与目标区域，我们将为您制定路由方案。
+    primary: 联系团队
+    secondary: 查看价格概览
+
+# Transit pricing intro page
+transitPricing:
+  title: 传输定价概览
+  subtitle: 快速了解IP传输的计费方式。
+  hero:
+    badge: 透明定价
+    title: IP传输价格，一目了然
+    description: BYOIP宣告的设置费与月费清晰可见，政策也公开透明。
+    primaryCta: 查看完整详情
+    secondaryCta: 联系销售
+  snapshot:
+    title: 价格速览
+    setupNote: 按LoA批次一次性
+    maintenanceNote: 按前缀/按月
+    geolocationNote: 需要时免费
+  pillars:
+    title: 计费方式
+    subtitle: 便于预算与规模扩展的清晰结构。
+    item1:
+      title: 以BYOIP为核心
+      description: 前缀归您所有，我们负责宣告管理。
+    item2:
+      title: 月度可预测
+      description: 按前缀计费，规划与扩容更容易。
+    item3:
+      title: 费用有据可依
+      description: 滥用处理费用有明确的月度上限。
+  rules:
+    title: 计费要点
+    item1: 初始设置按LoA批次一次性计费。
+    item2: 维护费按前缀（/24 或 /32）按月计费。
+    item3: 每个滥用类别每月最多收取一次费用。
+  policy:
+    title: 滥用处理政策
+    description: 查看完整政策、费用表与示例。
+    cta: 查看政策详情
+  cta:
+    title: 需要定制报价？
+    description: 告诉我们前缀与目标区域即可获取方案。
+    button: 咨询工程师
 
 # Broadband page
 broadband:
