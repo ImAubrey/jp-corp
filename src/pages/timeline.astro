@@ -14,6 +14,11 @@ const timelineAccents = ["#0f766e", "#f59e0b", "#2563eb", "#f97316", "#14b8a6", 
 // Timeline events with translation keys
 const timelineEvents = [
   {
+    dateKey: "timeline.events.event13.date",
+    titleKey: "timeline.events.event13.title",
+    descriptionKey: "timeline.events.event13.description"
+  },
+  {
     dateKey: "timeline.events.event9.date",
     titleKey: "timeline.events.event9.title",
     descriptionKey: "timeline.events.event9.description"
@@ -22,6 +27,16 @@ const timelineEvents = [
     dateKey: "timeline.events.event10.date",
     titleKey: "timeline.events.event10.title",
     descriptionKey: "timeline.events.event10.description"
+  },
+  {
+    dateKey: "timeline.events.event12.date",
+    titleKey: "timeline.events.event12.title",
+    descriptionKey: "timeline.events.event12.description"
+  },
+  {
+    dateKey: "timeline.events.event11.date",
+    titleKey: "timeline.events.event11.title",
+    descriptionKey: "timeline.events.event11.description"
   },
   {
     dateKey: "timeline.events.event1.date",
@@ -76,6 +91,10 @@ function createLocalePath(path: string) {
 
 <Layout title={t('timeline.pageTitle')}>
   <div class="timeline-page">
+    <div class="tl-ambient tl-ambient--a" aria-hidden="true"></div>
+    <div class="tl-ambient tl-ambient--b" aria-hidden="true"></div>
+    <div class="tl-ambient tl-ambient--c" aria-hidden="true"></div>
+    <div class="tl-grid" aria-hidden="true"></div>
     <Container>
       <div class="tl-head">
         <Sectionhead>
@@ -84,7 +103,7 @@ function createLocalePath(path: string) {
         </Sectionhead>
       </div>
 
-      <div class="tl-intro mx-auto max-w-4xl mt-16">
+      <div class="tl-intro glass-panel mx-auto max-w-4xl mt-16 p-8 md:p-10">
         <h2 class="text-3xl font-bold text-slate-900">
           {t('timeline.milestonesTitle')}
         </h2>
@@ -93,22 +112,24 @@ function createLocalePath(path: string) {
         </p>
       </div>
 
-      <div class="mx-auto max-w-5xl mt-12 mb-16">
+      <div class="mx-auto max-w-5xl mt-12 mb-16 tl-flow">
         <div class="tl-rail">
-          <div class="space-y-10 md:space-y-12">
+          <div class="space-y-10 md:space-y-12 tl-stack">
             {timelineEvents.map((event, index) => {
               const isRight = index % 2 === 0;
               return (
                 <article
                   class={`tl-item md:grid md:grid-cols-2 tl-reveal ${isRight ? 'tl-item--right' : 'tl-item--left'}`}
-                  style={`--tl-accent: ${timelineAccents[index % timelineAccents.length]}; --tl-delay: ${0.1 + index * 0.08}s;`}
+                  style={`--tl-accent: ${timelineAccents[index % timelineAccents.length]}; --tl-delay: ${0.1 + index * 0.08}s; --tl-enter-x: ${isRight ? "26px" : "-26px"};`}
                 >
                   <span class="tl-marker" aria-hidden="true">
                     <span class="tl-dot"></span>
+                    <span class="tl-pulse"></span>
                   </span>
                   <div
                     class={`tl-card p-6 pl-12 md:pl-6 ${isRight ? 'md:col-start-2 md:ml-10' : 'md:col-start-1 md:mr-10 md:justify-self-end md:row-start-1'}`}
                   >
+                    <span class="tl-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                     <span class="tl-date">{t(event.dateKey)}</span>
                     <h3 class="tl-title">{t(event.titleKey)}</h3>
                     <p class="tl-desc">{t(event.descriptionKey)}</p>
@@ -144,15 +165,68 @@ function createLocalePath(path: string) {
   .timeline-page {
     --tl-ink: #0f172a;
     --tl-muted: #64748b;
-    --tl-line: rgba(15, 23, 42, 0.12);
+    --tl-line: rgba(15, 23, 42, 0.14);
     --tl-card: rgba(255, 255, 255, 0.92);
-    --tl-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+    --tl-shadow: 0 26px 70px rgba(15, 23, 42, 0.12);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
     min-height: 100vh;
-    padding-bottom: 2.5rem;
+    padding-bottom: 4rem;
     background:
-      radial-gradient(circle at 12% 12%, rgba(20, 184, 166, 0.12), transparent 40%),
-      radial-gradient(circle at 82% 18%, rgba(244, 177, 128, 0.18), transparent 45%),
-      linear-gradient(180deg, #f8fafc 0%, #ffffff 48%, #f1f5f9 100%);
+      radial-gradient(circle at 10% 12%, rgba(14, 165, 233, 0.14), transparent 42%),
+      radial-gradient(circle at 86% 8%, rgba(251, 146, 60, 0.2), transparent 46%),
+      radial-gradient(circle at 50% 102%, rgba(244, 63, 94, 0.1), transparent 48%),
+      linear-gradient(180deg, #f8fafc 0%, #ffffff 42%, #eef4fb 100%);
+  }
+
+  .timeline-page .tl-ambient {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(42px);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .timeline-page .tl-ambient--a {
+    width: 21rem;
+    height: 21rem;
+    top: 5%;
+    left: -7rem;
+    background: radial-gradient(circle at 32% 32%, rgba(56, 189, 248, 0.8), rgba(56, 189, 248, 0));
+    animation: tl-float 12s ease-in-out infinite;
+  }
+
+  .timeline-page .tl-ambient--b {
+    width: 24rem;
+    height: 24rem;
+    top: 36%;
+    right: -8rem;
+    background: radial-gradient(circle at 70% 30%, rgba(251, 146, 60, 0.82), rgba(251, 146, 60, 0));
+    animation: tl-float 14s ease-in-out infinite reverse;
+  }
+
+  .timeline-page .tl-ambient--c {
+    width: 18rem;
+    height: 18rem;
+    bottom: -7rem;
+    left: 28%;
+    background: radial-gradient(circle at 30% 70%, rgba(244, 63, 94, 0.62), rgba(244, 63, 94, 0));
+    animation: tl-float 10s ease-in-out infinite;
+  }
+
+  .timeline-page .tl-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.42) 16%, rgba(0, 0, 0, 0.42) 84%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.42) 16%, rgba(0, 0, 0, 0.42) 84%, transparent 100%);
+    pointer-events: none;
+    z-index: -1;
   }
 
   .timeline-page .tl-head h1 {
@@ -163,8 +237,41 @@ function createLocalePath(path: string) {
     color: var(--tl-muted);
   }
 
+  .timeline-page .tl-intro {
+    position: relative;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+  }
+
+  .timeline-page .tl-intro::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0ea5e9, #38bdf8 35%, #fb923c 65%, transparent 100%);
+    opacity: 0.95;
+  }
+
+  .timeline-page .tl-flow {
+    position: relative;
+  }
+
+  .timeline-page .tl-flow::before {
+    content: "";
+    position: absolute;
+    inset: -2rem 6% -1.4rem;
+    border-radius: 2.2rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.18));
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.08);
+    pointer-events: none;
+  }
+
   .timeline-page .tl-rail {
     position: relative;
+    padding: 1.2rem 0;
+    z-index: 1;
   }
 
   .timeline-page .tl-rail::before {
@@ -173,13 +280,33 @@ function createLocalePath(path: string) {
     top: 0;
     bottom: 0;
     left: 1.25rem;
-    width: 2px;
+    width: 4px;
     border-radius: 999px;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.05));
+    background: linear-gradient(180deg, rgba(14, 116, 144, 0.9), rgba(37, 99, 235, 0.45), rgba(244, 63, 94, 0.4));
+    box-shadow: 0 0 0 8px rgba(56, 189, 248, 0.07);
+  }
+
+  .timeline-page .tl-rail::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.25rem;
+    width: 14px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(56, 189, 248, 0.34), rgba(244, 63, 94, 0.12));
+    filter: blur(12px);
+    pointer-events: none;
   }
 
   .timeline-page .tl-item {
     position: relative;
+    transition: transform 0.35s ease;
+  }
+
+  .timeline-page .tl-item:hover {
+    transform: translateY(-2px);
   }
 
   .timeline-page .tl-marker {
@@ -187,28 +314,41 @@ function createLocalePath(path: string) {
     left: 1.25rem;
     top: 1.8rem;
     transform: translateX(-50%);
+    z-index: 3;
   }
 
   .timeline-page .tl-dot {
     display: block;
-    width: 0.85rem;
-    height: 0.85rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 999px;
-    background: var(--tl-accent);
+    background: color-mix(in srgb, var(--tl-accent) 74%, #ffffff 26%);
     border: 3px solid #ffffff;
     box-shadow:
-      0 0 0 6px rgba(15, 23, 42, 0.08),
-      0 18px 30px rgba(15, 23, 42, 0.16);
+      0 0 0 6px color-mix(in srgb, var(--tl-accent) 18%, #ffffff 82%),
+      0 14px 26px rgba(15, 23, 42, 0.2);
+  }
+
+  .timeline-page .tl-pulse {
+    position: absolute;
+    inset: -0.5rem;
+    border-radius: 999px;
+    border: 2px solid color-mix(in srgb, var(--tl-accent) 48%, #ffffff 52%);
+    opacity: 0.45;
+    animation: tl-pulse 2.4s ease-out infinite;
   }
 
   .timeline-page .tl-card {
     position: relative;
     border-radius: 1.5rem;
     border: 1px solid rgba(15, 23, 42, 0.1);
-    background: linear-gradient(135deg, var(--tl-card), rgba(248, 250, 252, 0.9));
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.78)),
+      radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--tl-accent) 16%, #ffffff 84%), transparent 48%);
     box-shadow: var(--tl-shadow);
     backdrop-filter: blur(10px);
     overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   }
 
   .timeline-page .tl-card::before {
@@ -218,6 +358,34 @@ function createLocalePath(path: string) {
     height: 3px;
     background: linear-gradient(90deg, var(--tl-accent), transparent 70%);
     opacity: 0.9;
+  }
+
+  .timeline-page .tl-card::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    pointer-events: none;
+  }
+
+  .timeline-page .tl-item:hover .tl-card {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--tl-accent) 24%, rgba(15, 23, 42, 0.1) 76%);
+    box-shadow:
+      0 34px 80px rgba(15, 23, 42, 0.16),
+      0 0 0 1px rgba(255, 255, 255, 0.44) inset;
+  }
+
+  .timeline-page .tl-index {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: color-mix(in srgb, var(--tl-accent) 55%, #334155 45%);
+    opacity: 0.8;
   }
 
   .timeline-page .tl-date {
@@ -235,9 +403,10 @@ function createLocalePath(path: string) {
 
   .timeline-page .tl-title {
     margin-top: 0.85rem;
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: clamp(1.18rem, 1.9vw, 1.34rem);
+    font-weight: 700;
     color: var(--tl-ink);
+    letter-spacing: 0.01em;
   }
 
   .timeline-page .tl-desc {
@@ -252,35 +421,62 @@ function createLocalePath(path: string) {
     justify-content: center;
     padding: 0.9rem 2.4rem;
     border-radius: 999px;
-    background: var(--tl-ink);
+    background: linear-gradient(120deg, #0f172a 0%, #1e293b 45%, #0369a1 100%);
     color: #ffffff;
     font-weight: 600;
     letter-spacing: 0.05em;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    box-shadow: 0 18px 30px rgba(15, 23, 42, 0.18);
+    box-shadow:
+      0 22px 40px rgba(15, 23, 42, 0.24),
+      0 0 0 1px rgba(255, 255, 255, 0.18) inset;
   }
 
   .timeline-page .tl-cta:hover {
     transform: translateY(-2px);
-    background: #1e293b;
-    box-shadow: 0 22px 35px rgba(15, 23, 42, 0.22);
+    background: linear-gradient(120deg, #020617 0%, #0f172a 40%, #075985 100%);
+    box-shadow: 0 30px 46px rgba(15, 23, 42, 0.28);
   }
 
   .timeline-page .tl-reveal {
     opacity: 0;
-    transform: translateY(16px);
-    animation: tl-reveal 0.85s ease forwards;
+    transform: translate3d(var(--tl-enter-x, 0), 14px, 0) scale(0.98);
+    animation: tl-reveal 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     animation-delay: var(--tl-delay, 0s);
   }
 
   @keyframes tl-reveal {
     to {
       opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+
+  @keyframes tl-pulse {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.52;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  @keyframes tl-float {
+    0%,
+    100% {
       transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
     }
   }
 
   @media (min-width: 768px) {
+    .timeline-page .tl-flow::before {
+      inset: -2.6rem 4% -1.6rem;
+    }
+
     .timeline-page .tl-rail::before {
       left: 50%;
       transform: translateX(-50%);
@@ -289,12 +485,62 @@ function createLocalePath(path: string) {
     .timeline-page .tl-marker {
       left: 50%;
     }
+
+    .timeline-page .tl-rail::after {
+      left: 50%;
+    }
+
+    .timeline-page .tl-item--right .tl-card {
+      transform-origin: left center;
+    }
+
+    .timeline-page .tl-item--left .tl-card {
+      transform-origin: right center;
+    }
+
+    .timeline-page .tl-item--right:hover .tl-card {
+      transform: translateY(-4px) rotate(-0.6deg);
+    }
+
+    .timeline-page .tl-item--left:hover .tl-card {
+      transform: translateY(-4px) rotate(0.6deg);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .timeline-page .tl-flow::before {
+      inset: -1rem 0 -1rem;
+      border-radius: 1.4rem;
+    }
+
+    .timeline-page .tl-card {
+      border-radius: 1.25rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .timeline-page .tl-reveal {
       animation: none;
       opacity: 1;
+      transform: none;
+    }
+
+    .timeline-page .tl-ambient--a,
+    .timeline-page .tl-ambient--b,
+    .timeline-page .tl-ambient--c,
+    .timeline-page .tl-pulse {
+      animation: none;
+    }
+
+    .timeline-page .tl-item,
+    .timeline-page .tl-card,
+    .timeline-page .tl-cta {
+      transition: none;
+    }
+
+    .timeline-page .tl-item:hover,
+    .timeline-page .tl-item:hover .tl-card,
+    .timeline-page .tl-cta:hover {
       transform: none;
     }
   }

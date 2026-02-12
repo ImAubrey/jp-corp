@@ -56,5 +56,25 @@ const t = useTranslations(Astro.url);
         </iframe>
       </div>
     </div>
+
+    {locale === "ja" && (
+      <div class="mx-auto mt-8 max-w-4xl rounded-2xl border border-gray-200 bg-gray-50 p-6 shadow-sm text-sm text-gray-700">
+        <p class="font-semibold text-gray-900">日本法人情報</p>
+        <p class="mt-2"><span class="font-medium">払込済資本金：</span>500万円</p>
+        <p class="mt-3 font-medium text-gray-900">事業内容</p>
+        <ol class="mt-2 space-y-1 pl-5 list-decimal leading-relaxed">
+          <li>ＩＴソフト及びハードに関する開発企画設計製作並びに同開発商品の販売業務</li>
+          <li>ＩＴ関連事業に関する投資事業</li>
+          <li>各種ホームページの制作及び管理業務</li>
+          <li>ＩＴ関連事業に関するコンサルタント業務</li>
+          <li>コンピューターシステム開発、各種コンピューターソフト開発、同企画設計施工業務</li>
+          <li>コンピューター関連事業に関する事業コンサルタント業務</li>
+          <li>各種ネットワークの構築及びデータセンターの運営</li>
+          <li>電気工事業</li>
+          <li>損害保険代理店業務</li>
+          <li>前各号に附帯関連する一切の業務</li>
+        </ol>
+      </div>
+    )}
   </Container>
 </Layout>

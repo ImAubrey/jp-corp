@@ -209,6 +209,10 @@ timeline:
   milestonesDescription: Astrix自成立以来稳步发展，不断改进我们的网络基础设施并扩展服务范围，以更好地服务客户。
   ctaButton: 加入我们的旅程
   events:
+    event13:
+      date: 2026年2月
+      title: 取得JPNIC IP
+      description: 成功取得JPNIC分配的IP资源，进一步增强日本本地网络能力。
     event9:
       date: 2025年12月
       title: TY8节点开通
@@ -217,6 +221,14 @@ timeline:
       date: 2025年10月
       title: 广州至香港IEPL接入
       description: 接入中国大陆广州到香港的IEPL业务，提升跨境连接的稳定性与低时延表现。
+    event12:
+      date: 2025年6月
+      title: 取得Equinix TY1机柜
+      description: 在东京Equinix TY1完成机柜部署，为后续容量扩展奠定基础。
+    event11:
+      date: 2025年4月
+      title: 日本会社成立
+      description: 日本公司正式成立，完成本地化运营主体搭建。
     event1:
       date: 2025年1月1日
       title: 新年庆典
@@ -275,6 +287,7 @@ hosting:
     status: 状态
     rentalFee: 租金（美元）
     power: 功率（TDP）
+    memory: 内存
     setupFee: 设置费用（美元）
   serverStatus:
     inUse: 使用中
@@ -362,6 +375,10 @@ dataCenters:
 ipTransit:
   title: IP传输服务
   subtitle: 自带IP（BYOIP）宣告服务
+  pricingSpotlight:
+    title: 先看价格再决策
+    description: Transit 单价为 $0.99 美元/Mbps，独立 IPv4 /24（C段）为 $200 美元/月，先查看价格总览更直观。
+    button: 查看 Transit 价格
   benefitsTitle: BYOIP的好处
   benefitsDescription: 保持前缀所有权，同时获得稳定的全球可达性。可自定义BGP路由、维护IP信誉、降低共享IP带来的牵连限制，成本清晰且不受长期租赁限制。
   benefits:
@@ -430,7 +447,7 @@ ipTransit:
         title: 持续运营与优化
         description: 根据流量变化持续监控与优化。
   servicesTitle: IP宣告服务和定价
-  servicesDescription: 初始费用与月费清晰透明，按前缀计费便于扩展。
+  servicesDescription: 价格透明，支持按 Mbps 计费，同时提供独立 IPv4 /24（C段）月租。
   table:
     service: 服务
     details: 详情
@@ -438,15 +455,20 @@ ipTransit:
     notes: 备注
   services:
     initialSetup:
-      name: 初始宣告设置
-      details: 前缀白名单、IRR检查、宣告设置、交付给客户
-      price: $68 美元/批次前缀
-      notes: 前缀批次由单个授权书(LoA)定义
+      name: 初始开通设置
+      details: BGP会话建立、IRR/RPKI校验与基础路由策略配置
+      price: $99 美元/一次
+      notes: 仅首月一次性收取
     maintenance:
-      name: 宣告维护
-      details: "维护IP前缀宣告：IPv4 /24或IPv6 /32"
-      price: $18 美元/前缀/月
-      notes: " "
+      name: Transit带宽费用
+      details: "按提交带宽计费（支持95th计费模型）"
+      price: $0.99 美元/Mbps/月
+      notes: 最低承诺带宽 100 Mbps
+    ipBlock:
+      name: IPv4 /24（C段）租用
+      details: 提供独立 IPv4 /24（C段）按月租用
+      price: $200 美元/月
+      notes: 1个网段 = /24
     geolocation:
       name: 前缀地理位置
       details: 联系主要地理位置数据库设置正确位置
@@ -544,17 +566,18 @@ ipTransit:
 # Transit pricing intro page
 transitPricing:
   title: 传输定价概览
-  subtitle: 快速了解IP传输的计费方式。
+  subtitle: 专门展示 IP Transit 价格与计费口径。
   hero:
     badge: 透明定价
     title: IP传输价格，一目了然
-    description: BYOIP宣告的设置费与月费清晰可见，政策也公开透明。
+    description: 基础单价为 $0.99 美元/Mbps，独立 IPv4 /24（C段）月租为 $200 美元。
     primaryCta: 查看完整详情
     secondaryCta: 联系销售
   snapshot:
     title: 价格速览
-    setupNote: 按LoA批次一次性
-    maintenanceNote: 按前缀/按月
+    setupNote: 一次性开通费用
+    maintenanceNote: 单价：$0.99 美元/Mbps/月
+    ipBlockNote: 独立 IPv4 /24（C段）月租
     geolocationNote: 需要时免费
   pillars:
     title: 计费方式
@@ -564,15 +587,15 @@ transitPricing:
       description: 前缀归您所有，我们负责宣告管理。
     item2:
       title: 月度可预测
-      description: 按前缀计费，规划与扩容更容易。
+      description: 按Mbps计费，预算和扩容更直观。
     item3:
       title: 费用有据可依
       description: 滥用处理费用有明确的月度上限。
   rules:
     title: 计费要点
-    item1: 初始设置按LoA批次一次性计费。
-    item2: 维护费按前缀（/24 或 /32）按月计费。
-    item3: 每个滥用类别每月最多收取一次费用。
+    item1: 初始开通费用一次性 $99 美元。
+    item2: Transit 按 $0.99 美元/Mbps/月计费。
+    item3: IPv4 /24（C段）月租 $200 美元。
   policy:
     title: 滥用处理政策
     description: 查看完整政策、费用表与示例。

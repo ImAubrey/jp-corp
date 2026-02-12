@@ -3,7 +3,7 @@ nav:
   home: ホーム
   hosting: ホスティング
   dataCenters: データセンター
-  ipTransit: IP通信
+  ipTransit: IPトランジット
   broadband: 家庭用ブロードバンド
   timeline: タイムライン
   contact: お問い合わせ
@@ -208,6 +208,10 @@ timeline:
   milestonesDescription: Astrixは設立以来、着実に成長を続け、ネットワークインフラを継続的に改善し、サービス提供を拡大してお客様により良いサービスを提供しています。
   ctaButton: 私たちの旅に参加しましょう
   events:
+    event13:
+      date: 2026年2月
+      title: JPNIC IPを取得
+      description: JPNICからIPアドレスの割り当てを受け、日本国内向けネットワークリソースを強化しました。
     event9:
       date: 2025年12月
       title: TY8ノード開通
@@ -216,6 +220,14 @@ timeline:
       date: 2025年10月
       title: 広州〜香港IEPL接続
       description: 中国本土・広州から香港までのIEPL回線を接続し、越境通信の安定性と低遅延を強化しました。
+    event12:
+      date: 2025年6月
+      title: Equinix TY1ラックを確保
+      description: 東京のEquinix TY1でラックを確保し、国内展開の収容力を拡大しました。
+    event11:
+      date: 2025年4月
+      title: 日本法人を設立
+      description: 日本で法人を設立し、ローカル運用体制とコンプライアンス基盤を整備しました。
     event1:
       date: 2025年1月1日
       title: 新年のお祝い
@@ -274,6 +286,7 @@ hosting:
     status: 状態
     rentalFee: レンタル料金（USD）
     power: 消費電力（TDP）
+    memory: メモリ
     setupFee: セットアップ料金（USD）
   serverStatus:
     inUse: 使用中
@@ -359,8 +372,12 @@ dataCenters:
 
 # IP Transit page
 ipTransit:
-  title: IP通信サービス
+  title: IPトランジットサービス
   subtitle: 自己所有IP（BYOIP）アナウンスサービス
+  pricingSpotlight:
+    title: 料金を先に確認する
+    description: トランジットは $0.99 USD / Mbps、IPv4 /24（Cセグメント）は $200 USD / 月。まずは価格ページで全体像をご確認ください。
+    button: 料金ページを見る
   benefitsTitle: BYOIPの利点
   benefitsDescription: プレフィックスの所有権を維持したまま、安定したグローバル到達性を実現します。BGPの経路制御やIP評価の保全、長期リースに縛られない明確なコストで運用できます。
   benefits:
@@ -429,7 +446,7 @@ ipTransit:
         title: 運用と最適化
         description: トラフィック変化に合わせて継続的に調整。
   servicesTitle: IPアナウンスサービスと料金
-  servicesDescription: 初期費用と月額費用を明確にし、プレフィックス単位でスケールします。
+  servicesDescription: トランジット帯域単価とIPv4 /24（Cセグメント）料金を明確化し、用途に応じて柔軟にスケールできます。
   table:
     service: サービス
     details: 詳細
@@ -437,15 +454,20 @@ ipTransit:
     notes: 備考
   services:
     initialSetup:
-      name: 初期アナウンス設定
-      details: プレフィックスホワイトリスト、IRRチェック、アナウンス設定、顧客への配信
-      price: $68 USD / プレフィックスバッチ
-      notes: プレフィックスバッチは1つのLoAで定義されます
+      name: 初期設定
+      details: BGPセッション、IRR/RPKI確認、ルーティングポリシーの初期反映
+      price: $99 USD / 1回
+      notes: 初回のみ
     maintenance:
-      name: アナウンスメンテナンス
-      details: "IPプレフィックスアナウンスの維持：IPv4 /24またはIPv6 /32"
-      price: $18 USD / プレフィックス / 月
-      notes: " "
+      name: トランジット帯域利用料
+      details: "コミット帯域に応じた課金（95th対応）"
+      price: $0.99 USD / Mbps / 月
+      notes: 最低コミット 100 Mbps
+    ipBlock:
+      name: IPv4 /24（Cセグメント）レンタル
+      details: "専用のIPv4 /24（Cセグメント）を月額で提供"
+      price: $200 USD / 月
+      notes: 1ブロック = /24
     geolocation:
       name: プレフィックス地理位置情報
       details: 主要な地理位置情報データベースに連絡して正確な位置を設定
@@ -543,17 +565,18 @@ ipTransit:
 # Transit pricing intro page
 transitPricing:
   title: トランジット料金の概要
-  subtitle: IPトランジットの料金体系を簡潔にご紹介します。
+  subtitle: IPトランジット価格を専用ページでご案内します。
   hero:
     badge: 透明な料金
     title: IPトランジット料金をわかりやすく
-    description: BYOIPアナウンスの初期費用と月額費用を明確にし、ポリシーも公開しています。
+    description: 基本単価は $0.99 USD / Mbps。さらに IPv4 /24（Cセグメント）は月額 $200 USD です。
     primaryCta: 詳細を見る
     secondaryCta: お問い合わせ
   snapshot:
     title: 料金サマリー
-    setupNote: LoAバッチごとの一回費用
-    maintenanceNote: プレフィックス単位の月額
+    setupNote: 初期設定（1回）
+    maintenanceNote: 単価 $0.99 USD / Mbps / 月
+    ipBlockNote: 専用IPv4 /24（Cセグメント）月額
     geolocationNote: 依頼時は無料
   pillars:
     title: 料金のしくみ
@@ -563,15 +586,15 @@ transitPricing:
       description: プレフィックスの所有権はお客様のまま、当社がアナウンスを管理します。
     item2:
       title: 月額の見通し
-      description: プレフィックス単位の料金でスケール計画が容易です。
+      description: Mbps単位のコミットで、コストと帯域を直感的に管理できます。
     item3:
       title: ポリシーに基づく料金
       description: 不正利用対応は月次上限付きで明記されています。
   rules:
     title: 料金のポイント
-    item1: 初期設定はLoAバッチ単位で一度だけ課金。
-    item2: メンテナンスは /24 または /32 単位で月額課金。
-    item3: 不正利用の処理料金はカテゴリごとに月1回まで。
+    item1: 初期設定は 1回 $99 USD。
+    item2: 通信料金は $0.99 USD / Mbps / 月。
+    item3: IPv4 /24（Cセグメント）は月額 $200 USD。
   policy:
     title: 不正利用対応ポリシー
     description: 料金表と具体例を含む詳細をご確認ください。

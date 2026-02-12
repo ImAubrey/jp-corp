@@ -17,23 +17,120 @@ function createLocalePath(path: string) {
   return `/${locale}${path}`;
 }
 
-// Server data
-const servers = [
+// Base server data
+const baseServers = [
   {
     id: "EONS-NRT2-1718-U31",
     statusKey: "hosting.serverStatus.inUse",
-    rentalFee: "$198",
+    rentalFee: "$209",
     powerConsumption: "240W",
+    memory: "64GB",
     setupFee: "$68.00",
-    specsKey: "hosting.serverSpecs.server1"
+    specs: t("hosting.serverSpecs.server1")
   },
   {
     id: "EONS-NRT2-1718-U25-26",
     statusKey: "hosting.serverStatus.inUse",
-    rentalFee: "$329",
+    rentalFee: "$389",
     powerConsumption: "850W",
+    memory: "512GB",
     setupFee: "$68.00",
-    specsKey: "hosting.serverSpecs.server2"
+    specs: t("hosting.serverSpecs.server2")
+  }
+];
+
+// Extra inventory shown on Japanese hosting page
+const jaExtraServers = [
+  {
+    id: "NRT-CI-7C13-16C-01",
+    statusKey: "hosting.serverStatus.available",
+    rentalFee: "$239",
+    powerConsumption: "280W",
+    memory: "128GB",
+    setupFee: "$39.00",
+    specs: "AMD EPYC 7C13 / 16コア32スレッド / 128GB RAM / 2x 1.92TB NVMe / 10GbE"
+  },
+  {
+    id: "NRT-CI-7C13-32C-02",
+    statusKey: "hosting.serverStatus.available",
+    rentalFee: "$299",
+    powerConsumption: "320W",
+    memory: "256GB",
+    setupFee: "$49.00",
+    specs: "AMD EPYC 7C13 / 32コア64スレッド / 256GB RAM / 2x 3.84TB NVMe / 25GbE"
+  },
+  {
+    id: "NRT-CI-7663-56C-01",
+    statusKey: "hosting.serverStatus.available",
+    rentalFee: "$349",
+    powerConsumption: "380W",
+    memory: "256GB",
+    setupFee: "$59.00",
+    specs: "AMD EPYC 7663 / 56コア112スレッド / 256GB RAM / 2x 3.84TB NVMe / 25GbE"
+  },
+  {
+    id: "NRT-CI-7663-112C-02",
+    statusKey: "hosting.serverStatus.available",
+    rentalFee: "$399",
+    powerConsumption: "680W",
+    memory: "512GB",
+    setupFee: "$99.00",
+    specs: "2x AMD EPYC 7663 / 112コア224スレッド / 512GB RAM / 4x 3.84TB NVMe / 25GbE"
+  },
+  {
+    id: "NRT-DB-7543P-01",
+    statusKey: "hosting.serverStatus.available",
+    rentalFee: "$329",
+    powerConsumption: "410W",
+    memory: "512GB",
+    setupFee: "$49.00",
+    specs: "AMD EPYC 7543P / 32コア64スレッド / 512GB RAM / 2x 7.68TB NVMe / RAID対応"
+  },
+  {
+    id: "NRT-GEN4-7713-01",
+    statusKey: "hosting.serverStatus.inUse",
+    rentalFee: "$379",
+    powerConsumption: "520W",
+    memory: "512GB",
+    setupFee: "$79.00",
+    specs: "AMD EPYC 7713 / 64コア128スレッド / 512GB RAM / 2x 1.92TB NVMe + 4x 8TB HDD"
+  }
+];
+
+const servers = locale === "ja" ? [...baseServers, ...jaExtraServers] : baseServers;
+
+const jaComputeInstances = [
+  {
+    name: "EPYC 7C13 スタンダード",
+    vcpu: "16 vCPU",
+    memory: "64GB RAM",
+    storage: "500GB NVMe",
+    bandwidth: "10TB トラフィック",
+    price: "$209 / 月"
+  },
+  {
+    name: "EPYC 7C13 パフォーマンス",
+    vcpu: "32 vCPU",
+    memory: "128GB RAM",
+    storage: "1TB NVMe",
+    bandwidth: "20TB トラフィック",
+    price: "$269 / 月"
+  },
+  {
+    name: "EPYC 7663 プロ",
+    vcpu: "56 vCPU",
+    memory: "192GB RAM",
+    storage: "2TB NVMe",
+    bandwidth: "30TB トラフィック",
+    price: "$339 / 月"
+  },
+  {
+    name: "EPYC 7663 マックス",
+    vcpu: "112 vCPU",
+    memory: "384GB RAM",
+    storage: "4TB NVMe",
+    bandwidth: "50TB トラフィック",
+    price: "$399 / 月"
   }
 ];
 ---
@@ -63,6 +160,7 @@ const servers = [
               <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700 text-center">{t('hosting.table.status')}</th>
               <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">{t('hosting.table.rentalFee')}</th>
               <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">{t('hosting.table.power')}</th>
+              <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">{t('hosting.table.memory')}</th>
               <th class="py-3.5 px-4 text-left text-sm font-semibold text-gray-700">{t('hosting.table.setupFee')}</th>
             </tr>
           </thead>
@@ -77,6 +175,7 @@ const servers = [
                 </td>
                 <td class="py-4 px-4 text-sm text-gray-700">{server.rentalFee}</td>
                 <td class="py-4 px-4 text-sm text-gray-700">{server.powerConsumption}</td>
+                <td class="py-4 px-4 text-sm text-gray-700">{server.memory}</td>
                 <td class="py-4 px-4 text-sm text-gray-700">{server.setupFee}</td>
               </tr>
             ))}
@@ -90,11 +189,34 @@ const servers = [
           {servers.map((server) => (
             <div class="border border-gray-200 rounded-lg p-4">
               <p class="font-medium text-gray-800 mb-2">{server.id}</p>
-              <p class="text-gray-600">{t(server.specsKey)}</p>
+              <p class="text-gray-600">{server.specs}</p>
             </div>
           ))}
         </div>
       </div>
+
+      {locale === "ja" && (
+        <div class="mt-12">
+          <h3 class="font-medium text-2xl text-gray-800 mb-3">計算インスタンスレンタル</h3>
+          <p class="text-gray-600">
+            AMD EPYC 7C13 および 7663 系の計算インスタンスを月額で提供しています。短期案件・検証用途にも対応可能です。
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 mt-6">
+            {jaComputeInstances.map((instance) => (
+              <div class="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <p class="font-semibold text-gray-900">{instance.name}</p>
+                <ul class="mt-2 space-y-1 text-sm text-gray-700">
+                  <li>{instance.vcpu}</li>
+                  <li>{instance.memory}</li>
+                  <li>{instance.storage}</li>
+                  <li>{instance.bandwidth}</li>
+                </ul>
+                <p class="mt-3 text-base font-semibold text-gray-900">{instance.price}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       
       <div class="mx-auto max-w-4xl mt-16">
         <h2 class="font-bold text-3xl text-gray-800 mb-6">

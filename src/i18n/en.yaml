@@ -19,6 +19,10 @@ timeline:
   milestonesDescription: Astrix has grown steadily since its founding, continuously improving our network infrastructure and expanding our service offerings to better serve our clients.
   ctaButton: Join Us on Our Journey
   events:
+    event13:
+      date: February 2026
+      title: JPNIC IP Allocation
+      description: Received an IP allocation from JPNIC, strengthening our native Japan network resources.
     event9:
       date: December 2025
       title: TY8 Node Live
@@ -27,6 +31,14 @@ timeline:
       date: October 2025
       title: Guangzhou–Hong Kong IEPL Online
       description: Integrated the Guangzhou (Mainland China) to Hong Kong IEPL circuit to boost cross-border stability and low latency.
+    event12:
+      date: June 2025
+      title: Equinix TY1 Cabinet Secured
+      description: Secured cabinet space at Equinix TY1 to expand our Tokyo deployment capacity.
+    event11:
+      date: April 2025
+      title: Japan Company Established
+      description: Formally established our company in Japan to support localized operations and compliance.
     event1:
       date: January 1, 2025
       title: New Year Celebration
@@ -85,6 +97,7 @@ hosting:
     status: Status
     rentalFee: Rental Fee (USD)
     power: Power (TDP)
+    memory: Memory
     setupFee: Setup Fee (USD)
   serverStatus:
     inUse: In Use
@@ -172,6 +185,10 @@ dataCenters:
 ipTransit:
   title: IP Transit Services
   subtitle: Bring Your Own IP (BYOIP) Announcement Services
+  pricingSpotlight:
+    title: Check Pricing First
+    description: Transit is $0.99 USD per Mbps, and a dedicated IPv4 /24 (C block) is $200 USD per month.
+    button: View Transit Pricing
   benefitsTitle: Benefits of BYOIP
   benefitsDescription: Keep ownership of your prefixes while gaining dependable global reach. Our announcement service improves route stability, enables BGP traffic steering, protects IP reputation from collateral abuse, and keeps costs predictable without long leases.
   benefits:
@@ -240,7 +257,7 @@ ipTransit:
         title: Operate & optimize
         description: Continuous monitoring with adjustments as your traffic changes.
   servicesTitle: IP Announcement Services & Pricing
-  servicesDescription: Transparent setup and monthly fees with clear scope. Pricing is per prefix and scales with your network.
+  servicesDescription: Transparent transit pricing with a per-Mbps unit rate plus dedicated IPv4 /24 block rental.
   table:
     service: Service
     details: Details
@@ -248,15 +265,20 @@ ipTransit:
     notes: Notes
   services:
     initialSetup:
-      name: Initial Announcement Setup
-      details: Prefix whitelist, IRR check, announcement setup, delivery to customer
-      price: $68 USD / batch of prefixes
-      notes: A batch of prefixes is defined by a single LoA
+      name: Initial Setup
+      details: BGP session setup, IRR/RPKI validation, and baseline routing policy
+      price: $99 USD / one-time
+      notes: One-time onboarding fee
     maintenance:
-      name: Announcement Maintenance
-      details: "Maintain IP prefix announcements: IPv4 /24 or IPv6 /32"
-      price: $18 USD / prefix / month
-      notes: " "
+      name: Transit Bandwidth
+      details: "Committed transit billing based on bandwidth usage (95th percentile ready)"
+      price: $0.99 USD / Mbps / month
+      notes: "Minimum commit: 100 Mbps"
+    ipBlock:
+      name: IPv4 /24 Block Rental
+      details: Dedicated IPv4 /24 allocation billed monthly
+      price: $200 USD / month
+      notes: 1 block = /24
     geolocation:
       name: Prefix Geolocation
       details: Contact major geolocation databases to set correct location
@@ -354,17 +376,18 @@ ipTransit:
 # Transit pricing intro page
 transitPricing:
   title: Transit Pricing Overview
-  subtitle: A quick introduction to how IP transit pricing works.
+  subtitle: Dedicated page for IP transit pricing and unit rates.
   hero:
     badge: Transparent pricing
     title: IP Transit Pricing, Simplified
-    description: Predictable setup and monthly costs for BYOIP announcements, with clear policy coverage.
+    description: Unit price is $0.99 USD per Mbps, and a dedicated IPv4 /24 (C block) is $200 USD per month.
     primaryCta: View Full Transit Details
     secondaryCta: Contact Sales
   snapshot:
     title: Pricing Snapshot
-    setupNote: One-time per LoA batch
-    maintenanceNote: Per prefix, per month
+    setupNote: One-time onboarding
+    maintenanceNote: "Unit rate: $0.99 USD / Mbps / month"
+    ipBlockNote: Dedicated IPv4 /24 block, monthly
     geolocationNote: Free on request
   pillars:
     title: How Pricing Works
@@ -374,15 +397,15 @@ transitPricing:
       description: You keep ownership of your prefixes; we manage announcements.
     item2:
       title: Monthly clarity
-      description: Per-prefix billing makes planning and scaling straightforward.
+      description: Per-Mbps commit pricing keeps scaling and budgeting straightforward.
     item3:
       title: Policy-driven fees
       description: Abuse handling is documented with clear monthly limits.
   rules:
     title: Pricing Rules at a Glance
-    item1: Setup is billed once per LoA batch.
-    item2: Maintenance is billed per prefix (/24 or /32) each month.
-    item3: Abuse handling fees apply at most once per category per month.
+    item1: Initial setup is billed once at $99 USD.
+    item2: Transit is billed at $0.99 USD / Mbps / month.
+    item3: IPv4 /24 (C block) rental is $200 USD / month.
   policy:
     title: Abuse Handling Policy
     description: Review the full policy, fee table, and real examples.

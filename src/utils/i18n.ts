@@ -1,47 +1,71 @@
 import { getLocale } from "astro-i18n-aut";
 import { readFileSync } from 'fs';
+import { statSync } from 'fs';
 import { parse } from 'yaml';
 import { join } from 'path';
 
 // Cache for translations
-const translationsCache: Record<string, any> = {};
+const translationsCache: Record<string, { data: any; mtimeMs: number }> = {};
+const DEFAULT_LOCALE = "en";
 
 /**
  * Load translations for a specific locale
  */
 function loadTranslations(locale: string) {
-  if (translationsCache[locale]) {
-    return translationsCache[locale];
-  }
-  
+  const filePath = join(process.cwd(), 'src', 'i18n', `${locale}.yaml`);
+
   try {
-    const filePath = join(process.cwd(), 'src', 'i18n', `${locale}.yaml`);
+    const mtimeMs = statSync(filePath).mtimeMs;
+    const cached = translationsCache[locale];
+
+    // In production, cache hit is always safe.
+    // In development, refresh cache when YAML file changes.
+    if (cached && (process.env.NODE_ENV === "production" || cached.mtimeMs === mtimeMs)) {
+      return cached.data;
+    }
+
     const fileContent = readFileSync(filePath, 'utf8');
-    const translations = parse(fileContent);
-    translationsCache[locale] = translations;
-    return translations;
+    const data = parse(fileContent) ?? {};
+    translationsCache[locale] = { data, mtimeMs };
+    return data;
   } catch (error) {
     console.error(`Failed to load translations for ${locale}:`, error);
     return {};
   }
 }
 
+function getNestedTranslation(translations: any, key: string): string | undefined {
+  const keys = key.split('.');
+  let result = translations;
+
+  for (const k of keys) {
+    if (!result || typeof result !== "object") {
+      return undefined;
+    }
+    result = result[k];
+  }
+
+  return typeof result === "string" ? result : undefined;
+}
+
 /**
  * Get translation for a key with nested support (e.g., "common.home")
  */
 export function t(key: string, locale: string): string {
-  const translations = loadTranslations(locale);
-  const keys = key.split('.');
-  
-  let result = translations;
-  for (const k of keys) {
-    if (!result || typeof result !== 'object') {
-      return key; // Return the key if translation not found
-    }
-    result = result[k];
+  const primary = getNestedTranslation(loadTranslations(locale), key);
+  if (primary) {
+    return primary;
   }
-  
-  return typeof result === 'string' ? result : key;
+
+  if (locale !== DEFAULT_LOCALE) {
+    const fallback = getNestedTranslation(loadTranslations(DEFAULT_LOCALE), key);
+    if (fallback) {
+      return fallback;
+    }
+  }
+
+  // As a last resort, return the key for visibility.
+  return key;
 }
 
 /**
