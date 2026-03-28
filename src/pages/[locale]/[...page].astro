@@ -1,0 +1,64 @@
+---
+import { AVAILABLE_LOCALES, isLocale } from "@utils/locale";
+
+const staticRoutes = {
+  "": () => import("../index.astro"),
+  "404": () => import("../404.astro"),
+  "broadband": () => import("../broadband.astro"),
+  "contact": () => import("../contact.astro"),
+  "data-centers": () => import("../data-centers.astro"),
+  "docs": () => import("../docs/index.astro"),
+  "force-broadband-access": () => import("../force-broadband-access.astro"),
+  "hosting": () => import("../hosting.astro"),
+  "ip-transit": () => import("../ip-transit.astro"),
+  "ip-transit/pricing": () => import("../ip-transit/pricing.astro"),
+  "timeline": () => import("../timeline.astro"),
+} as const;
+
+type StaticRouteKey = keyof typeof staticRoutes;
+
+export function getStaticPaths() {
+  const routeKeys = [
+    "",
+    "404",
+    "broadband",
+    "contact",
+    "data-centers",
+    "docs",
+    "force-broadband-access",
+    "hosting",
+    "ip-transit",
+    "ip-transit/pricing",
+    "timeline",
+  ];
+
+  return AVAILABLE_LOCALES.flatMap((locale) =>
+    routeKeys.map((routeKey) => ({
+      params: {
+        locale,
+        page: routeKey || undefined,
+      },
+      props: {
+        routeKey,
+      },
+    })),
+  );
+}
+
+const { locale } = Astro.params;
+const { routeKey } = Astro.props as { routeKey: StaticRouteKey };
+
+if (!locale || !isLocale(locale)) {
+  throw new Error(`Unsupported locale: ${locale ?? "unknown"}`);
+}
+
+const loadPage = staticRoutes[routeKey];
+
+if (!loadPage) {
+  throw new Error(`Unsupported localized route: ${routeKey}`);
+}
+
+const { default: Page } = await loadPage();
+---
+
+<Page />

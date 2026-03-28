@@ -1,12 +1,10 @@
-import { getLocale } from "astro-i18n-aut";
-import { readFileSync } from 'fs';
-import { statSync } from 'fs';
-import { parse } from 'yaml';
-import { join } from 'path';
+import { readFileSync, statSync } from "node:fs";
+import { join } from "node:path";
+import { parse } from "yaml";
+import { AVAILABLE_LOCALES, DEFAULT_LOCALE, LOCALE_NAMES, getLocale } from "@utils/locale";
 
 // Cache for translations
 const translationsCache: Record<string, { data: any; mtimeMs: number }> = {};
-const DEFAULT_LOCALE = "en";
 
 /**
  * Load translations for a specific locale
@@ -80,17 +78,12 @@ export function useTranslations(url: URL) {
  * Get all available locales
  */
 export function getAvailableLocales() {
-  return ['en', 'ja', 'zh'];
+  return [...AVAILABLE_LOCALES];
 }
 
 /**
  * Get locale name for display
  */
 export function getLocaleName(locale: string): string {
-  const names = {
-    en: 'English',
-    ja: '日本語',
-    zh: '简体中文'
-  };
-  return names[locale as keyof typeof names] || locale;
+  return LOCALE_NAMES[locale as keyof typeof LOCALE_NAMES] || locale;
 }

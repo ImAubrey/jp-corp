@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
-import { i18n, filterSitemapByDefaultLocale } from "astro-i18n-aut/integration";
 
 const defaultLocale = "en";
 const locales = {
@@ -19,18 +18,14 @@ export default defineConfig({
     format: "directory",
   },
   integrations: [
-    mdx(), 
-    i18n({
-      locales,
-      defaultLocale,
-    }),
+    mdx(),
     sitemap({
       i18n: {
         locales,
         defaultLocale,
       },
-      filter: filterSitemapByDefaultLocale({ defaultLocale }),
-    }), 
-    icon()
+      filter: (page) => !new URL(page).pathname.startsWith(`/${defaultLocale}/`),
+    }),
+    icon(),
   ],
 });

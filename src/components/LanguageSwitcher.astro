@@ -1,20 +1,9 @@
 ---
-import { getLocale } from "astro-i18n-aut";
+import { getLocale, getLocaleUrl } from "@utils/locale";
 import { getAvailableLocales, getLocaleName } from "../utils/i18n";
 
 const currentLocale = getLocale(Astro.url);
 const availableLocales = getAvailableLocales();
-const pathname = Astro.url.pathname;
-function createLanguageUrl(locale: string) {
-  const isDefault = locale === 'en';
-  const cleanPath = pathname.replace(/^\/(en|ja|zh)\//, '/').replace(/\/$/, '') || '/';
-  
-  if (isDefault) {
-    return cleanPath === '/' ? '/' : `${cleanPath}/`;
-  } else {
-    return cleanPath === '/' ? `/${locale}/` : `/${locale}${cleanPath}/`;
-  }
-}
 const componentId = Math.random().toString(36).substring(2, 9);
 ---
 
@@ -35,7 +24,7 @@ const componentId = Math.random().toString(36).substring(2, 9);
       <div class="py-1" role="none">
         {availableLocales.map(locale => (
           <a 
-            href={createLanguageUrl(locale)} 
+            href={getLocaleUrl(locale, Astro.url)} 
             class={`block px-4 py-2 text-sm ${locale === currentLocale 
               ? 'bg-gray-100 text-gray-900 font-medium' 
               : 'text-gray-700 hover:bg-gray-50'}`}

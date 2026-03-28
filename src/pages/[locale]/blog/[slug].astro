@@ -1,0 +1,40 @@
+---
+import { readdir } from "node:fs/promises";
+import { getCollection } from "astro:content";
+import { AVAILABLE_LOCALES, isLocale } from "@utils/locale";
+import BlogPostPage from "../../blog/[slug].astro";
+
+export async function getStaticPaths() {
+  const files = await readdir(new URL("../../../content/blog", import.meta.url), {
+    recursive: true,
+    withFileTypes: true,
+  }).catch(() => []);
+
+  if (!files.some((entry) => entry.isFile() && /\.(md|mdx)$/i.test(entry.name))) {
+    return [];
+  }
+
+  const blogEntries = await getCollection("blog");
+
+  return AVAILABLE_LOCALES.flatMap((locale) =>
+    blogEntries.map((entry) => ({
+      params: {
+        locale,
+        slug: entry.slug,
+      },
+      props: {
+        entry,
+      },
+    })),
+  );
+}
+
+const { locale } = Astro.params;
+const { entry } = Astro.props;
+
+if (!locale || !isLocale(locale)) {
+  throw new Error(`Unsupported locale: ${locale ?? "unknown"}`);
+}
+---
+
+<BlogPostPage entry={entry} />

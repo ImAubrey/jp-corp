@@ -1,10 +1,20 @@
 ---
+import { readdir } from "node:fs/promises";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
+  const entries = await readdir(new URL("../../content/blog", import.meta.url), {
+    recursive: true,
+    withFileTypes: true,
+  }).catch(() => []);
+
+  if (!entries.some((entry) => entry.isFile() && /\.(md|mdx)$/i.test(entry.name))) {
+    return [];
+  }
+
   const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
