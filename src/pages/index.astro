@@ -6,6 +6,7 @@ import EnterpriseCta from "../components/enterprise-cta.astro";
 import EnterpriseHero from "../components/enterprise-hero.astro";
 import EnterpriseFeatures from "../components/enterprise-features.astro";
 import HomeServices from "../components/home-services.astro";
+import HomeNetworkFlow from "../components/home-network-flow.astro";
 import Logos from "../components/logos.astro";
 import Layout from "../layouts/Layout.astro";
 import { getLocale } from "@utils/locale";
@@ -55,6 +56,7 @@ const highlightEnterprise = shouldHighlightEnterpriseServices(geoLocation, Astro
           <EnterpriseFeatures locale={locale} t={t} />
         </>
       )}
+      <HomeNetworkFlow locale={locale} t={t} />
       <HomeServices locale={locale} t={t} />
       {!showBroadband ? <EnterpriseCta locale={locale} t={t} /> : null}
       <Logos locale={locale} t={t} />
@@ -83,7 +85,7 @@ const highlightEnterprise = shouldHighlightEnterpriseServices(geoLocation, Astro
       linear-gradient(120deg, rgba(15, 23, 42, 0.1) 1px, transparent 1px),
       linear-gradient(300deg, rgba(15, 23, 42, 0.1) 1px, transparent 1px);
     background-size: 140px 140px;
-    animation: home-drift 38s linear infinite, home-pulse 12s ease-in-out infinite;
+    animation: none;
     opacity: 0.4;
   }
 
@@ -92,7 +94,7 @@ const highlightEnterprise = shouldHighlightEnterpriseServices(geoLocation, Astro
       repeating-linear-gradient(135deg, rgba(59, 130, 246, 0.22) 0, rgba(59, 130, 246, 0.22) 1px, transparent 1px, transparent 24px),
       repeating-linear-gradient(45deg, rgba(16, 185, 129, 0.22) 0, rgba(16, 185, 129, 0.22) 1px, transparent 1px, transparent 28px);
     background-size: 260px 260px;
-    animation: home-drift 52s linear infinite reverse, home-pulse 16s ease-in-out infinite;
+    animation: none;
     opacity: 0.6;
   }
 
@@ -102,7 +104,7 @@ const highlightEnterprise = shouldHighlightEnterpriseServices(geoLocation, Astro
     opacity: 0.7;
     filter: drop-shadow(0 18px 36px rgba(15, 23, 42, 0.15));
     transform-origin: center;
-    animation: home-float 18s ease-in-out infinite, home-spin 120s linear infinite, home-breathe 10s ease-in-out infinite;
+    animation: none;
   }
 
   .home-geo--one {
@@ -133,7 +135,7 @@ const highlightEnterprise = shouldHighlightEnterpriseServices(geoLocation, Astro
   .home-geo polygon,
   .home-geo path {
     stroke-dasharray: 12 10;
-    animation: home-dash 22s linear infinite;
+    animation: none;
   }
 
   .home-glow {
@@ -143,7 +145,7 @@ const highlightEnterprise = shouldHighlightEnterpriseServices(geoLocation, Astro
       radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.2), transparent 45%),
       radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.2), transparent 55%);
     opacity: 0.6;
-    animation: home-glow 18s ease-in-out infinite;
+    animation: none;
   }
 
   .home-sparks {
@@ -152,7 +154,7 @@ const highlightEnterprise = shouldHighlightEnterpriseServices(geoLocation, Astro
     background-image: radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 1px);
     background-size: 160px 160px;
     opacity: 0.22;
-    animation: home-spark-drift 28s linear infinite;
+    animation: none;
   }
 
   .home-noise {

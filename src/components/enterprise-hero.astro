@@ -1,5 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import HomeEnterpriseServices from "./home-enterprise-services.astro";
+import fiberCrossConnect from "../assets/home/fiber-cross-connect.webp";
+import networkOperationsCenter from "../assets/home/network-operations-center.webp";
+import rackDeployment from "../assets/home/rack-deployment.webp";
+import serverHall from "../assets/data-centers/server-hall.webp";
 
 export interface Props {
   locale: string;
@@ -16,90 +22,141 @@ function createLocalePath(path: string) {
   return `/${locale}${path}`;
 }
 
-const enterpriseServices = [
+const operationScenes = [
   {
-    nameKey: "home.enterprise.services.transit.name",
-    descriptionKey: "home.enterprise.services.transit.description", 
-    priceKey: "home.enterprise.services.transit.price",
-    icon: "bx:bx-network-chart",
-    path: "/ip-transit/"
+    image: networkOperationsCenter,
+    titleKey: "home.enterprise.operations.monitoring.title",
+    descriptionKey: "home.enterprise.operations.monitoring.description",
+    altKey: "home.enterprise.operations.monitoring.alt",
   },
   {
-    nameKey: "home.enterprise.services.hosting.name",
-    descriptionKey: "home.enterprise.services.hosting.description",
-    priceKey: "home.enterprise.services.hosting.price", 
-    icon: "bx:bx-server",
-    path: "/hosting/"
+    image: rackDeployment,
+    titleKey: "home.enterprise.operations.deployment.title",
+    descriptionKey: "home.enterprise.operations.deployment.description",
+    altKey: "home.enterprise.operations.deployment.alt",
   },
   {
-    nameKey: "home.enterprise.services.maintenance.name",
-    descriptionKey: "home.enterprise.services.maintenance.description",
-    priceKey: "home.enterprise.services.maintenance.price",
-    icon: "bx:bx-wrench",
-    path: "/contact/"
-  }
+    image: fiberCrossConnect,
+    titleKey: "home.enterprise.operations.interconnect.title",
+    descriptionKey: "home.enterprise.operations.interconnect.description",
+    altKey: "home.enterprise.operations.interconnect.alt",
+  },
+];
+
+const heroSlides = [
+  {
+    code: "JP",
+    image: serverHall,
+    className: "home-facility__slide--jp",
+    locationKey: "home.enterprise.hero.carousel.japan.location",
+    titleKey: "home.enterprise.hero.carousel.japan.title",
+    descriptionKey: "home.enterprise.hero.carousel.japan.description",
+    altKey: "home.enterprise.hero.carousel.japan.alt",
+  },
+  {
+    code: "HK",
+    image: fiberCrossConnect,
+    className: "home-facility__slide--hk",
+    locationKey: "home.enterprise.hero.carousel.hongKong.location",
+    titleKey: "home.enterprise.hero.carousel.hongKong.title",
+    descriptionKey: "home.enterprise.hero.carousel.hongKong.description",
+    altKey: "home.enterprise.hero.carousel.hongKong.alt",
+  },
 ];
 ---
 
-<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <div class="relative">
-      <!-- Enterprise infrastructure illustration -->
-      <div class="absolute -top-8 -left-10 h-28 w-28 rounded-full bg-sky-300/40 blur-3xl glow"></div>
-      <div class="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-emerald-300/30 blur-3xl glow"></div>
-      <div class="glass-panel rounded-3xl p-8 w-96 h-96 flex items-center justify-center relative overflow-hidden floaty">
-        <!-- Infrastructure grid -->
-        <div class="grid grid-cols-3 gap-6 items-center">
-          <!-- Top row -->
-          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-            <Icon name="bx:bx-world" class="text-white w-6 h-6" />
-          </div>
-          <div class="bg-slate-900 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-            <Icon name="bx:bx-cloud" class="text-white w-6 h-6" />
-          </div>
-          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-            <Icon name="bx:bx-network-chart" class="text-white w-6 h-6" />
-          </div>
-          
-          <!-- Middle row - vertical spacer -->
-          <div class="h-4"></div>
-          <div class="h-4"></div>
-          <div class="h-4"></div>
-          
-          <!-- Center server -->
-          <div class="bg-slate-900 rounded-2xl p-4 shadow-lg col-span-3 flex justify-center">
-            <Icon name="bx:bx-server" class="text-white w-12 h-12" />
-          </div>
-          
-          <!-- Bottom spacer -->
-          <div class="h-4"></div>
-          <div class="h-4"></div>
-          <div class="h-4"></div>
-          
-          <!-- Bottom row -->
-          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-            <Icon name="bx:bx-shield" class="text-white w-6 h-6" />
-          </div>
-          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-            <Icon name="bx:bx-wrench" class="text-white w-6 h-6" />
-          </div>
-          <div class="bg-slate-800 rounded-xl p-3 shadow-md hover:shadow-lg transition-shadow">
-            <Icon name="bx:bx-support" class="text-white w-6 h-6" />
-          </div>
+<main
+  class="grid items-center gap-10 pt-16 pb-8 md:pt-12 md:pb-24 lg:grid-cols-2 lg:gap-14"
+  data-home-hero
+  data-motion="none"
+>
+  <div class="order-2 min-w-0 py-6 lg:order-1" data-home-hero-visual>
+    <section
+      class="home-facility"
+      data-home-hero-carousel
+      aria-roledescription="carousel"
+      aria-label={t("home.enterprise.hero.carousel.label")}
+    >
+      <div class="home-facility__slides" aria-live="off">
+        {
+          heroSlides.map((slide, index) => (
+            <figure
+              class:list={["home-facility__slide", slide.className]}
+              data-home-hero-slide
+              data-active={index === 0 ? "true" : "false"}
+              aria-hidden={index === 0 ? "false" : "true"}
+            >
+              <Image
+                src={slide.image}
+                alt={t(slide.altKey)}
+                class="home-facility__image"
+                width={1200}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchpriority={index === 0 ? "high" : "auto"}
+              />
+              <div class="home-facility__shade"></div>
+
+              <div class="home-facility__region">
+                <strong>{slide.code}</strong>
+                <span>{t(slide.locationKey)}</span>
+              </div>
+
+              <figcaption class="home-facility__caption">
+                <p>{t(slide.locationKey)}</p>
+                <h2>{t(slide.titleKey)}</h2>
+                <span>{t(slide.descriptionKey)}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+
+      <div class="home-facility__live">
+        <span class="home-facility__dot"></span>
+        {t("home.enterprise.hero.imageEyebrow")}
+      </div>
+
+      <div class="home-facility__controls">
+        <div class="home-facility__selectors">
+          {
+            heroSlides.map((slide, index) => (
+              <button
+                type="button"
+                data-home-carousel-select
+                data-slide-index={index}
+                data-active={index === 0 ? "true" : "false"}
+                aria-pressed={index === 0 ? "true" : "false"}
+                aria-label={`${t("home.enterprise.hero.carousel.showSlide")} ${slide.code}`}
+              >
+                <strong>{slide.code}</strong>
+                <span>{t(slide.locationKey)}</span>
+              </button>
+            ))
+          }
         </div>
-        
-        <!-- Status indicators -->
-        <div class="absolute top-4 right-4 glass-chip text-slate-700 text-xs px-3 py-1 rounded-full font-semibold">
-          Enterprise Ready
-        </div>
-        <div class="absolute bottom-4 left-4 glass-chip text-slate-700 text-xs px-3 py-1 rounded-full font-semibold">
-          24/7 Support
+
+        <div class="home-facility__arrows">
+          <button
+            type="button"
+            data-home-carousel-previous
+            aria-label={t("home.enterprise.hero.carousel.previous")}
+          >
+            <Icon name="bx:bx-chevron-left" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            data-home-carousel-next
+            aria-label={t("home.enterprise.hero.carousel.next")}
+          >
+            <Icon name="bx:bx-chevron-right" aria-hidden="true" />
+          </button>
         </div>
       </div>
-    </div>
+
+    </section>
   </div>
   
-  <div>
+  <div class="order-1 lg:order-2" data-home-hero-copy>
     <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-slate-900">
       {t('home.enterprise.hero.title')}
     </h1>
@@ -123,42 +180,370 @@ const enterpriseServices = [
   </div>
 </main>
 
-<!-- Services Preview Section -->
-<div class="mt-16">
-  <div class="text-center mb-12">
-    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-slate-900">
-      {t('home.enterprise.services.title')}
+<HomeEnterpriseServices locale={locale} t={t} />
+
+<section class="mt-24">
+  <div class="max-w-3xl">
+    <p class="text-xs font-semibold uppercase tracking-[0.28em] text-slate-500">
+      {t("home.enterprise.operations.kicker")}
+    </p>
+    <h2 class="mt-3 text-4xl font-bold text-slate-900 lg:text-5xl">
+      {t("home.enterprise.operations.title")}
     </h2>
-    <p class="text-xl mt-4 text-slate-600 max-w-3xl mx-auto">
-      {t('home.enterprise.services.subtitle')}
+    <p class="mt-4 text-lg leading-relaxed text-slate-600">
+      {t("home.enterprise.operations.description")}
     </p>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-8">
+  <div class="mt-10 grid gap-6 md:grid-cols-3">
     {
-      enterpriseServices.map((service) => (
-        <div class="glass-card lift rounded-2xl p-6">
-          <div class="flex gap-4 items-start">
-            <div class="mt-1 bg-slate-900 rounded-full p-3 w-12 h-12 shrink-0 shadow-lg shadow-slate-900/20">
-              <Icon class="text-white w-6 h-6" name={service.icon} />
-            </div>
-            <div class="flex-1">
-              <h3 class="font-semibold text-xl text-slate-900 mb-2">{t(service.nameKey)}</h3>
-              <p class="text-slate-600 mb-3 leading-relaxed">{t(service.descriptionKey)}</p>
-              <div class="flex items-center justify-between">
-                <span class="text-lg font-bold text-slate-900">{t(service.priceKey)}</span>
-                <a 
-                  href={createLocalePath(service.path)} 
-                  class="inline-flex items-center space-x-1 text-slate-900 hover:text-slate-600 font-medium"
-                >
-                  <span>{t('home.enterprise.services.learnMore')}</span>
-                  <Icon name="bx:bx-right-arrow-alt" class="w-4 h-4" />
-                </a>
-              </div>
-            </div>
+      operationScenes.map((scene) => (
+        <figure class="home-scene">
+          <div class="home-scene__media">
+            <Image
+              src={scene.image}
+              alt={t(scene.altKey)}
+              class="home-scene__image"
+              width={850}
+              loading="lazy"
+            />
           </div>
-        </div>
+          <figcaption class="home-scene__caption">
+            <h3 class="text-xl font-semibold text-slate-950">{t(scene.titleKey)}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              {t(scene.descriptionKey)}
+            </p>
+          </figcaption>
+        </figure>
       ))
     }
   </div>
-</div>
+</section>
+
+<style>
+  .home-facility {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    height: clamp(29rem, 43vw, 36rem);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    border-radius: 2rem;
+    background: #0f172a;
+    box-shadow:
+      0 34px 82px rgba(15, 23, 42, 0.25),
+      0 0 0 1px rgba(15, 23, 42, 0.04);
+    isolation: isolate;
+  }
+
+  .home-facility__slides,
+  .home-facility__slide {
+    position: absolute;
+    inset: 0;
+  }
+
+  .home-facility__slide {
+    visibility: hidden;
+    margin: 0;
+    opacity: 0;
+    transition:
+      opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.85s;
+  }
+
+  .home-facility__slide[data-active="true"] {
+    z-index: 1;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .home-facility__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.001);
+    transition: transform 7s ease-out;
+  }
+
+  .home-facility__slide[data-active="true"] .home-facility__image {
+    transform: scale(1.045);
+  }
+
+  .home-facility__slide--jp .home-facility__image {
+    object-position: 61% center;
+  }
+
+  .home-facility__slide--hk .home-facility__image {
+    object-position: 66% center;
+  }
+
+  .home-facility__shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(2, 6, 23, 0.08) 32%, rgba(2, 6, 23, 0.84) 100%),
+      linear-gradient(90deg, rgba(2, 6, 23, 0.48), transparent 62%);
+    pointer-events: none;
+  }
+
+  .home-facility__region,
+  .home-facility__live {
+    position: absolute;
+    top: 1rem;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(2, 6, 23, 0.72);
+    color: #ffffff;
+    backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  .home-facility__region {
+    left: 1rem;
+    gap: 0.7rem;
+    padding: 0.45rem 0.8rem 0.45rem 0.48rem;
+    border-radius: 0.9rem;
+  }
+
+  .home-facility__region strong {
+    display: grid;
+    place-items: center;
+    min-width: 2.3rem;
+    min-height: 2.3rem;
+    border-radius: 0.65rem;
+    background: rgba(255, 255, 255, 0.96);
+    color: #0f172a;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+  }
+
+  .home-facility__region span {
+    padding-right: 0.15rem;
+    color: #e2e8f0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .home-facility__live {
+    right: 1rem;
+    display: inline-flex;
+    gap: 0.55rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    backdrop-filter: blur(14px);
+  }
+
+  .home-facility__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: #34d399;
+    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.16);
+  }
+
+  .home-facility__caption {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 5.7rem;
+    left: 1.25rem;
+    z-index: 3;
+    max-width: 34rem;
+    color: #ffffff;
+    text-shadow: 0 2px 18px rgba(2, 6, 23, 0.5);
+  }
+
+  .home-facility__caption p {
+    color: #bae6fd;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .home-facility__caption h2 {
+    margin-top: 0.45rem;
+    font-family: "Bricolage Grotesque Variable", sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.45rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .home-facility__caption > span {
+    display: block;
+    max-width: 31rem;
+    margin-top: 0.65rem;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  .home-facility__controls {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .home-facility__selectors,
+  .home-facility__arrows {
+    display: flex;
+    gap: 0.45rem;
+  }
+
+  .home-facility__selectors,
+  .home-facility__arrows button {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(2, 6, 23, 0.68);
+    backdrop-filter: blur(16px) saturate(135%);
+  }
+
+  .home-facility__selectors {
+    padding: 0.3rem;
+    border-radius: 1rem;
+  }
+
+  .home-facility__selectors button {
+    display: flex;
+    gap: 0.55rem;
+    align-items: center;
+    min-height: 2.6rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.72rem;
+    color: #cbd5e1;
+    text-align: left;
+    transition:
+      color 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .home-facility__selectors button[data-active="true"] {
+    background: rgba(255, 255, 255, 0.96);
+    color: #0f172a;
+  }
+
+  .home-facility__selectors strong {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .home-facility__selectors span {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .home-facility__arrows button {
+    display: grid;
+    place-items: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 999px;
+    color: #ffffff;
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .home-facility__arrows button:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-1px);
+  }
+
+  .home-facility__arrows :global(svg) {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .home-scene {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.09);
+    backdrop-filter: blur(14px);
+  }
+
+  .home-scene__media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #dbe4ec;
+  }
+
+  .home-scene__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .home-scene:hover .home-scene__image {
+    transform: scale(1.03);
+  }
+
+  .home-scene__caption {
+    padding: 1.35rem;
+  }
+
+  @media (max-width: 639px) {
+    .home-facility {
+      height: 30rem;
+      border-radius: 1.5rem;
+    }
+
+    .home-facility__live,
+    .home-facility__selectors span {
+      display: none;
+    }
+
+    .home-facility__caption {
+      right: 1rem;
+      bottom: 5.4rem;
+      left: 1rem;
+    }
+
+    .home-facility__caption h2 {
+      font-size: 1.85rem;
+    }
+
+    .home-facility__selectors button {
+      justify-content: center;
+      min-width: 2.7rem;
+      padding-inline: 0.65rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-facility__slide,
+    .home-facility__image,
+    .home-facility__selectors button,
+    .home-facility__arrows button,
+    .home-scene__image {
+      transition: none;
+    }
+
+    .home-facility__slide[data-active="true"] .home-facility__image {
+      transform: none;
+    }
+
+    .home-scene:hover .home-scene__image {
+      transform: none;
+    }
+  }
+</style>

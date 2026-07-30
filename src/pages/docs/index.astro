@@ -1,3 +1,46 @@
 ---
-return Astro.redirect("https://docs.astrix.global");
+const docsBase = "https://docs.astrix.global";
 ---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting...</title>
+    <meta name="robots" content="noindex" />
+    <script is:inline>
+      (() => {
+        const docsBase = "https://docs.astrix.global";
+        const path = window.location.pathname.toLowerCase();
+
+        // Respect locale prefix when present: /zh/docs or /ja/docs.
+        const localeFromPath = path.startsWith("/zh/")
+          ? "zh"
+          : path.startsWith("/ja/")
+            ? "ja"
+            : "";
+
+        // Fallback to browser locale for /docs.
+        const browserLocale = (() => {
+          const lang = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+          const normalized = lang.toLowerCase();
+          if (normalized.startsWith("zh")) return "zh";
+          if (normalized.startsWith("ja")) return "ja";
+          return "en";
+        })();
+
+        const locale = localeFromPath || browserLocale;
+        const target =
+          locale === "zh" ? `${docsBase}/zh` : locale === "ja" ? `${docsBase}/ja` : `${docsBase}/`;
+
+        window.location.replace(target);
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <a href={`${docsBase}/`}>Continue to docs</a>
+    </noscript>
+  </body>
+</html>

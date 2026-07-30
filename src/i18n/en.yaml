@@ -123,6 +123,8 @@ dataCenters:
     liveBadge: Live Sites
     statusNote: Includes Equinix and HK COLO facilities currently in service.
     globeCaption: Live footprint across Tokyo and Hong Kong.
+    imageAlt: Representative view down the aisle of a modern data center server hall.
+    imageCaption: Tokyo & Hong Kong footprint
   locations:
     kicker: Active Facilities
     title: Current Locations
@@ -153,6 +155,20 @@ dataCenters:
         city: Hong Kong
         region: Hong Kong SAR
         summary: Additional Hong Kong colocation facility.
+  visuals:
+    kicker: Inside the Infrastructure
+    title: Built for dependable operations
+    description: A closer look at the environments, on-site work, and resilient systems behind modern infrastructure.
+    operations:
+      label: On-site operations
+      title: Hands-on support when it matters
+      description: Methodical rack-level work supports planned changes, diagnostics, and time-sensitive interventions.
+      alt: Representative data center engineer inspecting server equipment with a tablet.
+    infrastructure:
+      label: Facility resilience
+      title: Infrastructure beyond the rack
+      description: Power, cooling, and facility systems are essential layers of a stable deployment.
+      alt: Representative view of data center cooling and power infrastructure at blue hour.
   footprint:
     title: Regional Footprint
     description: A quick snapshot of how our sites map to key markets.
@@ -604,22 +620,72 @@ home:
       subtitle: Professional IT infrastructure services for businesses seeking reliable connectivity, secure hosting, and expert maintenance solutions.
       primaryCta: Contact Our Team
       secondaryCta: Explore IP Transit
+      imageAlt: Representative view down the aisle of a modern data center server hall.
+      imageEyebrow: Live infrastructure
+      imageTitle: Tokyo & Hong Kong
+      imageSites: Live sites
+      imageSupport: Operations support
+      carousel:
+        label: Japan and Hong Kong infrastructure
+        previous: Show previous location
+        next: Show next location
+        showSlide: Show location
+        japan:
+          location: Tokyo, Japan
+          title: Japan core infrastructure
+          description: Live server capacity built for resilient compute, hosting, and regional connectivity.
+          alt: Representative view of live server infrastructure in a modern Japanese data center.
+        hongKong:
+          location: Hong Kong
+          title: Hong Kong interconnection
+          description: Structured high-density fiber paths supporting dependable cross-border network delivery.
+          alt: Representative high-density fiber interconnection supporting the Hong Kong network site.
+    operations:
+      kicker: Behind the Infrastructure
+      title: Operations you can see
+      description: Real-world environments across monitoring, physical deployment, and carrier interconnection.
+      monitoring:
+        title: Continuous network visibility
+        description: Engineers monitor routing, capacity, and service health from a dedicated operations environment.
+        alt: Representative network operations center with engineers monitoring infrastructure.
+      deployment:
+        title: Rack-level deployment
+        description: Careful installation and structured cabling keep every change controlled and maintainable.
+        alt: Representative data center technician installing equipment and organizing rack cabling.
+      interconnect:
+        title: Structured interconnection
+        description: Orderly fiber cross-connects provide the physical foundation for dependable network paths.
+        alt: Representative high-density fiber cross-connect with neatly routed yellow and aqua cables.
     services:
+      kicker: Network · Cloud · Operations
       title: Core Enterprise Services
       subtitle: Comprehensive infrastructure solutions tailored for business needs
       learnMore: Learn More
+      scrollHint: Scroll to explore
+      networkLabel: Live carrier fabric
       transit:
         name: IP Transit Services
+        eyebrow: Multi-carrier connectivity
         description: High-performance BGP transit with global connectivity and DDoS protection for mission-critical operations.
         price: From ¥50,000/month
       hosting:
         name: Dedicated Server Hosting
+        eyebrow: Bare-metal infrastructure
         description: Enterprise-grade bare metal servers with 24/7 monitoring, backup services, and guaranteed uptime SLA.
         price: From ¥25,000/month
+        visualAlt: Representative live server hall in a Tokyo data center.
+        visualStatus: Facility online
+        rackLabel: Rack capacity
+        powerLabel: Power feeds
+        uplinkLabel: Uplink ready
       maintenance:
         name: Infrastructure Maintenance
+        eyebrow: Engineer-led operations
         description: Proactive monitoring, security updates, performance optimization, and technical support for your IT infrastructure.
         price: Custom Pricing
+        visualAlt: Engineers monitoring live infrastructure from a network operations center.
+        responseLabel: Engineer response
+        responseDetail: Direct L2/L3 escalation
     features:
       title: Enterprise-Grade Infrastructure
       subtitle: Built for reliability, security, and performance at scale
@@ -683,6 +749,37 @@ home:
       delivery: Procure -> deliver -> deploy
       onsite: Remote + on-site execution
     cta: Talk to Our Ops Team
+  motion:
+    kicker: Live Network Flow
+    title: One network. Four live sites. A continuous path.
+    description: Follow a protected route from Tokyo to Hong Kong as traffic moves through our active data center footprint.
+    status: Network online
+    statusDetail: View active facilities
+    routeLabel: Active route
+    mapTitle: Astrix live network route
+    mapDescription: An animated route connects TY8 and TY1 in Tokyo with HK2 and HK COLO in Hong Kong.
+    metrics:
+      sites: Active facilities
+      operations: Operations coverage
+      uptime: Network uptime target
+      regions: Connected regions
+    legend:
+      live: Live node
+      route: Protected route
+      secured: Monitored end to end
+    steps:
+      connect:
+        title: Connect
+        description: Bring each facility and service edge onto one managed fabric.
+      route:
+        title: Optimize
+        description: Select efficient paths across regional and upstream connections.
+      protect:
+        title: Protect
+        description: Monitor traffic and respond to network events around the clock.
+      deliver:
+        title: Deliver
+        description: Keep applications, teams, and customers consistently connected.
   solutions:
     title: T1-Powered Internet & Data Center Solutions
     description: Offering enterprise-grade ISP and IDC services with direct T1 connections designed for growing businesses, combining high-speed interconnections with the personal attention and flexibility that only a new, dedicated team can provide.

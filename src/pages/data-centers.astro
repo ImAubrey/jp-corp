@@ -1,6 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Container from "../components/container.astro";
 import Layout from "../layouts/Layout.astro";
+import coolingInfrastructure from "../assets/data-centers/cooling-infrastructure.webp";
+import onsiteOperations from "../assets/data-centers/onsite-operations.webp";
+import serverHall from "../assets/data-centers/server-hall.webp";
 import { getLocale } from "@utils/locale";
 import { useTranslations } from "../utils/i18n";
 
@@ -120,33 +124,34 @@ const principles = [
             </div>
           </div>
           <div class="dc-reveal dc-reveal--2">
-            <div class="space-y-6">
-              <div class="dc-card">
-                <div class="flex items-center justify-between">
-                  <p class="text-xs uppercase tracking-[0.3em] text-slate-500">
-                    {t("dataCenters.hero.liveBadge")}
-                  </p>
+            <div class="dc-hero-media">
+              <Image
+                src={serverHall}
+                alt={t("dataCenters.hero.imageAlt")}
+                class="dc-hero-media__image"
+                width={1200}
+                loading="eager"
+                fetchpriority="high"
+              />
+              <div class="dc-hero-media__veil"></div>
+              <div class="dc-hero-media__status">
+                <div class="flex items-center gap-3">
                   <span class="dc-badge">{locations.length}</span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                      {t("dataCenters.hero.liveBadge")}
+                    </p>
+                    <p class="mt-1 text-sm font-medium text-slate-900">
+                      {t("dataCenters.hero.imageCaption")}
+                    </p>
+                  </div>
                 </div>
-                <div class="relative mt-6 space-y-4">
-                  <div class="absolute left-2 top-3 bottom-3 w-px" style="background: var(--dc-line);"></div>
-                  {locations.map((location) => (
-                    <div class="relative flex gap-3">
-                      <span class="dc-dot"></span>
-                      <div>
-                        <p class="text-sm font-semibold text-slate-900">
-                          {t(location.nameKey)}
-                        </p>
-                        <p class="text-sm text-slate-500">
-                          {t(location.cityKey)}, {t(location.regionKey)}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <p class="mt-6 text-sm text-slate-600">
+                <div class="mt-4 flex items-start gap-2 border-t border-slate-200 pt-4">
+                  <span class="dc-live-dot mt-1.5"></span>
+                  <p class="text-sm text-slate-600">
                   {t("dataCenters.hero.statusNote")}
-                </p>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -208,6 +213,70 @@ const principles = [
               </div>
             </div>
           ))}
+        </div>
+      </Container>
+    </section>
+
+    <section class="pb-16 md:pb-20">
+      <Container>
+        <div class="dc-section-head dc-reveal dc-reveal--1">
+          <p class="text-xs uppercase tracking-[0.3em] text-slate-500">
+            {t("dataCenters.visuals.kicker")}
+          </p>
+          <h2 class="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">
+            {t("dataCenters.visuals.title")}
+          </h2>
+          <p class="mt-4 max-w-2xl text-lg text-slate-600">
+            {t("dataCenters.visuals.description")}
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+          <figure class="dc-photo dc-reveal dc-reveal--1">
+            <div class="dc-photo__media">
+              <Image
+                src={onsiteOperations}
+                alt={t("dataCenters.visuals.operations.alt")}
+                class="dc-photo__image"
+                width={1000}
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="dc-photo__caption">
+              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
+                {t("dataCenters.visuals.operations.label")}
+              </p>
+              <h3 class="mt-2 text-xl font-semibold text-slate-900">
+                {t("dataCenters.visuals.operations.title")}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                {t("dataCenters.visuals.operations.description")}
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="dc-photo dc-reveal dc-reveal--2">
+            <div class="dc-photo__media">
+              <Image
+                src={coolingInfrastructure}
+                alt={t("dataCenters.visuals.infrastructure.alt")}
+                class="dc-photo__image"
+                width={1000}
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="dc-photo__caption">
+              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
+                {t("dataCenters.visuals.infrastructure.label")}
+              </p>
+              <h3 class="mt-2 text-xl font-semibold text-slate-900">
+                {t("dataCenters.visuals.infrastructure.title")}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                {t("dataCenters.visuals.infrastructure.description")}
+              </p>
+            </figcaption>
+          </figure>
         </div>
       </Container>
     </section>
@@ -329,13 +398,47 @@ const principles = [
     color: #0f172a;
   }
 
-  .data-centers .dc-card {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(15, 23, 42, 0.1);
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-    backdrop-filter: blur(12px);
+  .data-centers .dc-hero-media {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 29rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1.75rem;
+    background: #0f172a;
+    box-shadow: 0 28px 65px rgba(15, 23, 42, 0.2);
+  }
+
+  .data-centers .dc-hero-media__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 29rem;
+    object-fit: cover;
+    object-position: 57% center;
+  }
+
+  .data-centers .dc-hero-media__veil {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(15, 23, 42, 0.02) 45%, rgba(15, 23, 42, 0.7) 100%),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.18), transparent 42%);
+    pointer-events: none;
+  }
+
+  .data-centers .dc-hero-media__status {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 1.15rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+    backdrop-filter: blur(16px) saturate(140%);
   }
 
   .data-centers .dc-badge {
@@ -351,16 +454,14 @@ const principles = [
     font-size: 1.1rem;
   }
 
-  .data-centers .dc-dot {
-    width: 0.55rem;
-    height: 0.55rem;
-    margin-top: 0.45rem;
+  .data-centers .dc-live-dot {
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 999px;
-    background: var(--dc-ink);
-    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.08);
-    z-index: 1;
+    background: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
+    flex-shrink: 0;
   }
-
 
   .data-centers .dc-location-card {
     position: relative;
@@ -390,6 +491,47 @@ const principles = [
     height: 0.35rem;
     border-radius: 999px;
     background: var(--dc-accent);
+  }
+
+  .data-centers .dc-photo {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 1.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 24px 55px rgba(15, 23, 42, 0.09);
+  }
+
+  .data-centers .dc-photo__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #dbe4ec;
+  }
+
+  .data-centers .dc-photo__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.16));
+    pointer-events: none;
+  }
+
+  .data-centers .dc-photo__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .data-centers .dc-photo:hover .dc-photo__image {
+    transform: scale(1.025);
+  }
+
+  .data-centers .dc-photo__caption {
+    padding: 1.5rem;
   }
 
   .data-centers .dc-panel {
@@ -472,6 +614,21 @@ const principles = [
       animation: none;
       opacity: 1;
       transform: none;
+    }
+
+    .data-centers .dc-photo__image {
+      transition: none;
+    }
+
+    .data-centers .dc-photo:hover .dc-photo__image {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .data-centers .dc-hero-media,
+    .data-centers .dc-hero-media__image {
+      min-height: 25rem;
     }
   }
 </style>

@@ -58,8 +58,11 @@ const makeTitle = title
     />
   </head>
   <body class="antialiased text-slate-900">
+    <div class="motion-progress" aria-hidden="true">
+      <div class="motion-progress__bar" data-motion-progress-bar></div>
+    </div>
     <Navbar />
-    <main class="relative pt-20 lg:pt-24">
+    <main id="swup" class="relative pt-20 lg:pt-24">
       <slot />
     </main>
     <Footer />
@@ -74,12 +77,38 @@ const makeTitle = title
       }
 
       body {
+        min-height: 100vh;
+        overflow-x: clip;
         background:
           radial-gradient(1200px 600px at 10% -10%, rgba(59, 130, 246, 0.15), transparent 60%),
           radial-gradient(1000px 600px at 90% 0%, rgba(16, 185, 129, 0.14), transparent 60%),
           radial-gradient(900px 500px at 50% 100%, rgba(236, 72, 153, 0.08), transparent 60%),
           linear-gradient(180deg, #f7f7fb 0%, #eef2f7 60%, #e9eef5 100%);
         color: #0f172a;
+      }
+
+      #swup {
+        min-height: 40vh;
+        will-change: opacity, transform;
+      }
+
+      .motion-progress {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 100;
+        height: 3px;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .motion-progress__bar {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left center;
+        background: linear-gradient(90deg, #2563eb, #06b6d4 55%, #10b981);
+        box-shadow: 0 0 18px rgba(37, 99, 235, 0.5);
       }
 
       .glass-panel {
@@ -199,6 +228,18 @@ const makeTitle = title
       }
 
       @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        #swup {
+          will-change: auto;
+        }
+
+        .motion-progress {
+          display: none;
+        }
+
         .floaty,
         .floaty-fast,
         .glow,
@@ -224,5 +265,8 @@ const makeTitle = title
         content-visibility: auto;
       }
     </style>
+    <script>
+      import "../scripts/site-motion";
+    </script>
   </body>
 </html>

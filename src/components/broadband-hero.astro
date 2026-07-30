@@ -15,10 +15,14 @@ function createLocalePath(path: string) {
 }
 ---
 
-<main class="pt-16 pb-8 md:pt-12 md:pb-24 relative">
+<main class="pt-16 pb-8 md:pt-12 md:pb-24 relative" data-home-page-shell>
   <!-- Main Hero Section -->
-  <div class="grid lg:grid-cols-2 place-items-center gap-12 mb-20">
-    <div class="order-2 lg:order-1">
+  <div
+    class="grid lg:grid-cols-2 place-items-center gap-12 mb-20"
+    data-home-hero
+    data-motion="none"
+  >
+    <div class="order-2 lg:order-1" data-home-hero-copy>
       <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-slate-900">
         {t('home.broadband.hero.title')}
       </h1>
@@ -58,7 +62,7 @@ function createLocalePath(path: string) {
       </div>
     </div>
     
-    <div class="order-1 lg:order-2">
+    <div class="order-1 lg:order-2" data-home-hero-visual>
       <div class="relative">
         <!-- Main visual representation -->
         <div class="absolute -top-10 -right-12 h-24 w-24 rounded-full bg-sky-300/40 blur-3xl glow"></div>

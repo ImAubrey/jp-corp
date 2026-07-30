@@ -94,22 +94,72 @@ home:
       subtitle: 信頼性の高い接続性、安全なホスティング、専門的なメンテナンスソリューションを求める企業向けの専門的ITインフラストラクチャサービス。
       primaryCta: チームにお問い合わせ
       secondaryCta: IP通信を探索
+      imageAlt: モダンなデータセンターのサーバールーム通路をイメージした写真。
+      imageEyebrow: 稼働中のインフラ
+      imageTitle: 東京・香港
+      imageSites: 稼働中拠点
+      imageSupport: 運用サポート
+      carousel:
+        label: 日本・香港インフラストラクチャ
+        previous: 前の拠点を表示
+        next: 次の拠点を表示
+        showSlide: 拠点を表示
+        japan:
+          location: 東京・日本
+          title: 日本のコアインフラ
+          description: 高可用なコンピュート、ホスティング、地域接続を支える稼働中のサーバー基盤。
+          alt: 日本のモダンなデータセンターで稼働するサーバーインフラのイメージ。
+        hongKong:
+          location: 香港
+          title: 香港インターコネクション
+          description: 安定した国際ネットワーク配信を支える、構造化された高密度光ファイバー経路。
+          alt: 香港ネットワーク拠点を支える高密度光ファイバー相互接続のイメージ。
+    operations:
+      kicker: インフラの現場
+      title: 目に見える運用体制
+      description: 監視、物理導入、キャリア相互接続を支える実際の運用環境をご紹介します。
+      monitoring:
+        title: 継続的なネットワーク監視
+        description: 専用の運用環境から、ルーティング、容量、サービス状態を監視します。
+        alt: 技術者がインフラを監視するネットワークオペレーションセンターのイメージ。
+      deployment:
+        title: ラック単位の導入作業
+        description: 丁寧な機器設置と構造化配線により、変更を管理しやすい状態に保ちます。
+        alt: 機器を設置しラック内配線を整えるデータセンター技術者のイメージ。
+      interconnect:
+        title: 構造化された相互接続
+        description: 整然とした光ファイバー接続が、安定したネットワーク経路の物理基盤になります。
+        alt: 黄色と水色のケーブルが整然と配線された高密度光ファイバー接続盤のイメージ。
     services:
+      kicker: ネットワーク · クラウド · 運用
       title: コア企業サービス
       subtitle: ビジネスニーズに合わせた包括的なインフラストラクチャソリューション
       learnMore: 詳細を見る
+      scrollHint: スクロールして見る
+      networkLabel: ライブキャリア構成
       transit:
         name: IP通信サービス
+        eyebrow: マルチキャリア接続
         description: ミッションクリティカルな運用のためのグローバル接続とDDoS保護を備えた高性能BGP通信。
         price: ¥50,000/月から
       hosting:
         name: 専用サーバーホスティング
+        eyebrow: ベアメタル基盤
         description: 24/7監視、バックアップサービス、および保証されたアップタイムSLAを備えた企業グレードのベアメタルサーバー。
         price: ¥25,000/月から
+        visualAlt: 東京のデータセンターで稼働するサーバーホールのイメージ。
+        visualStatus: ファシリティ稼働中
+        rackLabel: ラック容量
+        powerLabel: 電源系統
+        uplinkLabel: アップリンク
       maintenance:
         name: インフラストラクチャメンテナンス
+        eyebrow: エンジニア主導の運用
         description: ITインフラストラクチャの予防的監視、セキュリティ更新、パフォーマンス最適化、技術サポート。
         price: カスタム価格
+        visualAlt: ネットワーク運用センターから稼働中のインフラを監視するエンジニアのイメージ。
+        responseLabel: エンジニア応答
+        responseDetail: L2/L3へ直接エスカレーション
     features:
       title: エンタープライズグレードインフラストラクチャ
       subtitle: 大規模な信頼性、セキュリティ、パフォーマンスのために構築
@@ -173,6 +223,37 @@ home:
       delivery: 調達→納品→導入
       onsite: リモート + 現地対応
     cta: 運用相談
+  motion:
+    kicker: ライブネットワークフロー
+    title: ひとつのネットワーク。4つの稼働拠点。途切れない経路。
+    description: 東京から香港まで、稼働中のデータセンターを通過する保護された通信経路をご覧ください。
+    status: ネットワーク稼働中
+    statusDetail: 稼働中の施設を見る
+    routeLabel: アクティブ経路
+    mapTitle: Astrixライブネットワーク経路
+    mapDescription: 東京のTY8・TY1と香港のHK2・HK COLOを結ぶアニメーション経路です。
+    metrics:
+      sites: 稼働中施設
+      operations: 運用対応
+      uptime: ネットワーク稼働目標
+      regions: 接続リージョン
+    legend:
+      live: 稼働中ノード
+      route: 保護された経路
+      secured: エンドツーエンド監視
+    steps:
+      connect:
+        title: 接続
+        description: 各施設とサービスエッジを、ひとつの管理基盤へ接続します。
+      route:
+        title: 最適化
+        description: 地域間および上位回線から効率的な経路を選択します。
+      protect:
+        title: 保護
+        description: 通信を常時監視し、ネットワークイベントへ迅速に対応します。
+      deliver:
+        title: 提供
+        description: アプリケーション、チーム、顧客の安定した接続を維持します。
   solutions:
     title: T1パワードインターネット＆データセンターソリューション
     description: 成長中のビジネスのために設計された直接T1接続を備えた企業グレードのISPおよびIDCサービスを提供し、高速相互接続と新しい専任チームだけが提供できる個人的な注意と柔軟性を組み合わせています。
@@ -312,6 +393,8 @@ dataCenters:
     liveBadge: 稼働中拠点
     statusNote: EquinixとHK COLOの拠点が稼働中です。
     globeCaption: 東京・香港の稼働拠点を可視化。
+    imageAlt: モダンなデータセンターのサーバールーム通路をイメージした写真。
+    imageCaption: 東京・香港の拠点
   locations:
     kicker: 稼働中の施設
     title: 現在のロケーション
@@ -342,6 +425,20 @@ dataCenters:
         city: 香港
         region: 香港
         summary: 香港の追加コロケーション拠点。
+  visuals:
+    kicker: インフラの現場
+    title: 安定した運用を支える環境
+    description: モダンなインフラを支える施設環境、オンサイト作業、冗長設備をご紹介します。
+    operations:
+      label: オンサイト運用
+      title: 必要なときに届く現場対応
+      description: 計画作業や診断、緊急対応を、ラック単位の丁寧な作業で支えます。
+      alt: タブレットを手にサーバー機器を点検するデータセンター技術者のイメージ。
+    infrastructure:
+      label: 施設のレジリエンス
+      title: ラックを支える基盤設備
+      description: 電源・冷却・施設設備は、安定したデプロイメントに欠かせない基盤です。
+      alt: 夕暮れ時のデータセンター冷却・電源設備をイメージした写真。
   footprint:
     title: 地域フットプリント
     description: 主要市場への配置をひと目で。

@@ -95,22 +95,72 @@ home:
       subtitle: 为寻求可靠连接、安全托管和专业维护解决方案的企业提供专业IT基础设施服务。
       primaryCta: 联系我们的团队
       secondaryCta: 探索IP传输
+      imageAlt: 现代数据中心服务器机房通道的示意实景图。
+      imageEyebrow: 运行中基础设施
+      imageTitle: 东京与香港
+      imageSites: 运行中站点
+      imageSupport: 运维支持
+      carousel:
+        label: 日本与香港基础设施
+        previous: 显示上一个站点
+        next: 显示下一个站点
+        showSlide: 显示站点
+        japan:
+          location: 日本·东京
+          title: 日本核心基础设施
+          description: 为高可用计算、服务器托管和区域网络连接提供在线容量。
+          alt: 日本现代数据中心在线服务器基础设施的示意实景图。
+        hongKong:
+          location: 中国香港
+          title: 香港网络互联
+          description: 结构化高密度光纤链路，为稳定的跨境网络传输提供支持。
+          alt: 支持香港网络站点的高密度光纤互联示意实景图。
+    operations:
+      kicker: 基础设施现场
+      title: 看得见的运维能力
+      description: 展示网络监控、物理部署与运营商互联背后的真实工作环境。
+      monitoring:
+        title: 持续网络可视性
+        description: 工程师在专用运营中心持续监控路由、容量与服务健康状态。
+        alt: 工程师在网络运营中心监控基础设施的示意实景图。
+      deployment:
+        title: 机柜级部署
+        description: 严谨的设备安装与结构化布线，让每次变更都可控、易维护。
+        alt: 数据中心工程师安装设备并整理机柜布线的示意实景图。
+      interconnect:
+        title: 结构化网络互联
+        description: 整齐的光纤交叉连接，为稳定可靠的网络路径提供物理基础。
+        alt: 黄蓝光纤整齐布放的高密度交叉连接示意实景图。
     services:
+      kicker: 网络 · 云端 · 运维
       title: 核心企业服务
       subtitle: 为业务需求量身定制的全面基础设施解决方案
       learnMore: 了解更多
+      scrollHint: 滚动探索服务
+      networkLabel: 实时运营商网络
       transit:
         name: IP传输服务
+        eyebrow: 多运营商连接
         description: 为关键任务运营提供全球连接和DDoS保护的高性能BGP传输。
         price: 从¥50,000/月起
       hosting:
         name: 专用服务器托管
+        eyebrow: 裸金属基础设施
         description: 企业级裸机服务器，配备24/7监控、备份服务和保证的正常运行时间SLA。
         price: 从¥25,000/月起
+        visualAlt: 东京数据中心在线运行的服务器机房示意实景图。
+        visualStatus: 机房在线
+        rackLabel: 机柜容量
+        powerLabel: 双路供电
+        uplinkLabel: 上联就绪
       maintenance:
         name: 基础设施维护
+        eyebrow: 工程师主导运维
         description: 对您的IT基础设施进行主动监控、安全更新、性能优化和技术支持。
         price: 定制价格
+        visualAlt: 工程师在网络运营中心监控在线基础设施的示意实景图。
+        responseLabel: 工程师响应
+        responseDetail: L2/L3直接升级
     features:
       title: 企业级基础设施
       subtitle: 为大规模的可靠性、安全性和性能而构建
@@ -174,6 +224,37 @@ home:
       delivery: 采购-到货-上架全流程
       onsite: 远程 + 驻场协同
     cta: 咨询运维方案
+  motion:
+    kicker: 实时网络流
+    title: 一张网络，四个在线站点，一条持续畅通的路径。
+    description: 跟随受保护的线路从东京前往香港，查看流量如何经过我们正在运行的数据中心节点。
+    status: 网络在线
+    statusDetail: 查看运行设施
+    routeLabel: 活跃线路
+    mapTitle: Astrix实时网络线路
+    mapDescription: 动画线路连接东京TY8、TY1与香港HK2、HK COLO节点。
+    metrics:
+      sites: 运行设施
+      operations: 运维覆盖
+      uptime: 网络可用性目标
+      regions: 已连接区域
+    legend:
+      live: 在线节点
+      route: 受保护线路
+      secured: 端到端监控
+    steps:
+      connect:
+        title: 接入
+        description: 将各设施和服务边缘接入统一管理的网络架构。
+      route:
+        title: 优化
+        description: 在区域与上游连接之间选择更高效的传输路径。
+      protect:
+        title: 防护
+        description: 全天候监控流量并快速响应各类网络事件。
+      deliver:
+        title: 交付
+        description: 让应用、团队与客户始终保持稳定连接。
   solutions:
     title: T1级互联网和数据中心解决方案
     description: 提供企业级ISP和IDC服务，配备直接T1连接，专为成长中的企业设计，将高速互连与只有新成立的专业团队才能提供的个性化关注和灵活性相结合。
@@ -313,6 +394,8 @@ dataCenters:
     liveBadge: 运行中站点
     statusNote: 包含 Equinix 与 HK COLO 机房，当前均在运行中。
     globeCaption: 东京与香港的运行中站点分布。
+    imageAlt: 现代数据中心服务器机房通道的示意实景图。
+    imageCaption: 东京与香港节点
   locations:
     kicker: 运行中的机房
     title: 当前位置
@@ -343,6 +426,20 @@ dataCenters:
         city: 香港
         region: 中国香港
         summary: 香港的额外机房节点。
+  visuals:
+    kicker: 走进基础设施
+    title: 为可靠运维而打造
+    description: 近距离了解支撑现代基础设施的机房环境、现场运维与高可用系统。
+    operations:
+      label: 现场运维
+      title: 关键时刻的现场支持
+      description: 严谨的机柜级操作，为计划变更、故障诊断与紧急处理提供支持。
+      alt: 数据中心工程师手持平板检查服务器设备的示意实景图。
+    infrastructure:
+      label: 设施韧性
+      title: 机柜之外的基础保障
+      description: 供电、制冷与设施系统，是稳定部署不可或缺的基础层。
+      alt: 蓝调时刻的数据中心制冷与供电设施示意实景图。
   footprint:
     title: 区域布局
     description: 关键市场的站点一览。
